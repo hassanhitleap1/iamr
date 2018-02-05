@@ -7,19 +7,21 @@ use app\models\User;
  */
 class SignupForm extends Model
 {
-    public $username;
     public $email;
     public $password;
+    public $full_name;
+    public $image;
+    public $image_name;
+    public $confirm_password;
+    public $about_me;
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            ['username', 'trim'],
-            ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This username has already been taken.'],
-            ['username', 'string', 'min' => 2, 'max' => 255],
+            ['full_name', 'required'],
+            ['about_me', 'required'],
             ['email', 'trim'],
             ['email', 'required'],
             ['email', 'email'],
@@ -27,6 +29,9 @@ class SignupForm extends Model
             ['email', 'unique', 'targetClass' => '\app\models\User', 'message' => 'This email address has already been taken.'],
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
+            ['confirm_password', 'compare', 'compareAttribute'=>'password'],
+            ['image',  'image', 'extensions' => "gif, jpg, png"],
+
         ];
     }
     /**
@@ -41,7 +46,8 @@ class SignupForm extends Model
         }
         
         $user = new User();
-        $user->username = $this->username;
+        $user->full_name = $this->full_name;
+        $user->image_name = $this->image_name;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();

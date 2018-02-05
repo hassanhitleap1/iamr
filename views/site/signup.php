@@ -4,6 +4,8 @@
 /* @var $model \frontend\models\SignupForm */
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+use kartik\file\FileInput;
+use yii\helpers\Url;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -14,13 +16,26 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="row">
         <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
+            <?php $form = ActiveForm::begin(['id' => 'form-signup','options'=>['enctype'=>'multipart/form-data'] ]); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'full_name') ?>
+
+                <?= $form->field($model, 'about_me')->textArea(['rows' => '6','cols'=>50]) ;?>
 
                 <?= $form->field($model, 'email') ?>
-
+                
                 <?= $form->field($model, 'password')->passwordInput() ?>
+
+                <?= $form->field($model, 'confirm_password')->passwordInput() ?>
+
+                <?= $form->field($model, 'image')->widget(FileInput::classname(), [
+                        'options' => ['multiple' => false, 'accept' => 'image/*'],
+                        'pluginOptions' => [
+                            'previewFileType' => 'image',
+                            'showUpload' => false,
+                            'allowedFileExtensions' => ['jpg','png','jpeg'],
+                            ]
+                    ]);?>
 
                 <div class="form-group">
                     <?= Html::submitButton('Signup', ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
