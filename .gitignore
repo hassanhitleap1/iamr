@@ -10,11 +10,13 @@ nbproject
 .settings
 .jpg
 
+
 # windows thumbnail cache
 Thumbs.db
 
 # composer vendor dir
 /vendor
+/web/image
 
 # composer itself is not needed
 composer.phar
