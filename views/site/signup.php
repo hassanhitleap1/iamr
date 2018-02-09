@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use kartik\file\FileInput;
 use yii\helpers\Url;
+use yii\web\UploadedFile;
 $this->title = 'Signup';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -28,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 <?= $form->field($model, 'confirm_password')->passwordInput() ?>
 
-                <?= $form->field($model, 'image')->widget(FileInput::classname(), [
+                <?= $form->field($model, 'file')->widget(FileInput::classname(), [
                         'options' => ['multiple' => false, 'accept' => 'image/*'],
                         'pluginOptions' => [
                             'previewFileType' => 'image',

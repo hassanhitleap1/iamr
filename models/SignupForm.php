@@ -10,7 +10,7 @@ class SignupForm extends Model
     public $email;
     public $password;
     public $full_name;
-    public $image;
+    public $file;
     public $image_name;
     public $confirm_password;
     public $about_me;
@@ -30,7 +30,7 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
             ['confirm_password', 'compare', 'compareAttribute'=>'password'],
-            ['image',  'image', 'extensions' => "gif, jpg, png"],
+            ['file',  'image', 'extensions' => "gif, jpg, png"],
 
         ];
     }
@@ -44,10 +44,11 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
-        
+        $this->file->saveAs('image/' . $this->file->baseName . '.' . $this->file->extension);
         $user = new User();
+
         $user->full_name = $this->full_name;
-        $user->image_name = $this->image_name;
+        //$user->image_name = $this->image_name;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();

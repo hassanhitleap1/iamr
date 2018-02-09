@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\SignupForm;
+use yii\web\UploadedFile;
 
 class SiteController extends Controller
 {
@@ -98,24 +99,6 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays contact page.
-     *
-     * @return Response|string
-     */
-    public function actionContact()
-    {
-        $model = new ContactForm();
-        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
-            Yii::$app->session->setFlash('contactFormSubmitted');
-
-            return $this->refresh();
-        }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
      * Displays about page.
      *
      * @return string
@@ -135,6 +118,7 @@ class SiteController extends Controller
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
+            $model->file = UploadedFile::getInstance($model, 'file');
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
                     return $this->goHome();
@@ -144,5 +128,10 @@ class SiteController extends Controller
         return $this->render('signup', [
             'model' => $model,
         ]);
+    }
+
+
+    public  function actionPayment(){
+        return $this->render('payment');
     }
 }
