@@ -9,7 +9,7 @@ use yii\base\InvalidConfigException;
 class Device extends BaseObject
 {
 	
-	public function  getIp(){
+	public static function  getIp(){
 		if (!empty($_SERVER['HTTP_CLIENT_IP']))
         //check ip from share internet
         {
@@ -27,7 +27,7 @@ class Device extends BaseObject
         return $ip;
 	}
 
-	public function getOS() { 
+	public static function getOS() { 
 
 		$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	
@@ -66,7 +66,7 @@ class Device extends BaseObject
 		return $os_platform;
 	}
 	
-	public function getBrowser() {
+	public  static function getBrowser() {
 	
 		$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	

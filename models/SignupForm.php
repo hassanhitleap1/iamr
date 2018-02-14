@@ -44,7 +44,9 @@ class SignupForm extends Model
         if (!$this->validate()) {
             return null;
         }
+        if(!empty($this->file)){
         $this->file->saveAs('image/' . $this->file->baseName . '.' . $this->file->extension);
+        }
         $user = new User();
 
         $user->full_name = $this->full_name;

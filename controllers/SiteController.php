@@ -11,6 +11,8 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\SignupForm;
 use yii\web\UploadedFile;
+use app\models\InfoDevice;
+use app\components\Device;
 
 class SiteController extends Controller
 {
@@ -121,6 +123,12 @@ class SiteController extends Controller
             $model->file = UploadedFile::getInstance($model, 'file');
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
+                    $infoDivce=new InfoDevice;
+                    $infoDivce->ip= Device::getIp();
+                    $infoDivce->browser=Device::getBrowser();
+                    $infoDivce->os =Device::getOS();
+                    $infoDivce->user_id=Yii::$app->user->id;
+                    $infoDivce->save();
                     return $this->goHome();
                 }
             }
