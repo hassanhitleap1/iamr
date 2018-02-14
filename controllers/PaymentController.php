@@ -84,8 +84,8 @@ class PaymentController extends Controller
   
         $redirectUrls = new RedirectUrls();
         
-        $redirectUrls->setReturnUrl("$baseUrl/done?success=true")
-            ->setCancelUrl("$baseUrl/error?success=false");
+        $redirectUrls->setReturnUrl("$baseUrl/done&success=true")
+            ->setCancelUrl("$baseUrl/error&success=false");
             
     
         $payment = new Payment();
@@ -106,8 +106,7 @@ class PaymentController extends Controller
             $this->redirect( $redirectUrls);
         } catch (Exception $ex) {   
             
-           // ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $request, $ex);
-            exit(1);
+            return "erorr";
 
         }
         $approvalUrl = $payment->getApprovalLink();
@@ -120,6 +119,10 @@ class PaymentController extends Controller
 
     public function actionDone(){
         return "done";
+    }
+
+    public function actionError(){
+        return "error";
     }
 }
 
