@@ -13,6 +13,7 @@ use app\models\SignupForm;
 use yii\web\UploadedFile;
 use app\models\InfoDevice;
 use app\components\Device;
+use app\models\User;
 
 class SiteController extends Controller
 {
@@ -65,7 +66,8 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $users=User::find()->all();
+        return $this->render('index',['users'=>$users]);
     }
 
     /**
