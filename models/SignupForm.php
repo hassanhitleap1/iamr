@@ -55,7 +55,7 @@ class SignupForm extends Model
         
 
         $user->full_name = $this->full_name;
-        //$user->image_name = $this->image_name;
+        $user->about_me = $this->about_me;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
