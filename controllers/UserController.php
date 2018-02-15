@@ -6,7 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-
+use app\models\User;
 class UserController extends Controller
 {
     /**
@@ -59,14 +59,32 @@ class UserController extends Controller
     /**
      * 
      */
-    public function actionProfile(){
-        return $this->render('profile');
+    public function actionProfile($id){
+        $user= $this->findModel($id);
+        return $this->render('profile',['user'=>$user]);
     }
 
 
     public function actionReferral(){
 
         return $this->render('referral');
+    }
+
+
+        /**
+     * Finds the Ads model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Ads the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }   
 
