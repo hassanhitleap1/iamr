@@ -185,4 +185,9 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasOne(InfoDevice::className(), ['user_id' => 'id']);
     }
+
+    public static function getStatus()
+    {
+        return $this->status;
+    }
 }

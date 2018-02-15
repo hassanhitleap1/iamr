@@ -131,7 +131,7 @@ class SiteController extends Controller
                     $infoDivce->os =Device::getOS();
                     $infoDivce->user_id=Yii::$app->user->id;
                     $infoDivce->save();
-                    return $this->goHome();
+                    return $this->render('payment');
                 }
             }
         }

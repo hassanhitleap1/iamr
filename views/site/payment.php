@@ -1,4 +1,6 @@
 <?php
+
+use yii\helpers\Url;
 /* @var $this yii\web\View */
 
 $this->title = 'Payment';
@@ -83,9 +85,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 </li>
             </ul>
             <br/>
-            <a href="http://www.jquery2dotnet.com" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <a href="<?=Url::to(['/payment'])?>" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
         </div>   
-
-        
-        
 </div>    

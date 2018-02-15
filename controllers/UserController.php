@@ -66,8 +66,15 @@ class UserController extends Controller
 
 
     public function actionReferral(){
-
-        return $this->render('referral');
+        if (Yii::$app->user->id) {
+            var_dump( Yii::$app->user->status);
+            exit();
+            return $this->render('referral');
+        }else {
+            throw new NotFoundHttpException("must be pay to get referal ");
+            
+        }
+        
     }
 
 
