@@ -186,4 +186,12 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(InfoDevice::className(), ['user_id' => 'id']);
     }
 
+        /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getBalance()
+    {
+        return $this->hasOne(Balance::className(), ['user_id' => 'id']);
+    }
+
 }
