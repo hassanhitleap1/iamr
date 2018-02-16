@@ -50,7 +50,7 @@ class SignupForm extends Model
         $this->file->saveAs('image/' . $this->file->baseName . '.' . $this->file->extension);
         $user->image_name='image/' . $this->file->baseName . '.' . $this->file->extension;
         }else{
-        $user->image_name='image/defualt.jpg';
+        $user->image_name='image/default.jpg';
         }
         
 

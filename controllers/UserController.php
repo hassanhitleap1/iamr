@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\User;
+use yii\web\NotFoundHttpException;
 class UserController extends Controller
 {
     /**
@@ -66,12 +67,10 @@ class UserController extends Controller
 
 
     public function actionReferral(){
-        if (Yii::$app->user->id) {
-            var_dump( Yii::$app->user->status);
-            exit();
+        if (Yii::$app->user->identity->status) {
             return $this->render('referral');
         }else {
-            throw new NotFoundHttpException("must be pay to get referal ");
+            throw new \yii\web\NotFoundHttpException("must be pay to get referal ");
             
         }
         

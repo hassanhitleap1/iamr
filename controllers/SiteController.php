@@ -107,9 +107,9 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionAbout()
+    public function actionWhy300Doller()
     {
-        return $this->render('about');
+        return $this->render('why-300-doller');
     }
 
 
