@@ -13,7 +13,7 @@ $this->title = 'I AM RIACH';
                     <div class="card-block">
                         <h4 class="card-title"><?= $user->full_name?></h4>
                         <p class="card-text"><?=  substr($user->about_me,0,40)?></p><a
-                         href=<?=Yii::$app->request->baseUrl."/index.php/?r=user/profile&id=$user->id"?> class="nav-toggle">Read More</a>
+                         href=<?=Yii::$app->request->baseUrl."/index.php/?r=site/view&id=$user->id"?> class="nav-toggle">Read More</a>
                         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                     </div>
             </div>

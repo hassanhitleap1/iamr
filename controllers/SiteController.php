@@ -14,6 +14,7 @@ use yii\web\UploadedFile;
 use app\models\InfoDevice;
 use app\components\Device;
 use app\models\User;
+use yii\web\NotFoundHttpException;
 
 class SiteController extends Controller
 {
@@ -144,4 +145,27 @@ class SiteController extends Controller
     public  function actionPayment(){
         return $this->render('payment');
     }
+
+    public function actionView($id){
+        $user= $this->findModel($id);
+        return $this->render('view',['user'=>$user]);
+    }
+
+
+            /**
+     * Finds the Ads model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return user the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new \yii\web\NotFoundHttpException('The requested page does not exist.');
+    }
+
 }

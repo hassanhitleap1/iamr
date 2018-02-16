@@ -60,8 +60,8 @@ class UserController extends Controller
     /**
      * 
      */
-    public function actionProfile($id){
-        $user= $this->findModel($id);
+    public function actionProfile(){
+        $user= $this->findModel(Yii::$app->user->id);
         return $this->render('profile',['user'=>$user]);
     }
 
