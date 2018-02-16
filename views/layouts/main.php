@@ -38,20 +38,24 @@ AppAsset::register($this);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'Why 300 Doller', 'url' => ['/site/why-300-doller']],
-        ['label' => 'Referral', 'url' => ['/user/referral']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->full_name . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
+        $menuItems[] = [
+            'label' => 'profile',
+            'items' => [
+                ['label' => 'My Profile', 'url' => ['/user/profile']],
+                '<li class="divider"></li>',
+                ['label' => 'Referral', 'url' => ['/user/referral']],
+           ],
+        ]; 
+          $menuItems[] = [
+                        'label' => 'Logout (' . Yii::$app->user->identity->email . ')',
+                        'url' => ['/site/logout'],
+                        'linkOptions' => ['data-method' => 'post']
+                    ];
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
