@@ -70,7 +70,7 @@ class UserController extends Controller
         if (Yii::$app->user->identity->status) {
             return $this->render('referral');
         }else {
-            throw new \yii\web\NotFoundHttpException("must be pay to get referal ");
+            return $this->render('alarm');
             
         }
         

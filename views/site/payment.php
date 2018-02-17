@@ -7,6 +7,9 @@ $this->title = 'Payment';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-payment">
+<div class="alert alert-info">
+    <strong>Info!</strong> to get referral must be pay (donation) to the site and show your information for the world  
+    </div>
     <div class="row">
         <div class="col-xs-12 col-md-4 col-md-offset-2">
                 <div class="panel panel-default">

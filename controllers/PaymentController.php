@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use app\models\User;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
@@ -19,7 +20,7 @@ use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
 use app\models\Translation;
-use  PayPal\Exception\PPConnectionException;
+use PayPal\Exception\PPConnectionException;
 
 
 class PaymentController extends Controller
@@ -133,6 +134,9 @@ class PaymentController extends Controller
         $trans= Translation::find()->where(['payment_id'=>$paymentId])->one();
         if(!empty($trans)){
             $trans->completed=1;
+            $user = $this->findModel(Yii::$app->user->id);
+            $user->status=User::STATUS_ACTIVE;
+            $user->save();
             $trans->save();
             return $this->redirect(['user/profile']);
         }
@@ -144,6 +148,23 @@ class PaymentController extends Controller
     public function actionError()
     {
         return  $this->redirect(['site/payment']);
+    }
+
+
+     /**
+     * Finds the Ads model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return user the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new \yii\web\NotFoundHttpException('The requested page does not exist.');
     }
 }
 
