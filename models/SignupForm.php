@@ -53,7 +53,7 @@ class SignupForm extends Model
         $user->image_name='image/default.jpg';
         }
         
-
+        $user->status=User::STATUS_DELETED;
         $user->full_name = $this->full_name;
         $user->about_me = $this->about_me;
         $user->email = $this->email;
