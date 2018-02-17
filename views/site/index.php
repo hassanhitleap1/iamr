@@ -1,5 +1,6 @@
 <?php
 use  yii\helpers\Url; 
+use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 $this->title = 'I AM RIACH';
 ?>
@@ -22,4 +23,9 @@ $this->title = 'I AM RIACH';
     <?php endif;?>
     
     </div>  
+    <div class="row">
+        <?php echo LinkPager::widget([
+    'pagination' => $pages,
+]); ?>
+    </div>
 </div>

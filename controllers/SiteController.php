@@ -15,6 +15,7 @@ use app\models\InfoDevice;
 use app\components\Device;
 use app\models\User;
 use yii\web\NotFoundHttpException;
+use yii\data\Pagination;
 
 class SiteController extends Controller
 {
@@ -67,8 +68,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $users=User::find()->all();
-        return $this->render('index',['users'=>$users]);
+        $query = User::find()->where(['status' => 10]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count() ,'pageSize'=>12]);
+        $users = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+    
+        return $this->render('index', [
+             'users' => $users,
+             'pages' => $pages,
+        ]);
+
+        //return $this->render('index', ['users' => $users,'pagination' => $pagination]);
     }
 
     /**
