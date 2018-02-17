@@ -18,6 +18,8 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
+use app\models\Translation;
+use  PayPal\Exception\PPConnectionException;
 
 
 class PaymentController extends Controller
@@ -104,31 +106,44 @@ class PaymentController extends Controller
 
         try {
             $payment->create($apiContext);
+            $hash= md5($payment->getId());
+            $_SESSION['paypal_hash']=$hash;
+            $trsns=new Translation;
+            $trsns->user_id= Yii::$app->user->id;
+            $trsns->hash=$hash;
+            $trsns->payment_id=$payment->getId();
+            $trsns->completed=0;
+            $trsns->save();
+
         } catch (Exception $ex) {
             ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $request, $ex);
             exit(1);
         }
         $approvalUrl = $payment->getApprovalLink();
-
-        
-         $url=$payment->links[1]->href;
-        
-
+        return $this->redirect($approvalUrl); 
    
+
+    }
+
+
+    public function  actionSuccess()
+    {
+        $paymentId = $_GET['paymentId'];
+        $payerID = $_GET['PayerID'];
+        $trans= Translation::find()->where(['payment_id'=>$paymentId])->one();
+        if(!empty($trans)){
+            $trans->completed=1;
+            $trans->save();
+            return $this->redirect(['user/profile']);
+        }
+        return  $this->redirect(['site/payment']);
         
-        return $this->redirect($url); 
-
-
-        return $this->render('index');
     }
 
-    public function  actionSuccess(){
-        return "success";
-    }
 
     public function actionError()
     {
-        return  "error";
+        return  $this->redirect(['site/payment']);
     }
 }
 

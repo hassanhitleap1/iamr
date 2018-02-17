@@ -194,4 +194,12 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Balance::className(), ['user_id' => 'id']);
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTranslations()
+    {
+        return $this->hasMany(Translation::className(), ['user_id' => 'id']);
+    }
+
 }
