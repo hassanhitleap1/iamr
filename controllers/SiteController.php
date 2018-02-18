@@ -141,9 +141,7 @@ class SiteController extends Controller
 
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
-
-                    $infoDivce->ip= Device::setDeviceUser();
-                        
+                     Device::setDeviceUser();
                     if(Yii::$app->session->has('ref')){
                         $userRef= User::find()->where(['ref'=>Yii::$app->session->get('rel')])->one();
                         if(!empty($userRef)){

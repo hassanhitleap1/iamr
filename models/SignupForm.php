@@ -59,7 +59,7 @@ class SignupForm extends Model
         $user->about_me = $this->about_me;
         $user->email = $this->email;
         $user->setPassword($this->password);
-        $user->ref=Yii::$app->getSecurity()->generateRandomString(20);
+        $user->generateRef();
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;

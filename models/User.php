@@ -201,5 +201,11 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->hasMany(Translation::className(), ['user_id' => 'id']);
     }
-
+        /**
+     * Generates "remember me" authentication key
+     */
+    public function generateRef()
+    {
+        $this->ref = Yii::$app->getSecurity()->generateRandomString(20);
+    }
 }
