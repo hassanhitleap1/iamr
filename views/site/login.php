@@ -10,57 +10,59 @@ $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <div class="">
-       <div class="panel panel-primary">
-          <div class="panel-heading">Plaase Signin</div>
-          <div class="panel-body">
-              <div class="row">
-                  <div class="col-md-4">
-                    <?= \powerkernel\bootstrapsocial\Button::widget([
-                    'button' => 'twitter', 
-                    'iconOnly' => false, // set true if only want the icon 
-                    'link' => '#your-url', // the button URL
-                    'label'=> 'log in with twitter', // button label
-                    'class'=>'btn-lg',
-                    ]) ?>
-                    <?= \powerkernel\bootstrapsocial\Button::widget([
-                    'button' => 'facebook', // Available buttons see https://github.com/lipis/bootstrap-social/
-                    'iconOnly' => false, // set true if only want the icon 
-                    'link' => '#your-url', // the button URL
-                    'label'=> 'log in with facebook', // button label
-                    ]) ?>
-                    <?= \powerkernel\bootstrapsocial\Button::widget([
-                    'button' => 'google', // Available buttons see https://github.com/lipis/bootstrap-social/
-                    'iconOnly' => false, // set true if only want the icon 
-                    'link' => '#your-url', // the button URL
-                    'label'=> 'log in with google', // button label
-                    ]) ?>                                        
-             
-                  </div>
-                  <div class="col-md-1" style="border-left:1px solid #ccc;height:160px"></div>
-                  <div class="col-md-7">
-                          <?php $form = ActiveForm::begin([
-                            'id' => 'login-form',
-                        ]); ?>
+     <div class="row">
+        <div class="col-md-7 col-md-offset-3">
+             <div class="panel panel-primary">
+                <div class="panel-heading">Plaase Signin</div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                          <?= \powerkernel\bootstrapsocial\Button::widget([
+                          'button' => 'twitter', 
+                          'iconOnly' => false, // set true if only want the icon 
+                          'link' => '#your-url', // the button URL
+                          'label'=> 'log in with twitter', // button label
+                          'class'=>'btn-lg',
+                          ]) ?>
+                          <?= \powerkernel\bootstrapsocial\Button::widget([
+                          'button' => 'facebook', // Available buttons see https://github.com/lipis/bootstrap-social/
+                          'iconOnly' => false, // set true if only want the icon 
+                          'link' => '#your-url', // the button URL
+                          'label'=> 'log in with facebook', // button label
+                          ]) ?>
+                          <?= \powerkernel\bootstrapsocial\Button::widget([
+                          'button' => 'google', // Available buttons see https://github.com/lipis/bootstrap-social/
+                          'iconOnly' => false, // set true if only want the icon 
+                          'link' => '#your-url', // the button URL
+                          'label'=> 'log in with google', // button label
+                          ]) ?>                                        
+                   
+                        </div>
+                        <div class="col-md-1" style="border-left:1px solid #ccc;height:160px; width: 29.994318px; "></div>
+                        <div class="col-md-7">
+                                <?php $form = ActiveForm::begin([
+                                  'id' => 'login-form',
+                              ]); ?>
 
-                            <?= $form->field($model, 'email')->textInput(['autofocus' => true,
-                            'placeholder'=>'Email'])->label(false) ?>
+                                  <?= $form->field($model, 'email')->textInput(['autofocus' => true,
+                                  'placeholder'=>'Email'])->label(false) ?>
 
-                            <?= $form->field($model, 'password')->passwordInput([
-                            'placeholder'=>'Password'])->label(false) ?>
+                                  <?= $form->field($model, 'password')->passwordInput([
+                                  'placeholder'=>'Password'])->label(false) ?>
 
-                            <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                                  <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-                            <div class="form-group">
-                                <div class="col-md-4">
-                                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
-                                </div>
-                            </div>
+                                  <div class="form-group">
+                                      <div class="col-md-4">
+                                          <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+                                      </div>
+                                  </div>
 
-                        <?php ActiveForm::end(); ?>
-                  </div>
-              </div>
-          </div>
+                              <?php ActiveForm::end(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
