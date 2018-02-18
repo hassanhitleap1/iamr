@@ -208,4 +208,28 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->ref = Yii::$app->getSecurity()->generateRandomString(20);
     }
+
+       /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReferrals()
+    {
+        return $this->hasMany(Referral::className(), ['user_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReferralsUnder()
+    {
+        return $this->hasMany(Referral::className(), ['user_id_referral' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getReferralCode()
+    {
+        return $this->hasOne(ReferralCode::className(), ['user_id' => 'id']);
+    }
 }

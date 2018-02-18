@@ -35,52 +35,21 @@ $this->params['breadcrumbs'][] = $this->title;
             <table class="table">
                 <thead>
                 <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>Email</th>
+                    <th>full name</th>
+                    <th>date register</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Default</td>
-                    <td>Defaultson</td>
-                    <td>def@somemail.com</td>
-                </tr>      
-                <tr class="success">
-                    <td>Success</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr class="danger">
-                    <td>Danger</td>
-                    <td>Moe</td>
-                    <td>mary@example.com</td>
-                </tr>
-                <tr class="info">
-                    <td>Info</td>
-                    <td>Dooley</td>
-                    <td>july@example.com</td>
-                </tr>
-                <tr class="warning">
-                    <td>Warning</td>
-                    <td>Refs</td>
-                    <td>bo@example.com</td>
-                </tr>
-                <tr class="active">
-                    <td>Active</td>
-                    <td>Activeson</td>
-                    <td>act@example.com</td>
-                </tr>
+                <?php if(!empty( Yii::$app->user->identity->referrals)):?>
+                    <?php foreach(Yii::$app->user->identity->referrals as $referrals):?>
+                    <tr>
+                        <td><?= $referrals->user->full_name;?></td>
+                        <td><?=$referrals->user->created_at?></td>
+                    </tr>
+                    <?php endforeach;?>
+                <?php endif;?>      
                 </tbody>
             </table>
         </div> 
     </div>      
 </div>
-<img  onclick='openInNewTab();' src='https://static-ca.ebgames.ca/images/products/606502/3max.jpg'  style='width: 466px; height: 45px;' id='link' /><script>
-    function openInNewTab() 
-    {
-        var url='https://stackoverflow.com/posts/11384018/revisions';
-        var win = window.open(url, '_blank');
-        win.focus();
-    }
-    </script> 
