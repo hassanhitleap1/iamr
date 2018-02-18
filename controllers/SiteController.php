@@ -132,7 +132,7 @@ class SiteController extends Controller
      */
     public function actionSignup()
     {
-        if (!empty($_GET['rel'])){ Yii::$app->session->set('rel',$_GET['rel']);}
+        if (!empty($_GET['ref'])){ Yii::$app->session->set('ref',$_GET['ref']);}
         $model = new SignupForm();
 
         if ($model->load(Yii::$app->request->post())) {
@@ -144,8 +144,8 @@ class SiteController extends Controller
 
                     $infoDivce->ip= Device::setDeviceUser();
                         
-                    if(Yii::$app->session->has('rel')){
-                        $userRef= User::find()->where(['rel'=>Yii::$app->session->get('rel')])->one();
+                    if(Yii::$app->session->has('ref')){
+                        $userRef= User::find()->where(['ref'=>Yii::$app->session->get('rel')])->one();
                         if(!empty($userRef)){
                             $referral= new Referral;
                             $referral->user_id=$userRef->id;
