@@ -16,7 +16,7 @@ use yii\helpers\Url;
 
     <?= $form->field($model, 'tite')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'disc')->widget(CKEditor::className(), [
+        <?= $form->field($model, 'disc')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'full',
             'clientOptions' => [

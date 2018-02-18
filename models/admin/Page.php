@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $tite
- * @property integer $disc
+ * @property string $disc
  * @property string $key_page
  */
 class Page extends \yii\db\ActiveRecord
@@ -29,7 +29,7 @@ class Page extends \yii\db\ActiveRecord
     {
         return [
             [['tite', 'disc', 'key_page'], 'required'],
-            [['disc'], 'integer'],
+            [['disc'], 'string'],
             [['tite'], 'string', 'max' => 300],
             [['key_page'], 'string', 'max' => 10],
         ];

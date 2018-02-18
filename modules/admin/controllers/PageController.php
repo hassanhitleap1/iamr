@@ -105,7 +105,7 @@ class PageController extends Controller
 
         return $this->redirect(['index']);
     }
-    /**
+            /**
      * upload image 
      */
     public  function  actionUploadfile(){
@@ -120,8 +120,6 @@ class PageController extends Controller
         } else {
             echo "Possible file upload attack!\n";
         }
-
-
 
     }
 
