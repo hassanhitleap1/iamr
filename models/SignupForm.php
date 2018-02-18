@@ -1,5 +1,6 @@
 <?php
 namespace app\models;
+
 use yii\base\Model;
 use app\models\User;
 /**
@@ -58,7 +59,7 @@ class SignupForm extends Model
         $user->about_me = $this->about_me;
         $user->email = $this->email;
         $user->setPassword($this->password);
-        $user->rel=Yii::$app->getSecurity()->generateRandomString(20);
+        $user->ref=Yii::$app->getSecurity()->generateRandomString(20);
         $user->generateAuthKey();
         
         return $user->save() ? $user : null;

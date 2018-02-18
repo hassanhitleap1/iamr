@@ -8,11 +8,6 @@ $this->title = 'Profile';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-profile">
-    <?php if(! Yii::$app->user->identity->status):?>
-        <div class="alert alert-info">
-            <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['site/payment']);?> >to get referral must be pay (donation) to the site and show your information for the world  </a>
-        </div>
-    <?php endif;?>
     <div class="row">
                     <div class="col-sm-6 col-md-4">
                         <img src="<?= Yii::$app->request->baseUrl.'/'.$user->image_name?>" alt="" class="img-rounded img-responsive" />

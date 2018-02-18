@@ -8,10 +8,7 @@ $this->title = 'alram';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-user">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <div class="alert alert-info">
-    <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['site/payment']);?> >to get referral must be pay (donation) to the site and show your information for the world  </a>
-    </div>
-
+  <div class="alert alert-danger">
+    <strong>info </strong> if you wont to get referal must be donation for site 
+  </div>
 </div>

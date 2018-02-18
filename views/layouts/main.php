@@ -68,6 +68,13 @@ AppAsset::register($this);
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
+        <?php if(! Yii::$app->user->isGuest):?>
+            <?php if(! Yii::$app->user->identity->status):?>
+                    <div class="alert alert-info">
+                        <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['site/payment']);?> >to get referral must be pay (donation) to the site and show your information for the world  </a>
+                    </div>
+            <?php endif;?> 
+        <?php endif;?> 
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
