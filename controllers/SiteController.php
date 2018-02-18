@@ -134,11 +134,26 @@ class SiteController extends Controller
     {
         if (!empty($_GET['rel'])){ Yii::$app->session->set('rel',$_GET['rel']);}
         $model = new SignupForm();
+
         if ($model->load(Yii::$app->request->post())) {
+
             $model->file = UploadedFile::getInstance($model, 'file');
+
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
+
                     $infoDivce->ip= Device::setDeviceUser();
+                        
+                    if(Yii::$app->session->has('rel')){
+                        $userRef= User::find()->where(['rel'=>Yii::$app->session->get('rel')])->one();
+                        if(!empty($userRef)){
+                            $referral= new Referral;
+                            $referral->user_id=$userRef->id;
+                            $referral->user_id_referral=Yii::$app->user->id;
+                            $referral->save();     
+                        }
+                    }
+                  
                     return $this->render('payment');
                 }
             }
