@@ -5,7 +5,7 @@ namespace  app\components;
 use yii\base\BaseObject;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
-
+use app\models\InfoDevice;
 class Device extends BaseObject
 {
 	
@@ -90,6 +90,16 @@ class Device extends BaseObject
 				$browser = $value;
 	
 		return $browser;
+	}
+
+
+	public  function setDeviceUser(){
+		$infoDivce=new InfoDevice;
+		$infoDivce->ip= self::getIp();
+        $infoDivce->browser=self::getBrowser();
+        $infoDivce->os =self::getOS();
+        $infoDivce->user_id=Yii::$app->user->id;
+        $infoDivce->save();
 	}
 
 }

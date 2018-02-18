@@ -38,7 +38,7 @@ class UserHelper extends BaseObject
             win.focus();
         }
         </script>";
-        $htmlCode= 'http://'.Yii::$app->request->baseUrl.'/index.php?r=site%2Fsignup';
+        $htmlCode= 'http:/'.Yii::$app->request->baseUrl.'/index.php?r=site%2Fsignup&rel';
         $referralCode->html_code=$htmlCode;
         $referralCode->js_code=$jsCode;
         $referralCode->user_id=$userId;
