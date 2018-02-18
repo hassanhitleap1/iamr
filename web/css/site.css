@@ -118,3 +118,7 @@ a.desc:after {
 .gi-lg{
    font-size: 23px; 
 }
+
+#cke_125_fileInput{
+    height: 200px;
+}

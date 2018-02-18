@@ -8,7 +8,7 @@ use app\models\admin\PageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\helpers\Url;
 /**
  * PageController implements the CRUD actions for Page model.
  */
@@ -104,6 +104,25 @@ class PageController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+    /**
+     * upload image 
+     */
+    public  function  actionUploadfile(){
+        
+        $uploaddir = Yii::getAlias('@webroot').'/image/image-pages/';
+        $filename=Yii::$app->getSecurity()->generateRandomString(20). basename($_FILES['upload']['name']);
+        $uploadfile = $uploaddir .$filename;
+              
+        if (move_uploaded_file($_FILES['upload']['tmp_name'], $uploadfile)) {
+           echo Url::to( Yii::getAlias('@web'). "/image/image-pages/" . $filename);
+           
+        } else {
+            echo "Possible file upload attack!\n";
+        }
+
+
+
     }
 
     /**

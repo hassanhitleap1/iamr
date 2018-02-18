@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\admin\Page */
@@ -17,7 +18,10 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'disc')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
-        'preset' => 'full'
+        'preset' => 'full',
+            'clientOptions' => [
+                    'filebrowserUploadUrl' => yii\helpers\Url::to(['page/uploadfile'])
+                ]
     ]) ?>
 
     <?= $form->field($model, 'key_page')->textInput(['maxlength' => true]) ?>
