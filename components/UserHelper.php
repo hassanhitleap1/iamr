@@ -29,7 +29,7 @@ class UserHelper extends BaseObject
     public static function setReferralCode($userId){
         $referralCode= new ReferralCode;
         $urlRef='http:/'.\Yii::$app->request->baseUrl.'/index.php?r=site%2Fsignup&rel='.Yii::$app->user->identity->ref;
-        $jsCode="<img  onclick='openInNewTab();' 
+        $jsCode ="<img  onclick='openInNewTab();' 
         src='https://static-ca.ebgames.ca/images/products/606502/3max.jpg'  
         style='width: 466px; height: 45px;' id='link' />
         <script>
