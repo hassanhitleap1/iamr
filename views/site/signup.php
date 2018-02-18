@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                          </div>   
                                               <?= $form->field($model, 'about_me')->textArea(['rows' => '6','cols'=>50,
                                                 'placeholder'=>'about me'])->label(false)  ;?>
-
+                                                <label for="file">optional</label>
                                               <?= $form->field($model, 'file')->widget(FileInput::classname(), [
                                                     'options' => ['multiple' => false, 'accept' => 'image/*'],
                                                     'pluginOptions' => [
