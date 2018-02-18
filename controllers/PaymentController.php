@@ -21,6 +21,7 @@ use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Rest\ApiContext;
 use app\models\Translation;
 use PayPal\Exception\PPConnectionException;
+use app\components\UserHelper;
 
 
 class PaymentController extends Controller
@@ -138,6 +139,9 @@ class PaymentController extends Controller
             $user->status=User::STATUS_ACTIVE;
             $user->save();
             $trans->save();
+            UserHelper::setBalance(Yii::$app->user->id);
+            UserHelper::setReferralCode(Yii::$app->user->id);
+
             return $this->redirect(['user/profile']);
         }
         return  $this->redirect(['site/payment']);

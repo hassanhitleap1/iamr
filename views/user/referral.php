@@ -11,17 +11,21 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="row">
         <div class="col-md-6">
         <h2>Your Balance </h1>
-        <span class="glyphicon glyphicon-usd gi-lg">1000</span>
+        <span class="glyphicon glyphicon-usd gi-lg"> <?= $balance->balance?></span>
         </div>
         <div class="col-md-6">
             <div class="referral">
                 <div class="form-group">
                     <label for="comment">Referral: html</label>
-                    <textarea class="form-control" rows="2" id="comment"></textarea>
+                    <textarea class="form-control" rows="2" id="comment"  >
+                       <?= $referralCode->html_code ?>
+                    </textarea>
                 </div>
                 <div class="form-group">
                         <label for="comment">Referral: script</label>
-                        <textarea class="form-control" rows="2" id="comment"></textarea>
+                        <textarea class="form-control" rows="2" id="comment">
+                             <?= $referralCode->js_code ?>
+                        </textarea>
                 </div>                
             </div>
         </div>

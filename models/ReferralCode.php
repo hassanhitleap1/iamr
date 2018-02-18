@@ -9,7 +9,7 @@ use Yii;
  *
  * @property integer $id
  * @property string $html_code
- * @property integer $js_code
+ * @property string $js_code
  * @property integer $user_id
  *
  * @property User $user
@@ -31,7 +31,8 @@ class ReferralCode extends \yii\db\ActiveRecord
     {
         return [
             [['html_code', 'js_code', 'user_id'], 'required'],
-            [['js_code', 'user_id'], 'integer'],
+            [['js_code'], 'string'],
+            [['user_id'], 'integer'],
             [['html_code'], 'string', 'max' => 500],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],

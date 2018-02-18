@@ -8,6 +8,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\User;
 use yii\web\NotFoundHttpException;
+use app\models\Balance;
+use app\models\ReferralCode;
 class UserController extends Controller
 {
     /**
@@ -68,7 +70,12 @@ class UserController extends Controller
 
     public function actionReferral(){
         if (Yii::$app->user->identity->status) {
-            return $this->render('referral');
+            $blance= Balance::find()->where(['user_id'=>Yii::$app->user->id])->one();
+            $referralCode=ReferralCode::find()->where(['user_id'=>Yii::$app->user->id])->one();
+            return $this->render('referral',[
+                'balance'=>$blance,
+                'referralCode'=>$referralCode,
+            ]);
         }else {
             return $this->render('alarm');
             

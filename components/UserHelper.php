@@ -1,7 +1,7 @@
 <?php
 
 namespace  app\components;
-
+use Yii;
 use yii\base\BaseObject;
 use app\models\Balance;
 use app\models\Referral;
@@ -11,21 +11,21 @@ use app\models\ReferralCode;
 class UserHelper extends BaseObject
 {
 	
-    public function setBalance($userId){
+    public  static function setBalance($userId){
         $balanceModel= new Balance;
         $balanceModel->balance=0.00;
         $balanceModel->user_id=$userId;
         $balanceModel->save();
     }
 
-    public function setReferral($userId,$userIdReferral){
+    public static function setReferral($userId,$userIdReferral){
         $referral= new Referral;
         $referral->user_id=$userId;
         $referral->user_id_referral=$userIdReferral;
         $referral->save();
     }
 
-    public function setReferralCode($userId){
+    public static function setReferralCode($userId){
         $referralCode= new ReferralCode;
         
         $jsCode="<img  onclick='openInNewTab();' 
@@ -41,8 +41,9 @@ class UserHelper extends BaseObject
         $htmlCode= 'http://'.Yii::$app->request->baseUrl.'/index.php?r=site%2Fsignup';
         $referralCode->html_code=$htmlCode;
         $referralCode->js_code=$jsCode;
-        $referralCode=$userId;
+        $referralCode->user_id=$userId;
         $referralCode->save();
+
     }
 }
 
