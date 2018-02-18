@@ -6,42 +6,72 @@
 
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-42119746-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="">
+       <div class="panel panel-primary">
+          <div class="panel-heading">Plaase Signin</div>
+          <div class="panel-body">
+              <div class="row">
+                  <div class="col-md-4">
+                    <?= \powerkernel\bootstrapsocial\Button::widget([
+                    'button' => 'twitter', 
+                    'iconOnly' => false, // set true if only want the icon 
+                    'link' => '#your-url', // the button URL
+                    'label'=> 'log in with twitter', // button label
+                    'class'=>'btn-lg',
+                    ]) ?>
+                    <?= \powerkernel\bootstrapsocial\Button::widget([
+                    'button' => 'facebook', // Available buttons see https://github.com/lipis/bootstrap-social/
+                    'iconOnly' => false, // set true if only want the icon 
+                    'link' => '#your-url', // the button URL
+                    'label'=> 'log in with facebook', // button label
+                    ]) ?>
+                    <?= \powerkernel\bootstrapsocial\Button::widget([
+                    'button' => 'google', // Available buttons see https://github.com/lipis/bootstrap-social/
+                    'iconOnly' => false, // set true if only want the icon 
+                    'link' => '#your-url', // the button URL
+                    'label'=> 'log in with google', // button label
+                    ]) ?>                                        
+             
+                  </div>
+                  <div class="col-md-1" style="border-left:1px solid #ccc;height:160px"></div>
+                  <div class="col-md-7">
+                          <?php $form = ActiveForm::begin([
+                            'id' => 'login-form',
+                        ]); ?>
 
-    <p>Please fill out the following fields to login:</p>
+                            <?= $form->field($model, 'email')->textInput(['autofocus' => true,
+                            'placeholder'=>'Email'])->label(false) ?>
 
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n<div class=\"col-lg-3\">{input}</div>\n<div class=\"col-lg-8\">{error}</div>",
-            'labelOptions' => ['class' => 'col-lg-1 control-label'],
-        ],
-    ]); ?>
+                            <?= $form->field($model, 'password')->passwordInput([
+                            'placeholder'=>'Password'])->label(false) ?>
 
-        <?= $form->field($model, 'email')->textInput(['autofocus' => true]) ?>
+                            <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-        <?= $form->field($model, 'password')->passwordInput() ?>
+                            <div class="form-group">
+                                <div class="col-md-4">
+                                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
+                                </div>
+                            </div>
 
-        <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-offset-1 col-lg-3\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
-
-        <div class="form-group">
-            <div class="col-lg-offset-1 col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
+                        <?php ActiveForm::end(); ?>
+                  </div>
+              </div>
+          </div>
         </div>
-
-    <?php ActiveForm::end(); ?>
-
-    <div class="col-lg-offset-1" style="color:#999;">
-        You may login with <strong>admin/admin</strong> or <strong>demo/demo</strong>.<br>
-        To modify the username/password, please check out the code <code>app\models\User::$users</code>.
     </div>
 </div>
