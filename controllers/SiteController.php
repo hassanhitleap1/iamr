@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
+use app\controllers\BaseController;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -15,8 +15,9 @@ use app\components\Device;
 use app\models\User;
 use yii\web\NotFoundHttpException;
 use yii\data\Pagination;
+use Yii\web\cookie;
 
-class SiteController extends Controller
+class SiteController extends BaseController
 {
     /**
      * @inheritdoc
@@ -172,17 +173,7 @@ class SiteController extends Controller
     }
 
 
-        public function actionLanguage()
-        {
-            if(isset($_POST['lang'])){
-                Yii::$app->language = $_POST['lang'];
-                $cookie = new Yii\web\cookie([
-                'name'=>'lang',
-                'value'=>$_POST['lang']
-            ]);
-            Yii::$app->getResponse()->getCookies()->add($cookie);
-            }
-        }
+
             /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

@@ -35,25 +35,75 @@ $(document).ready(function(){
 		imgNavDeu.attr("src",deuImgLink);
 		imgNavFra.attr("src",fraImgLink);
 		imgNavArb.attr("src",arbImgLink);
-
+		currentId='';
 		$( ".language" ).on( "click", function( event ) {
 			var currentId = $(this).attr('id');
+			codeLang='en';
+			if(currentId == "navIta") {
+				codeLang='it';
+				
+			} else if (currentId == "navEng") {
+				codeLang='en';
 
+			} else if (currentId == "navDeu") {
+				codeLang='de';
+				
+			} else if (currentId == "navFra") {
+				codeLang='fr';
+
+			}else if (currentId == "navArb") {
+				codeLang='ar';
+			}
+			
+			setLang(codeLang,currentId);
+		});// click on language 
+
+		$(window).bind("load", function() { 
+			console.log("11111111111");
+			setIconLang(currentId);
+		});
+
+	
+});
+
+function setLang(lang,currentId){
+	url='http://localhost/iamrich/web/index.php?r=base/language';
+	
+	$.ajax({
+         url: url,
+         type: 'post',
+         data: {'lang':lang},
+         success: function (data) {
+         		location.reload(); 	
+           }
+
+     });
+}
+
+
+function setIconLang(currentId){
+	
+    	
 			if(currentId == "navIta") {
 				imgNavSel.attr("src",itaImgLink);
 				spanNavSel.text("ITA");
+				
 			} else if (currentId == "navEng") {
 				imgNavSel.attr("src",engImgLink);
 				spanNavSel.text("ENG");
+				
 			} else if (currentId == "navDeu") {
 				imgNavSel.attr("src",deuImgLink);
 				spanNavSel.text("DEU");
+				
 			} else if (currentId == "navFra") {
 				imgNavSel.attr("src",fraImgLink);
 				spanNavSel.text("FRA");
+				
 			}else if (currentId == "navArb") {
 				imgNavSel.attr("src",arbImgLink);
 				spanNavSel.text("ARB");
+				
 			}
 
 			if(currentId == "btnIta") {
@@ -72,16 +122,7 @@ $(document).ready(function(){
 				imgBtnSel.attr("src",arbImgLink);
 				spanBtnSel.text("ARB");
 			}
-			
-		});
+     
 
-		
+}
 
-		// $(function(){
-		//   $(document).on('click','.language', function(){
-		//      var lang = $(this).attr('id');
-		//      $.post('index.php?r=site/language', {'lang':lang},function(data){
-		//     location.reload();  
-		//   });
-		// }); 
-});
