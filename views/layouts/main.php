@@ -25,18 +25,17 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name,
+        'brandLabel' => Yii::$app->name ,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => Yii::t('app','Home'), 'url' => ['/site/index']],
         ['label' => 'Why 300 Doller', 'url' => ['/site/why-300-doller']],
     ];
     if (Yii::$app->user->isGuest) {
@@ -56,7 +55,21 @@ AppAsset::register($this);
                         'url' => ['/site/logout'],
                         'linkOptions' => ['data-method' => 'post']
                     ];
+      
+
     }
+      $menuItems[]= [
+            'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ITA</span> ',
+            'linkOptions' => ['data-toggle' => 'dropdown', 'role'=>'button',
+             'aria-expanded'=>'false'],
+             'encode' => false,
+            'items' => [
+            '<li><a id="navIta" href="#" class="language"> <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavIta">Italiano</span></a></li>',
+            '<li><a id="navDeu" href="#" class="language"> <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavDeu">Deutsch</span></a></li>',
+            '<li><a id="navFra" href="#" class="language"><img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavFra">Francais</span></a></li>',
+            '<li><a id="navEng" href="#" class="language"><img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavEng">English</span></a></li>',
+           ],
+        ];  
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
@@ -82,9 +95,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+  
     </div>
 </footer>
 
