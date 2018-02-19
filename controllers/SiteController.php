@@ -172,6 +172,17 @@ class SiteController extends Controller
     }
 
 
+        public function actionLanguage()
+        {
+            if(isset($_POST['lang'])){
+                Yii::$app->language = $_POST['lang'];
+                $cookie = new Yii\web\cookie([
+                'name'=>'lang',
+                'value'=>$_POST['lang']
+            ]);
+            Yii::$app->getResponse()->getCookies()->add($cookie);
+            }
+        }
             /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

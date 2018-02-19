@@ -64,10 +64,42 @@ AppAsset::register($this);
              'aria-expanded'=>'false'],
              'encode' => false,
             'items' => [
-            '<li><a id="navIta" href="#" class="language"> <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavIta">Italiano</span></a></li>',
-            '<li><a id="navDeu" href="#" class="language"> <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavDeu">Deutsch</span></a></li>',
-            '<li><a id="navFra" href="#" class="language"><img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavFra">Francais</span></a></li>',
-            '<li><a id="navEng" href="#" class="language"><img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavEng">English</span></a></li>',
+
+            '<li>
+                <a id="navIta" href="#" class="language">
+                     <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  
+                     <span id="lanNavIta">Italiano</span>
+                 </a>
+            </li>',
+
+            '<li>
+                <a id="navDeu" href="#" class="language">
+                     <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small"> 
+                      <span id="lanNavDeu">Deutsch</span>
+                 </a>
+             </li>',
+
+            '<li>
+                <a id="navFra" href="#" class="language">
+                    <img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  
+                    <span id="lanNavFra">Francais</span>
+                </a>
+            </li>',
+
+            '<li>
+                <a id="navEng" href="#" class="language">
+                    <img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  
+                    <span id="lanNavEng">English</span>
+                </a>
+            </li>',
+
+            '<li>
+                <a id="navArb" href="#" class="language">
+                    <img id="imgNavArb" src="" alt="..." class="img-thumbnail icon-small">  
+                    <span id="lanNavEng">Arbic</span>
+                </a>
+            </li>',
+
            ],
         ];  
     echo Nav::widget([
