@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+	 	var currentId='en';
+
         var itaImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Italien.gif";
     	var engImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Grossbritanien.gif";
 		var deuImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Deutschland.gif";
@@ -35,10 +38,11 @@ $(document).ready(function(){
 		imgNavDeu.attr("src",deuImgLink);
 		imgNavFra.attr("src",fraImgLink);
 		imgNavArb.attr("src",arbImgLink);
-		currentId='';
+		
 		$( ".language" ).on( "click", function( event ) {
-			var currentId = $(this).attr('id');
-			codeLang='en';
+
+			 currentId = $(this).attr('id');
+
 			if(currentId == "navIta") {
 				codeLang='it';
 				
@@ -57,13 +61,6 @@ $(document).ready(function(){
 			
 			setLang(codeLang,currentId);
 		});// click on language 
-
-		$(window).bind("load", function() { 
-			console.log("11111111111");
-			setIconLang(currentId);
-		});
-
-	
 });
 
 function setLang(lang,currentId){
@@ -74,7 +71,9 @@ function setLang(lang,currentId){
          type: 'post',
          data: {'lang':lang},
          success: function (data) {
-         		location.reload(); 	
+         		location.reload(); 
+         		console.log(currentId);
+         		setCookie('currentId',currentId);	
            }
 
      });
@@ -82,8 +81,7 @@ function setLang(lang,currentId){
 
 
 function setIconLang(currentId){
-	
-    	
+
 			if(currentId == "navIta") {
 				imgNavSel.attr("src",itaImgLink);
 				spanNavSel.text("ITA");
@@ -123,6 +121,23 @@ function setIconLang(currentId){
 				spanBtnSel.text("ARB");
 			}
      
-
 }
 
+
+$(window).bind("load", function() { 
+	console.log(getCookie('currentId'));
+	setIconLang(getCookie('currentId'));
+});
+
+
+
+      function setCookie(key, value) {
+            var expires = new Date();
+            expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+            document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+        }
+
+        function getCookie(key) {
+            var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+            return keyValue ? keyValue[2] : null;
+        }
