@@ -28,7 +28,7 @@ AppAsset::register($this);
 <div class="wrap">
 <?php
     NavBar::begin([
-        'brandLabel' => Yii::$app->name. Yii::$app->language ,
+        'brandLabel' => Yii::$app->name ,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
@@ -59,7 +59,7 @@ AppAsset::register($this);
 
     }
       $menuItems[]= [
-            'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ITA</span> ',
+            'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ENG</span> ',
             'linkOptions' => ['data-toggle' => 'dropdown', 'role'=>'button',
              'aria-expanded'=>'false'],
              'encode' => false,

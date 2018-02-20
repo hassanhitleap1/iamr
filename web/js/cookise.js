@@ -1,50 +1,48 @@
-function setCookie(key, value) 
-{
-    var expires = new Date();
-    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
-    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
-}
+$(document).ready(function(){
+    var itaImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Italien.gif";
+    var engImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Grossbritanien.gif";
+    var deuImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Deutschland.gif";
+    var fraImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Frankreich.gif";
+    var arbImgLink = "https://images-na.ssl-images-amazon.com/images/I/31VsQPsLJFL._SL500_AC_SS350_.jpg";
 
-function getCookie(key) 
-{
-    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
-    return keyValue ? keyValue[2] : null;
-}
+    var imgBtnSel = $('#imgBtnSel');
+    var imgBtnIta = $('#imgBtnIta');
+    var imgBtnEng = $('#imgBtnEng');
+    var imgBtnDeu = $('#imgBtnDeu');
+    var imgBtnFra = $('#imgBtnFra');
+    var imgBtnArb = $('#imgBtnArb');
 
-
-function setLang(lang){
-    url='http://localhost/iamrich/web/index.php?r=base/language';
+    var imgNavSel = $('#imgNavSel');
+    var imgNavIta = $('#imgNavIta');
+    var imgNavEng = $('#imgNavEng');
+    var imgNavDeu = $('#imgNavDeu');
+    var imgNavFra = $('#imgNavFra');
+    var imgNavArb = $('#imgNavArb');
     
-    $.ajax({
-         url: url,
-         type: 'post',
-         data: {'lang':lang},
-         success: function (data) {
-                location.reload(); 
-                setCookie('currentId',currentId);   
-                setIconLang(currentId);
-           }
+    var spanNavSel = $('#lanNavSel');
+    var spanBtnSel = $('#lanBtnSel');
+    currentId = getCookie('currentId');
 
-     });
-}
+    
+    if(typeof(currentId) != "undefined" && currentId !== null) {
+        
+        imgBtnSel.attr("src",itaImgLink);
+        imgBtnIta.attr("src",itaImgLink);
+        imgBtnEng.attr("src",engImgLink);
+        imgBtnDeu.attr("src",deuImgLink);
+        imgBtnFra.attr("src",fraImgLink);
+        imgBtnFra.attr("src",arbImgLink);
 
+        imgNavSel.attr("src",itaImgLink);
+        imgNavIta.attr("src",itaImgLink);
+        imgNavEng.attr("src",engImgLink);
+        imgNavDeu.attr("src",deuImgLink);
+        imgNavFra.attr("src",fraImgLink);
+        imgNavArb.attr("src",arbImgLink);
 
-
-
-
-setVar(currentId,imgNavSel,itaImgLink,engImgLink,
-    deuImgLink,fraImgLink,arbImgLink,imgBtnSel,spanBtnSel);
-
-
-
-
-function setVar(currentId,imgNavSel,itaImgLink,engImgLink,
-            deuImgLink,fraImgLink,arbImgLink,imgBtnSel,spanBtnSel){
-
-            console.log(currentId);
-            if(currentId == "navIta") {
-                imgNavSel.attr("src",itaImgLink);
-                spanNavSel.text("ITA");
+        if(currentId == "navIta") {
+            imgNavSel.attr("src",itaImgLink);
+            spanNavSel.text("ITA");
             } else if (currentId == "navEng") {
                 imgNavSel.attr("src",engImgLink);
                 spanNavSel.text("ENG");
@@ -75,26 +73,105 @@ function setVar(currentId,imgNavSel,itaImgLink,engImgLink,
                 imgBtnSel.attr("src",arbImgLink);
                 spanBtnSel.text("ARB");
             }
-            
 
+    }else{
+        imgBtnSel.attr("src",engImgLink);
+        imgBtnIta.attr("src",itaImgLink);
+        imgBtnEng.attr("src",itaImgLink);
+        imgBtnDeu.attr("src",deuImgLink);
+        imgBtnFra.attr("src",fraImgLink);
+        imgBtnFra.attr("src",arbImgLink);
+
+        imgNavSel.attr("src",engImgLink);
+        imgNavIta.attr("src",itaImgLink);
+        imgNavEng.attr("src",engImgLink);
+        imgNavDeu.attr("src",deuImgLink);
+        imgNavFra.attr("src",fraImgLink);
+        imgNavArb.attr("src",arbImgLink);
+    }
+
+
+    
+    $( ".language" ).on( "click", function( event ) {
+
+         currentId = $(this).attr('id');
+
+        if(currentId == "navIta") {
+        imgNavSel.attr("src",itaImgLink);
+        spanNavSel.text("ITA");
+        lang='it';
+        } else if (currentId == "navEng") {
+            imgNavSel.attr("src",engImgLink);
+            spanNavSel.text("ENG");
+            lang='en';
+        } else if (currentId == "navDeu") {
+            imgNavSel.attr("src",deuImgLink);
+            spanNavSel.text("DEU");
+            lang='de';
+        } else if (currentId == "navFra") {
+            imgNavSel.attr("src",fraImgLink);
+            spanNavSel.text("FRA");
+            lang='fr';
+        }else if (currentId == "navArb") {
+            imgNavSel.attr("src",arbImgLink);
+            spanNavSel.text("ARB");
+            lang='ar';
+        }
+
+        if(currentId == "btnIta") {
+            imgBtnSel.attr("src",itaImgLink);
+            spanBtnSel.text("ITA");
+        } else if (currentId == "btnEng") {
+            imgBtnSel.attr("src",engImgLink);
+            spanBtnSel.text("ENG");
+        } else if (currentId == "btnDeu") {
+            imgBtnSel.attr("src",deuImgLink);
+            spanBtnSel.text("DEU");
+        } else if (currentId == "btnFra") {
+            imgBtnSel.attr("src",fraImgLink);
+            spanBtnSel.text("FRA");
+        } else if (currentId == "btnArb") {
+            imgBtnSel.attr("src",arbImgLink);
+            spanBtnSel.text("ARB");
+        }
+        setCookie('currentId',currentId,1);
+        setLang(lang);
+    });// click on language 
+});
+
+
+function setLang(lang){
+url='http://localhost/iamrich/web/index.php?r=base/language';
+
+$.ajax({
+     url: url,
+     type: 'post',
+     data: {'lang':lang},
+     success: function (data) {
+            location.reload(); 
+       }
+
+ });
 }
 
-
-            
-
-            if(currentId == "navIta") {
-                codeLang='it';
-                
-            } else if (currentId == "navEng") {
-                codeLang='en';
-
-            } else if (currentId == "navDeu") {
-                codeLang='de';
-                
-            } else if (currentId == "navFra") {
-                codeLang='fr';
-
-            }else if (currentId == "navArb") {
-                codeLang='ar';
-            }
-            
+function setCookie(cname, cvalue, exdays) {
+var d = new Date();
+d.setTime(d.getTime() + (exdays*24*60*60*1000));
+var expires = "expires="+ d.toUTCString();
+document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+var name = cname + "=";
+var decodedCookie = decodeURIComponent(document.cookie);
+var ca = decodedCookie.split(';');
+for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+    }
+}
+return "";
+}
