@@ -59,7 +59,7 @@ AppAsset::register($this);
 
     }
       $menuItems[]= [
-            'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ITA</span> ',
+            'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ENG</span> ',
             'linkOptions' => ['data-toggle' => 'dropdown', 'role'=>'button',
              'aria-expanded'=>'false'],
              'encode' => false,

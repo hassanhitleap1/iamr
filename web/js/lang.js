@@ -18,29 +18,52 @@ $(document).ready(function(){
 		var imgNavDeu = $('#imgNavDeu');
 		var imgNavFra = $('#imgNavFra');
 		var imgNavArb = $('#imgNavArb');
-		
+
 		var spanNavSel = $('#lanNavSel');
 		var spanBtnSel = $('#lanBtnSel');
+		//var	currentId getCookie('currentId');
+		if(typeof(currentId) != "undefined" && currentId !== null) {
+			imgBtnSel.attr("src",itaImgLink);
+			imgBtnIta.attr("src",itaImgLink);
+			imgBtnEng.attr("src",engImgLink);
+			imgBtnDeu.attr("src",deuImgLink);
+			imgBtnFra.attr("src",fraImgLink);
+			imgBtnFra.attr("src",arbImgLink);
 
-		imgBtnSel.attr("src",itaImgLink);
-		imgBtnIta.attr("src",itaImgLink);
-		imgBtnEng.attr("src",engImgLink);
-		imgBtnDeu.attr("src",deuImgLink);
-		imgBtnFra.attr("src",fraImgLink);
-		imgBtnFra.attr("src",arbImgLink);
+			imgNavSel.attr("src",itaImgLink);
+			imgNavIta.attr("src",itaImgLink);
+			imgNavEng.attr("src",engImgLink);
+			imgNavDeu.attr("src",deuImgLink);
+			imgNavFra.attr("src",fraImgLink);
+			imgNavArb.attr("src",arbImgLink);
 
-		imgNavSel.attr("src",itaImgLink);
-		imgNavIta.attr("src",itaImgLink);
-		imgNavEng.attr("src",engImgLink);
-		imgNavDeu.attr("src",deuImgLink);
-		imgNavFra.attr("src",fraImgLink);
-		imgNavArb.attr("src",arbImgLink);
+			setCookie('currentId',currentId);
+			console.log(getCookie('currentId'));
+
+		}else{
+			
+			imgBtnSel.attr("src",engImgLink);
+			imgBtnIta.attr("src",itaImgLink);
+			imgBtnEng.attr("src",itaImgLink);
+			imgBtnDeu.attr("src",deuImgLink);
+			imgBtnFra.attr("src",fraImgLink);
+			imgBtnFra.attr("src",arbImgLink);
+
+			imgNavSel.attr("src",engImgLink);
+			imgNavIta.attr("src",itaImgLink);
+			imgNavEng.attr("src",engImgLink);
+			imgNavDeu.attr("src",deuImgLink);
+			imgNavFra.attr("src",fraImgLink);
+			imgNavArb.attr("src",arbImgLink);
+
+		}
+
 
 		
 		$( ".language" ).on( "click", function( event ) {
 
-			 currentId = $(this).attr('id');
-
+			currentId = $(this).attr('id');
+			setCookie('currentId',currentId);
 			if(currentId == "navIta") {
             imgNavSel.attr("src",itaImgLink);
             spanNavSel.text("ITA");
@@ -82,4 +105,32 @@ $(document).ready(function(){
 
 
 
+function getCookie(key) 
+{
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+}
+
+function setCookie(key, value) 
+{
+    var expires = new Date();
+    expires.setTime(expires.getTime() + (1 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString();
+}
+
+function setLang(lang){
+    url='http://localhost/iamrich/web/index.php?r=base/language';
+    
+    $.ajax({
+         url: url,
+         type: 'post',
+         data: {'lang':lang},
+         success: function (data) {
+                location.reload(); 
+                setCookie('currentId',currentId);   
+                setIconLang(currentId);
+           }
+
+     });
+}
 
