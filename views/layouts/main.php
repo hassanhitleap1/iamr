@@ -65,6 +65,13 @@ AppAsset::register($this);
              'encode' => false,
             'items' => [
 
+             '<li>
+                <a id="navEng" href="#" class="language">
+                    <img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  
+                    <span id="lanNavEng">English</span>
+                </a>
+            </li>',
+            
             '<li>
                 <a id="navIta" href="#" class="language">
                      <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  
@@ -83,13 +90,6 @@ AppAsset::register($this);
                 <a id="navFra" href="#" class="language">
                     <img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavFra">Francais</span>
-                </a>
-            </li>',
-
-            '<li>
-                <a id="navEng" href="#" class="language">
-                    <img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  
-                    <span id="lanNavEng">English</span>
                 </a>
             </li>',
 
