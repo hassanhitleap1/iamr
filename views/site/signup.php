@@ -26,13 +26,14 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'link' => '#your-url', // the button URL
                                     'label'=> 'log in with twitter', // button label
                                     'class'=>'btn-lg',
-                                    ]) ?>                   
+                                    ]) ?>   
+                  
                                </div>
                                <div class="col-md-4">
                                     <?= \powerkernel\bootstrapsocial\Button::widget([
                                     'button' => 'facebook', 
                                     'iconOnly' => false, // set true if only want the icon 
-                                    'link' => '#your-url', // the button URL
+                                    'link' => Url::to(['facebook/index']), // the button URL
                                     'label'=> 'log in with facebook', // button label
                                     'class'=>'btn-lg',
                                     ]) ?>                   
