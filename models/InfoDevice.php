@@ -10,6 +10,17 @@ use Yii;
  * @property string $ip
  * @property string $os
  * @property string $browser
+ * @property string $country
+ * @property string $country_code
+ * @property string $region
+ * @property string $region_name
+ * @property string $city
+ * @property string $lat
+ * @property string $lon
+ * @property string $timezone
+ * @property string $isp
+ * @property string $org
+ * @property string $as
  * @property integer $user_id
  *
  * @property User $user
@@ -30,6 +41,14 @@ class InfoDevice extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+            [['ip', 'user_id'], 'required'],
+            [['user_id'], 'integer'],
+            [['ip', 'os', 'browser', 'region', 'city'], 'string', 'max' => 30],
+            [['country'], 'string', 'max' => 150],
+            [['country_code', 'region_name'], 'string', 'max' => 10],
+            [['lat', 'lon', 'timezone', 'isp', 'org'], 'string', 'max' => 50],
+            [['as'], 'string', 'max' => 100],
+            [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
     }
@@ -43,6 +62,17 @@ class InfoDevice extends \yii\db\ActiveRecord
             'ip' => 'Ip',
             'os' => 'Os',
             'browser' => 'Browser',
+            'country' => 'Country',
+            'country_code' => 'Country Code',
+            'region' => 'Region',
+            'region_name' => 'Region Name',
+            'city' => 'City',
+            'lat' => 'Lat',
+            'lon' => 'Lon',
+            'timezone' => 'Timezone',
+            'isp' => 'Isp',
+            'org' => 'Org',
+            'as' => 'As',
             'user_id' => 'User ID',
         ];
     }

@@ -6,6 +6,7 @@ use yii\base\BaseObject;
 use yii\base\Component;
 use yii\base\InvalidConfigException;
 use app\models\InfoDevice;
+
 class Device extends BaseObject
 {
 	
@@ -23,8 +24,10 @@ class Device extends BaseObject
         else
         {
           $ip=$_SERVER['REMOTE_ADDR'];
-        }
-        return $ip;
+		}
+		
+		return $ip;
+		
 	}
 
 	public static function getOS() { 
@@ -93,15 +96,41 @@ class Device extends BaseObject
 	}
 
 
-	public  function setDeviceUser(){
+	public static  function setDeviceUser(){
+		$ip=self::getIp();
 		$infoDivce=new InfoDevice;
-		$infoDivce->ip= self::getIp();
+		$infoDivce->ip= $ip;
+		$moreInfo=self::getMoreInfo($ip);
+		if(!$moreInfo == ""){
+		$infoDivce->country 		=$moreInfo['country'];
+		$infoDivce->country_Code	=$moreInfo['countryCode'];
+		$infoDivce->region			=$moreInfo['region'];
+		$infoDivce->region_name		=$moreInfo['regionName'];
+		$infoDivce->city			=$moreInfo['city'];
+		$infoDivce->zip				=$moreInfo['zip'];
+		$infoDivce->lat				=$moreInfo['lat'];
+		$infoDivce->lon				=$moreInfo['lon'];
+		$infoDivce->timezone		=$moreInfo['timezone'];
+		$infoDivce->isp				=$moreInfo['isp'];
+		$infoDivce->org				=$moreInfo['org'];
+		$infoDivce->as				=$moreInfo['as'];
+		}
         $infoDivce->browser=self::getBrowser();
-        $infoDivce->os =self::getOS();
+		$infoDivce->os =self::getOS();
+		var_dump($infoDivce);
+		exit;
         $infoDivce->user_id=Yii::$app->user->id;
         $infoDivce->save();
 	}
 
+	public static function getMoreInfo($ip)
+	{
+		$moreInfo = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+		if($moreInfo && $moreInfo['status'] == 'success') {
+			return $moreInfo;
+		}
+		return "";
+	}
 }
 
 ?>
