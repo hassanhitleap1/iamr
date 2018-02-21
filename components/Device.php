@@ -117,8 +117,6 @@ class Device extends BaseObject
 		}
         $infoDivce->browser=self::getBrowser();
 		$infoDivce->os =self::getOS();
-		var_dump($infoDivce);
-		exit;
         $infoDivce->user_id=Yii::$app->user->id;
         $infoDivce->save();
 	}
