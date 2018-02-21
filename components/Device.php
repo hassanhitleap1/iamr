@@ -100,34 +100,37 @@ class Device extends BaseObject
 		$ip=self::getIp();
 		$infoDivce=new InfoDevice;
 		$infoDivce->ip= $ip;
-		$moreInfo=self::getMoreInfo($ip);
+		$moreInfo=self::getMoreInfo();
 		if(!$moreInfo == ""){
 		$infoDivce->country 		=$moreInfo['country'];
-		$infoDivce->country_Code	=$moreInfo['countryCode'];
+		$infoDivce->country_code	=$moreInfo['countryCode'];
 		$infoDivce->region			=$moreInfo['region'];
 		$infoDivce->region_name		=$moreInfo['regionName'];
 		$infoDivce->city			=$moreInfo['city'];
-		$infoDivce->zip				=$moreInfo['zip'];
-		$infoDivce->lat				=$moreInfo['lat'];
-		$infoDivce->lon				=$moreInfo['lon'];
+		$infoDivce->lat				=(string)$moreInfo['lat'];
+		$infoDivce->lon				= (string)$moreInfo['lon'];
 		$infoDivce->timezone		=$moreInfo['timezone'];
 		$infoDivce->isp				=$moreInfo['isp'];
 		$infoDivce->org				=$moreInfo['org'];
 		$infoDivce->as				=$moreInfo['as'];
 		}
+		
         $infoDivce->browser=self::getBrowser();
 		$infoDivce->os =self::getOS();
         $infoDivce->user_id=Yii::$app->user->id;
         $infoDivce->save();
+		
+		
 	}
 
-	public static function getMoreInfo($ip)
+	public static function getMoreInfo()
 	{
-		$moreInfo = @unserialize(file_get_contents('http://ip-api.com/php/'.$ip));
+		$moreInfo = @unserialize(file_get_contents('http://ip-api.com/php/'));
 		if($moreInfo && $moreInfo['status'] == 'success') {
 			return $moreInfo;
 		}
 		return "";
+
 	}
 }
 

@@ -41,12 +41,10 @@ class InfoDevice extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['ip', 'user_id'], 'required'],
+            [['ip',  'user_id'], 'required'],
             [['user_id'], 'integer'],
-            [['ip', 'os', 'browser', 'region', 'city'], 'string', 'max' => 30],
+            [['ip', 'os', 'browser', 'country_code', 'region', 'region_name', 'city', 'lat', 'lon', 'timezone', 'isp', 'org'], 'string', 'max' => 50],
             [['country'], 'string', 'max' => 150],
-            [['country_code', 'region_name'], 'string', 'max' => 10],
-            [['lat', 'lon', 'timezone', 'isp', 'org'], 'string', 'max' => 50],
             [['as'], 'string', 'max' => 100],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
@@ -83,5 +81,14 @@ class InfoDevice extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @inheritdoc
+     * @return InfoDeviceQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new InfoDeviceQuery(get_called_class());
     }
 }
