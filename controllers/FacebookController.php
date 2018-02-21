@@ -26,6 +26,8 @@ class FacebookController extends \yii\base\Controller{
         //     // 'app_secret' => '275058a24dc34f3cad39bfe29f3bf4b9   ',
         //     // 'default_graph_version' => 'v2.10',
         //   ]);
+
+        
     }
 
     public function actionIndex(){

@@ -135,7 +135,7 @@ class SiteController extends BaseController
     {
         if (!empty($_GET['ref'])){ Yii::$app->session->set('ref',$_GET['ref']);}
         $model = new SignupForm();
-
+        if (!Yii::$app->user->isGuest) {return $this->redirect(['site/index']);}
         if ($model->load(Yii::$app->request->post())) {
 
             $model->file = UploadedFile::getInstance($model, 'file');
