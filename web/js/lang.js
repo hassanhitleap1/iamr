@@ -26,14 +26,14 @@ $(document).ready(function(){
     
     if(typeof(currentId) != "undefined" && currentId !== null) {
         
-        imgBtnSel.attr("src",itaImgLink);
+        imgBtnSel.attr("src", engImgLink);
         imgBtnIta.attr("src",itaImgLink);
         imgBtnEng.attr("src",engImgLink);
         imgBtnDeu.attr("src",deuImgLink);
         imgBtnFra.attr("src",fraImgLink);
         imgBtnFra.attr("src",arbImgLink);
 
-        imgNavSel.attr("src",itaImgLink);
+        imgNavSel.attr("src", engImgLink);
         imgNavIta.attr("src",itaImgLink);
         imgNavEng.attr("src",engImgLink);
         imgNavDeu.attr("src",deuImgLink);
