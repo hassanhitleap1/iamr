@@ -80,17 +80,17 @@ class UserController extends Controller
      * @param integer $id
      * @return mixed
      */
-    public function actionUpdate($id)
+    public function actionAcrivation($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        if ($model->status) {
+        $model->status=User::STATUS_DELETED;
+        }else{
+        $model->status = User::STATUS_ACTIVE;   
         }
+        $model->save();
+        return $this->redirect(['index']);
+        
     }
 
     /**

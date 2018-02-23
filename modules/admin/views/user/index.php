@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\User;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\UserSearch */
@@ -15,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
+<?php Pjax::begin() ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -29,7 +30,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute'=>'image_name',
                 'format' => 'raw',
                 'value'=>function ($dataProvider) 
-                { return '<img  src="'.Yii::$app->request->baseUrl.'/'. $dataProvider->image_name.'" alt="Card image cap"  class="img-circle"  width="200" height="200">';
+                { return '<img  src="'.Yii::$app->request->baseUrl.'/'. 
+                    $dataProvider->image_name.'" alt="Card image cap"  class="img-circle" 
+                     width="200" height="200">';
             }
                 
             ],
@@ -47,8 +50,45 @@ $this->params['breadcrumbs'][] = $this->title;
 
             [
                 'class' => 'yii\grid\ActionColumn',
-                'template' => '{view} ',
+                'template' => '{acrivation}',
+                'buttons' => 
+                [
+                    'acrivation' => function ($url, $model) 
+                    {
+                        if($model->status){
+                            return Html::a(
+                                '<span class="glyphicon glyphicon-remove-sign" style="color:red;" ></span>',
+                                $url,
+                                [
+                                    'title' => 'Active',
+                                    'data' =>
+                                        ['confirm' => 'Are you sure you want to Disactive this user?', 'method' => 'post'],
+                                    'data-ajax' => '1'
+                                ]
+                            );   
+
+                        }else{
+                            return  Html::a(
+                                '<span class="glyphicon glyphicon-ok-sign" ></span>', 
+                            $url, ['title' =>'Active', 
+                            'data' => 
+                            ['confirm' => 'Are you sure you want to active this user?', 'method' => 'post'], 
+                            'data-ajax' => '1']) ;
+                            }
+                    },
+                  
+                ],
             ],
         ],
     ]); ?>
+    <?php Pjax::end() ?>
+
+    <?php
+    $this->registerJs(
+        '$("document").ready(function(){ 
+    
+    });'
+    );
+    ?>
+    ?>
 </div>
