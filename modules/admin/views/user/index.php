@@ -32,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=>function ($dataProvider) 
                 { return '<img  src="'.Yii::$app->request->baseUrl.'/'. 
                     $dataProvider->image_name.'" alt="Card image cap"  class="img-circle" 
-                     width="200" height="200">';
+                     width="100" height="100">';
             }
                 
             ],
@@ -83,12 +83,5 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
     <?php Pjax::end() ?>
 
-    <?php
-    $this->registerJs(
-        '$("document").ready(function(){ 
-    
-    });'
-    );
-    ?>
-    ?>
+
 </div>
