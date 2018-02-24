@@ -48,6 +48,7 @@ AppAsset::register($this);
                 ['label' => 'My Profile', 'url' => ['/user/profile']],
                 '<li class="divider"></li>',
                 ['label' => 'Referral', 'url' => ['/user/referral']],
+                ['label' => 'Payment Request', 'url' => ['/payment-request/index']],
            ],
         ]; 
           $menuItems[] = [

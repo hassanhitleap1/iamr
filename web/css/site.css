@@ -144,3 +144,8 @@ a.desc:after {
         font-size: 30px;
         color: green;
 }
+.message-payment-form{
+    font-style: italic;
+    font-size: 19px;
+    color: green;
+}
