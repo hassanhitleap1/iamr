@@ -7,7 +7,16 @@ $this->title = 'Admin';
 ?>
 <div class="admin-default-index">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<canvas id="pie-chart" width="1000" height="200"></canvas>
+    <div class=" col-md-7  col-md-offset-4 centered user-info">namber user active is 
+      <span class="glyphicon glyphicon-user"></span><strong >100</strong >
+    </div>
+    <hr>
+    <canvas id="pie-chart" width="1000" height="200"></canvas>
+    <br/><br/><br/>
+    <div class=" col-md-7  col-md-offset-4 centered user-info">namber user Disactive is 
+      <span class="glyphicon glyphicon-user"></span><strong >100</strong >
+    </div>
+    <hr>
 <canvas id="pie2-chart" width="1000" height="200"></canvas>
 <script>
 
