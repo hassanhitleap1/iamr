@@ -28,7 +28,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'value'=> 'user.full_name',
             ],
             'hash',
-            'completed',
+            [
+                'attribute' => 'completed',
+                'value' => function($dataProvider)
+                {
+                    return $dataProvider->completed? 'Completed': 'Not Completed';
+                },
+                'filter'=>[1=> 'Completed',0=> 'Not Completed']
+            ],
 
          
         ],
