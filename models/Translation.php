@@ -46,7 +46,7 @@ class Translation extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'payment_id' => 'Payment ID',
-            'user_id' => 'User ID',
+            'user_id' => 'User full name',
             'hash' => 'Hash',
             'completed' => 'Completed',
         ];

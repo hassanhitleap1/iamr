@@ -23,7 +23,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'payment_id',
-            'user.full_name',
+            [
+                'attribute'=>'user_id',
+                'value'=> 'user.full_name',
+            ],
             'hash',
             'completed',
 

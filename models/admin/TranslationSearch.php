@@ -19,7 +19,7 @@ class TranslationSearch extends Translation
     {
         return [
             [['id', 'completed'], 'integer'],
-            [['payment_id', 'hash','user_id'], 'safe'],
+            [['payment_id','user_id','hash'], 'safe'],
         ];
     }
 
@@ -42,7 +42,7 @@ class TranslationSearch extends Translation
     public function search($params)
     {
         $query = Translation::find();
-        $query->joinWith('user');
+
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -50,21 +50,21 @@ class TranslationSearch extends Translation
         ]);
 
         $this->load($params);
-
+        $query->joinWith('user');
         if (!$this->validate()) {
             // uncomment the following line if you do not want to return any records when validation fails
             // $query->where('0=1');
             return $dataProvider;
         }
-
+        $query->joinWith('user');
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
-            'completed' => $this->completed,
+            'translation.id' => $this->id,
+            'translation.completed' => $this->completed,
         ]);
 
-        $query->andFilterWhere(['like', 'payment_id', $this->payment_id])
-            ->andFilterWhere(['like', 'hash', $this->hash])
+        $query->andFilterWhere(['like', 'translation.payment_id', $this->payment_id])
+            ->andFilterWhere(['like', 'translation.hash', $this->hash])
             ->andFilterWhere(['like', 'user.full_name', $this->user_id]);
 
         return $dataProvider;
