@@ -34,33 +34,29 @@ class PaymentRequest extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['value', 'user_id', 'country', 'full_address', 'accept'], 'required'],
+            [['value',  'country', 'full_address'], 'required'],
             [['value'], 'number'],
             [['user_id', 'accept'], 'integer'],
             [['paypal'], 'string', 'max' => 50],
             [['western_union_full_name'], 'string', 'max' => 255],
             [['country'], 'string', 'max' => 100],
             [['full_address'], 'string', 'max' => 200],
-           // ['paypal', 'onOfThem'],
+            [['western_union_full_name', 'paypal'], 'my_required'],
+            //[['paypal', 'western_union_full_name'], 'onOfThem'],
         ];
     }
 
-    /**
-     * Validates the password.
-     * This method serves as the inline validation for password.
-     *
-     * @param string $attribute the attribute currently being validated
-     * @param array $params the additional name-value pairs given in the rule
-     */
-    public function onOfThem($attribute, $params)
+    public function my_required($attribute, $params)
     {
-        if (!$this->hasErrors()) {
-
-            if (empty($this->paypal) || empty($this->western_union_full_name) ) {
-                $this->addError($attribute, 'must be fill paypal or western union full name ');
-            }
+    
+        if (empty($this->paypal) and empty($this->western_union_full_name)) {
+            $this->addError($attribute, "must be fill paypal or western union full name ");
+            return false;
         }
+
+        return true;
     }
+
     /**
      * @inheritdoc
      */
@@ -71,7 +67,7 @@ class PaymentRequest extends \yii\db\ActiveRecord
             'value' => 'Value',
             'user_id' => 'User ID',
             'paypal' => 'Paypal',
-            'western_union_full_name' => 'Western Union Full Name',
+            'western_union_full_name' => 'Full Name',
             'country' => 'Country',
             'full_address' => 'Full Address',
             'accept' => 'Accept',
