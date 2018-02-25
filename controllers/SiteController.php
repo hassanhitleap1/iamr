@@ -3,19 +3,20 @@
 namespace app\controllers;
 
 use Yii;
-use yii\filters\AccessControl;
-use app\controllers\BaseController;
-use yii\web\Response;
-use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
-use app\models\SignupForm;
-use yii\web\UploadedFile;
-use app\components\Device;
-use app\models\User;
-use yii\web\NotFoundHttpException;
-use yii\data\Pagination;
 use Yii\web\cookie;
+use app\components\Device;
+use app\controllers\BaseController;
+use app\models\ContactForm;
+use app\models\LoginForm;
+use app\models\Referral;
+use app\models\SignupForm;
+use app\models\User;
+use yii\data\Pagination;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\NotFoundHttpException;
+use yii\web\Response;
+use yii\web\UploadedFile;
 
 class SiteController extends BaseController
 {
@@ -133,7 +134,11 @@ class SiteController extends BaseController
      */
     public function actionSignup()
     {
-        if (!empty($_GET['ref'])){ Yii::$app->session->set('ref',$_GET['ref']);}
+        $session = Yii::$app->session;
+        if (!empty($_GET['ref'])){ 
+            $session->set('ref',$_GET['ref']);
+        }
+
         $model = new SignupForm();
         
         if (!Yii::$app->user->isGuest) {return $this->redirect(['site/index']);}
@@ -145,12 +150,15 @@ class SiteController extends BaseController
                 if (Yii::$app->getUser()->login($user)) {
                      Device::setDeviceUser();
                     if(Yii::$app->session->has('ref')){
-                        $userRef= User::find()->where(['ref'=>Yii::$app->session->get('rel')])->one();
+                        $userRef= User::find()->where(['ref'=>Yii::$app->session->get('ref')])->one();
                         if(!empty($userRef)){
                             $referral= new Referral;
                             $referral->user_id=$userRef->id;
                             $referral->user_id_referral=Yii::$app->user->id;
-                            $referral->save();     
+
+                           if(!$referral->save()){
+                             return $this->render('payment');
+                           }     
                         }
                     }
                   

@@ -56,7 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-12 col-md-4" >
             <div class="panel panel-default">
                     <div class="radio pull-right">
-                      <label><input type="radio" name="optradio">this payment</label>
+                      <label><input type="radio" name="optradio" checked>this payment</label>
                     </div>
                     <div class="panel-heading">
                         <h3 class="panel-title">

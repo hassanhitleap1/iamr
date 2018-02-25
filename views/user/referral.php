@@ -35,8 +35,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <table class="table">
                 <thead>
                 <tr>
-                    <th>full name</th>
-                    <th>date register</th>
+                    <th>Full Name</th>
+                    <th>Date Register</th>
+                    <th>Activation</th>
+                    <th>Payment</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,6 +47,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     <tr>
                         <td><?= $referrals->user->full_name;?></td>
                         <td><?=$referrals->user->created_at?></td>
+                        <td><?= $referrals->user->status? "Active": "Disactive"  ?></td>
+                        <td><?= $referrals->user->status? "Pay": "Not Pay"  ?></td>
                     </tr>
                     <?php endforeach;?>
                 <?php endif;?>      
