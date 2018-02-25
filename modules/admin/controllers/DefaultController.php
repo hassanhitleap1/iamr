@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\models\admin\LoginForm;
+use app\models\User;
 // use frontend\models\PasswordResetRequestForm;
 // use app\models\ResetPasswordForm;
 
@@ -70,7 +71,16 @@ class DefaultController extends Controller
          */
         public function actionIndex()
         {
-            return $this->render('index');
+           $avtiveCountUser = User::find()->active()->toArray()->all()->count();
+           $avtiveCountUser = User::find()->disActive()->toArray()->all()->count();
+            $avtiveUser = User::find()->active()->toArray()->all();
+            $disAvtiveUser = User::find()->disActive()->toArray()->all();
+            return $this->render('index',[
+                'avtiveCountUser'=> $avtiveCountUser,
+                'avtiveCountUser'=> $avtiveCountUser,
+                'avtiveUser'=> $avtiveUser,
+                'disAvtiveUser'=> $disAvtiveUser,
+            ]);
         }
         /**
          * Logs in a user.

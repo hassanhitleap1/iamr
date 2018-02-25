@@ -20,7 +20,7 @@ class PaymentRequestSearch extends PaymentRequest
         return [
             [['id', 'user_id', 'accept'], 'integer'],
             [['value'], 'number'],
-            [['paypal', 'western_union_full_name', 'country', 'full_address'], 'safe'],
+            [['paypal', 'western_union_full_name', 'country', 'full_address', 'create_at'], 'safe'],
         ];
     }
 
@@ -63,6 +63,7 @@ class PaymentRequestSearch extends PaymentRequest
             'id' => $this->id,
             'value' => $this->value,
             'user_id' => $this->user_id,
+            'create_at' => $this->create_at,
             'accept' => $this->accept,
         ]);
 
