@@ -2,11 +2,6 @@
 
 namespace app\controllers;
 
-use Yii;
-use app\models\User;
-use yii\helpers\Url;
-use yii\web\Controller;
-use yii\web\Response;
 use PHPUnit\TextUI\ResultPrinter;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
@@ -18,10 +13,16 @@ use PayPal\Api\Payment;
 use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
-use PayPal\Rest\ApiContext;
-use app\models\Translation;
 use PayPal\Exception\PPConnectionException;
+use PayPal\Rest\ApiContext;
+use Yii;
 use app\components\UserHelper;
+use app\models\Balance;
+use app\models\Translation;
+use app\models\User;
+use yii\helpers\Url;
+use yii\web\Controller;
+use yii\web\Response;
 
 
 class PaymentController extends Controller
@@ -137,8 +138,22 @@ class PaymentController extends Controller
             $trans->completed=1;
             $user = $this->findModel(Yii::$app->user->id);
             $user->status=User::STATUS_ACTIVE;
+            $userRfId= $user->referral['user_id'];
+            if (!is_array($userRfId)) {
+                $balance= Balance::find()->where(['user_id'=>$userRfId])->one();
+
+                $balance->balance=20;
+
+                if(!$balance->save()){
+                    var_dump($balance->getErrors());
+                }
+            }
+
+
             $user->save();
             $trans->save();
+          
+            
             UserHelper::setBalance(Yii::$app->user->id);
             UserHelper::setReferralCode(Yii::$app->user->id);
 

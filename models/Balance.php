@@ -43,9 +43,9 @@ class Balance extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'balance' => 'Balance',
-            'user_id' => 'User ID',
+            'id' => Yii::t('app', 'ID'),
+            'balance' => Yii::t('app', 'Balance'),
+            'user_id' => Yii::t('app', 'User ID'),
         ];
     }
 
@@ -55,5 +55,14 @@ class Balance extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    /**
+     * @inheritdoc
+     * @return BalanceQuery the active query used by this AR class.
+     */
+    public static function find()
+    {
+        return new BalanceQuery(get_called_class());
     }
 }

@@ -32,6 +32,7 @@ class Referral extends \yii\db\ActiveRecord
         return [
             [['user_id', 'user_id_referral'], 'required'],
             [['user_id', 'user_id_referral'], 'integer'],
+            [['user_id_referral'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['user_id_referral'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id_referral' => 'id']],
         ];
