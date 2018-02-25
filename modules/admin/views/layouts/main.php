@@ -39,14 +39,14 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['default/index']], 
         ['label' => 'User', 'url' => ['user/index']],
         ['label' => 'Pages', 'url' => ['page/index']],
-    ['label' => 'Translations', 'url' => ['translation/index']], 
+         ['label' => 'Translations', 'url' => ['translation/index']], 
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => 'Login', 'url' => ['default/login']];
     } else {
           $menuItems[] = [
-                        'label' => 'Logout (' . Yii::$app->user->identity->email . ')',
-                        'url' => ['/site/logout'],
+                        'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                        'url' => ['default/logout'],
                         'linkOptions' => ['data-method' => 'post']
                     ];
     }
