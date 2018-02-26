@@ -39,7 +39,7 @@ AppAsset::register($this);
         ],
     ]);
     
-    if (Yii::$app->user->isGuest) {
+    if (Yii::$app->admin->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['default/login']];
     } else {
         $menuItems = [
@@ -51,7 +51,7 @@ AppAsset::register($this);
         $menuItems[] =   ['label' => 'Profile',
         'items' => [
             [
-                'label' => 'Logout (' .  Yii::$app->user->identity->username . ')',
+                'label' => 'Logout (' .  Yii::$app->admin->identity->username . ')',
                 'url' => ['default/logout'],
                 'linkOptions' => ['data-method' => 'post']
             ]
