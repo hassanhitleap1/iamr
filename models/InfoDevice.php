@@ -91,4 +91,19 @@ class InfoDevice extends \yii\db\ActiveRecord
     {
         return new InfoDeviceQuery(get_called_class());
     }
+
+          /**
+     * @inheritdoc
+     * @return InfoDevice|array|null
+     */
+    public static function countContry()
+    {
+       return  (new \yii\db\Query())
+        ->select(['country_code', 'COUNT(*) as country_count'])
+        ->from('info_device')
+        ->groupBy('country_code')
+        ->orderBy('COUNT(*) DESC')
+        ->limit(6)
+        ->all();
+    }
 }

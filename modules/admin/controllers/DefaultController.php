@@ -3,13 +3,14 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
+use app\models\InfoDevice;
+use app\models\User;
+use app\models\admin\LoginForm;
 use yii\base\InvalidParamException;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
-use yii\filters\AccessControl;
-use app\models\admin\LoginForm;
-use app\models\User;
 // use frontend\models\PasswordResetRequestForm;
 // use app\models\ResetPasswordForm;
 
@@ -71,15 +72,20 @@ class DefaultController extends Controller
          */
         public function actionIndex()
         {
-           $avtiveCountUser = User::find()->active()->toArray()->all()->count();
-           $avtiveCountUser = User::find()->disActive()->toArray()->all()->count();
-            $avtiveUser = User::find()->active()->toArray()->all();
-            $disAvtiveUser = User::find()->disActive()->toArray()->all();
+            $avtiveCountUser =count (User::find()->active()->asArray()->all());
+           $disAvtiveCountUser = count(User::find()->disActive()->asArray()->all());
+            $avtiveUser = User::find()->active()->asArray()->all();
+            $disAvtiveUser = User::find()->disActive()->asArray()->all();
+            $topContry=InfoDevice::countContry();
+            $topContryDisctive= User::find()->countContryDisActiveUser()->all();
+            // var_dump($topContryDisctive);
+            // exit;
             return $this->render('index',[
                 'avtiveCountUser'=> $avtiveCountUser,
-                'avtiveCountUser'=> $avtiveCountUser,
+                'disAvtiveCountUser'=> $disAvtiveCountUser,
                 'avtiveUser'=> $avtiveUser,
                 'disAvtiveUser'=> $disAvtiveUser,
+                'topContry'=>$topContry,
             ]);
         }
         /**

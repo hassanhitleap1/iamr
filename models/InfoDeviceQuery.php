@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use yii\db\Query;
+
 /**
  * This is the ActiveQuery class for [[InfoDevice]].
  *
@@ -31,4 +33,7 @@ class InfoDeviceQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+
+
+
 }
