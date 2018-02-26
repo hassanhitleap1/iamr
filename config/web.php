@@ -38,9 +38,17 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        // 'user' => [
+        //     'identityClass' => 'app\models\User',
+        //     'enableAutoLogin' => true,
+        // ],
+        // 'admin' => [
+        //     'identityClass' => 'app\models\admin\Admin',
+        //     'enableAutoLogin' => true,
+        // ],
         'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'identityClass' => 'app\models\admin\Admin',
+            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
