@@ -5,6 +5,12 @@ return [
 	'why-300-doller'=>'لماذا 300 دولار ',
 	'signup'=>'تسجيل الدخول',
 	'login'=>'دخول ',
+	'profile'=>'الملف الشخصي',
+	'my_profile'=>'ملفي الشخصي',
+	'Referral'=>'الأحالة',
+	'Payment_Request'=>'طلب دفع مال ',
+	'Logout'=>'تسجيل الخروج',
+
 	'Plaase-Signin'=>'ارجو تسجيل الدخول',
 	'log_in_with_facebook'=>' الدخول بأستخدام الفيسبوك',
 	'log_in_with_google'=>'الدخول بأستخدام جوجل ',
@@ -27,4 +33,7 @@ return [
 	'Created_At'=>'تاريخ الانشاء',
 	'Updated_At'=>'تاريخ التحديث',
 	'confirm_password'=>'تأكيد رقم السري ',
+	'value'=>'القيمة',
+	'full_address'=>'العنوان بالكامل ',
+	'Request'=>'طلب',	
 ];

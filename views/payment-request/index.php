@@ -47,7 +47,7 @@ $this->title="payment-request";
                             <?= $form->field($model, 'full_address')->textInput(['maxlength' => true, 'placeholder'=>'address like  UK-lundon-amman']) ?>
 
                             <div class="form-group">
-                                <?= Html::submitButton( 'Request' , ['class' =>  'btn btn-primary']) ?>
+                                <?= Html::submitButton( Yii::t('app','Request') , ['class' =>  'btn btn-primary']) ?>
                             </div>
 
                             <?php ActiveForm::end(); ?>

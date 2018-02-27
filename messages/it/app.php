@@ -5,6 +5,12 @@ return [
 	'why-300-doller'=>'perché 300 dollari',
 	'signup'=>'Iscriviti',
 	'login'=>'Accesso',
+	'profile'=>'profilo',
+	'my_profile'=>'il mio profilo',
+	'Referral'=>'Referral',
+	'Logout'=>'Disconnettersi',
+	
+	'Payment_Request'=>'Richiesta di pagamento',
 	'Plaase-Signin'=>'Per favore Accedi',
 	'log_in_with_facebook'=>'Fai il login con facebook',
 	'log_in_with_google'=>'Fai il login con Google',
@@ -27,4 +33,8 @@ return [
 	'Created_At'=>'Creato a',
 	'Updated_At'=>'Aggiornato a',
 	'confirm_password'=>'conferma password',
+	'value'=>'valore',
+	'full_address'=>'indirizzo completo',
+	'Request'=>'Richiesta',
+
 ];

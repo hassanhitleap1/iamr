@@ -43,16 +43,16 @@ AppAsset::register($this);
         $menuItems[] = ['label' => Yii::t('app','login'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = [
-            'label' => 'profile',
+            'label' => Yii::t('app','profile'),
             'items' => [
-                ['label' => 'My Profile', 'url' => ['/user/profile']],
+                ['label' => Yii::t('app','my_profile'), 'url' => ['/user/profile']],
                 '<li class="divider"></li>',
-                ['label' => 'Referral', 'url' => ['/user/referral']],
-                ['label' => 'Payment Request', 'url' => ['/payment-request/index']],
+                ['label' => Yii::t('app','Referral'), 'url' => ['/user/referral']],
+                ['label' =>  Yii::t('app','Payment_Request'), 'url' => ['/payment-request/index']],
            ],
         ]; 
           $menuItems[] = [
-                        'label' => 'Logout (' . Yii::$app->user->identity->email . ')',
+                        'label' =>Yii::t('app','Logout') .' (' . Yii::$app->user->identity->email . ')',
                         'url' => ['/site/logout'],
                         'linkOptions' => ['data-method' => 'post']
                     ];

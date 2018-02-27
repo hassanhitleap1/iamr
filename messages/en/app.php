@@ -5,6 +5,12 @@ return [
 	'why-300-doller'=>'why 300 doller',
 	'signup'=>'signup',
 	'login'=>'Login',
+	'profile'=>'profile',
+	'my_profile'=>'My Profile',
+	'Referral'=>'Referral',
+	'Payment_Request'=>'Payment Request',
+	'Logout'=>'Logout',
+	
 	'Plaase-Signin'=>'Please Signin',
 	'log_in_with_facebook'=>'log in with facebook',
 	'log_in_with_google'=>'log in with Google',
@@ -28,4 +34,7 @@ return [
 	'Created_At'=>'Created_At',
 	'Updated_At'=>'Updated_At',
 	'confirm_password'=>'confirm password',
+	'value'=>'value',
+	'full_address'=>'full address',
+	'Request'=>'Request',
 ];
