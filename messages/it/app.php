@@ -36,5 +36,5 @@ return [
 	'value'=>'valore',
 	'full_address'=>'indirizzo completo',
 	'Request'=>'Richiesta',
-
+	'Your_Balance'=>'Il tuo bilancio',
 ];
