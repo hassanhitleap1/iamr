@@ -45,10 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
                               ]); ?>
 
                                   <?= $form->field($model, 'email')->textInput(['autofocus' => true,
-                                  'placeholder'=>'Email'])->label(false) ?>
+                                  'placeholder'=>Yii::t('app','Email')])->label(false) ?>
 
                                   <?= $form->field($model, 'password')->passwordInput([
-                                  'placeholder'=>'Password'])->label(false) ?>
+                                  'placeholder'=>Yii::t('app','Password_Hash')])->label(false) ?>
 
                                   <?= $form->field($model, 'rememberMe')->checkbox() ?>
 

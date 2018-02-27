@@ -9,6 +9,12 @@ return [
 	'log_in_with_facebook'=>'log in with facebook',
 	'log_in_with_google'=>'log in with Google',
 	'log_in_with_twitter'=>'log in with Twitter ',
+
+	'singup_with_facebook'=>'singup with facebook ',
+	'singup_with_google'=>'singup with Google ',
+	'singup_with_twitter'=>'singup with Twitter ',
+
+	'button_singup'=>'singup',
 	'ID'=>'ID',
 	'Full_Name'=>'Full Name',
 	'About_Me'=>'About Me',
@@ -21,4 +27,5 @@ return [
 	'Ref'=>'Ref',
 	'Created_At'=>'Created_At',
 	'Updated_At'=>'Updated_At',
+	'confirm_password'=>'confirm password',
 ];

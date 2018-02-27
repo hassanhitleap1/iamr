@@ -24,7 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'button' => 'twitter', 
                                     'iconOnly' => false, // set true if only want the icon 
                                     'link' => '#your-url', // the button URL
-                                    'label'=> 'log in with twitter', // button label
+                                    'label'=> Yii::t('app','singup_with_twitter'), // button 
                                     'class'=>'btn-lg',
                                     ]) ?>   
                   
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'button' => 'facebook', 
                                     'iconOnly' => false, // set true if only want the icon 
                                     'link' => Url::to(['facebook/index']), // the button URL
-                                    'label'=> 'log in with facebook', // button label
+                                    'label'=> Yii::t('app','singup_with_facebook'), // button label
                                     'class'=>'btn-lg',
                                     ]) ?>                   
                                </div>
@@ -43,7 +43,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     'button' => 'google', 
                                     'iconOnly' => false, // set true if only want the icon 
                                     'link' => '#your-url', // the button URL
-                                    'label'=> 'log in with google', // button label
+                                    'label'=> Yii::t('app','singup_with_google'), // button label
                                     'class'=>'btn-lg',
                                     ]) ?>                   
                                </div>
@@ -54,20 +54,20 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <div class="row">
                                             <div class="col-md-6">
                                                  <?= $form->field($model, 'full_name')->textInput(['autofocus' => true,
-                                                        'placeholder'=>'full Name'])->label(false) ?>
+                                                        'placeholder'=>Yii::t('app','Full_Name')])->label(false) ?>
                                                  <?= $form->field($model, 'email')->textInput(['autofocus' => true,
-                                                        'placeholder'=>'email'])->label(false) ?>                               
+                                                        'placeholder'=>Yii::t('app','Email')])->label(false) ?>                               
                                             </div>
                                             <div class="col-md-6">
                                                  <?= $form->field($model, 'password')->passwordInput([
-                                                        'placeholder'=>'password'])->label(false)  ?>
+                                                        'placeholder'=>Yii::t('app','Password_Hash')])->label(false)  ?>
 
                                                  <?= $form->field($model, 'confirm_password')->passwordInput([
-                                                        'placeholder'=>'confirm password'])->label(false) ?>      
+                                                        'placeholder'=>Yii::t('app','confirm_password')])->label(false) ?>      
                                             </div>
                                          </div>   
                                               <?= $form->field($model, 'about_me')->textArea(['rows' => '6','cols'=>50,
-                                                'placeholder'=>'about me'])->label(false)  ;?>
+                                                'placeholder'=>Yii::t('app','About_Me')])->label(false)  ;?>
                                                 <label for="file">optional</label>
                                               <?= $form->field($model, 'file')->widget(FileInput::classname(), [
                                                     'options' => ['multiple' => false, 'accept' => 'image/*'],
@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                                 ])->label(false);?>
 
                                             <div class="form-group col-md-4">
-                                                <?= Html::submitButton('Signup', ['class' => 'btn btn-primary btn-block', 'name' => 'signup-button']) ?>
+                                                <?= Html::submitButton(Yii::t('app','button_singup'), ['class' => 'btn btn-primary btn-block', 'name' => 'signup-button']) ?>
                                             </div>
                                             
                                         </div>

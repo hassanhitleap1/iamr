@@ -9,6 +9,11 @@ return [
 	'log_in_with_facebook'=>' الدخول بأستخدام الفيسبوك',
 	'log_in_with_google'=>'الدخول بأستخدام جوجل ',
 	'log_in_with_twitter'=>'الدخول بأستخدام تويتر ',
+
+	'singup_with_facebook'=>'تسجيل الدخول بستخدام فيسبوك',
+	'singup_with_google'=>'تسجيل الدخول بستخدام جوجل',
+	'singup_with_twitter'=>'تسجيل الدخول بستخدام تويتر',
+	'button_singup'=>'نسجيل الدخول ',
 	'ID'=>'رقم التعريف',
 	'Full_Name'=>'الاسم بالكامل ',
 	'About_Me'=>'عني ',
@@ -21,4 +26,5 @@ return [
 	'Ref'=>'الأحالة',
 	'Created_At'=>'تاريخ الانشاء',
 	'Updated_At'=>'تاريخ التحديث',
+	'confirm_password'=>'تأكيد رقم السري ',
 ];

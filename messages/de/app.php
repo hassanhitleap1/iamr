@@ -9,6 +9,12 @@ return [
 	'log_in_with_facebook'=>'Mit Facebook einloggen',
 	'log_in_with_google'=>'Mit Google einloggen',
 	'log_in_with_twitter'=>'Mit Twitter einloggen',
+
+	'singup_with_facebook'=>'Melde dich mit Facebook an',
+	'singup_with_google'=>'Melde dich mit Google an ',
+	'singup_with_twitter'=>'Melde dich mit Twitter an ',
+	
+	'button_singup'=>'Anmelden',
 	'ID'=>'ICH WÜRDE',
 	'Full_Name'=>'Vollständiger Name',
 	'About_Me'=>'Über mich',
@@ -21,5 +27,8 @@ return [
 	'Ref'=>'Verweisung',
 	'Created_At'=>'Hergestellt in',
 	'Updated_At'=>'Aktualisiert am',
+	'confirm_password'=>'Bestätige das Passwort
+',
+
 
 ];
