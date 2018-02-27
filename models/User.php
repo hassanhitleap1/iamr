@@ -52,6 +52,27 @@ class User extends ActiveRecord implements IdentityInterface
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
         ];
     }
+
+        /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('app','ID'),
+            'full_name' => Yii::t('app','Full_Name'),
+            'about_me' => Yii::t('app','About_Me'),
+            'image_name' => Yii::t('app','Image_Name'),
+            'auth_key' => Yii::t('app','Auth_Key'),
+            'password_hash' => Yii::t('app','Password_Hash'),
+            'password_reset_token' => Yii::t('app','Password_Reset_Token'),
+            'email' => Yii::t('app','Email'),
+            'status' => Yii::t('app','Status'),
+            'ref' => Yii::t('app','Ref'),
+            'created_at' => Yii::t('app','Created_At'),
+            'updated_at' => Yii::t('app','Updated_At'),
+        ];
+    }
     /**
      * @inheritdoc
      */

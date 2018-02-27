@@ -13,7 +13,7 @@ $this->params['breadcrumbs'][] = $this->title;
      <div class="row">
         <div class="col-md-7 col-md-offset-3">
              <div class="panel panel-primary">
-                <div class="panel-heading">Plaase Signin</div>
+                <div class="panel-heading"><?=Yii::t('app','Plaase-Signin')?></div>
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-4">
@@ -21,20 +21,20 @@ $this->params['breadcrumbs'][] = $this->title;
                           'button' => 'twitter', 
                           'iconOnly' => false, // set true if only want the icon 
                           'link' => '#your-url', // the button URL
-                          'label'=> 'log in with twitter', // button label
+                          'label'=> Yii::t('app','log_in_with_twitter'), // button label
                           'class'=>'btn-lg',
                           ]) ?>
                           <?= \powerkernel\bootstrapsocial\Button::widget([
                           'button' => 'facebook', // Available buttons see https://github.com/lipis/bootstrap-social/
                           'iconOnly' => false, // set true if only want the icon 
                           'link' => '#your-url', // the button URL
-                          'label'=> 'log in with facebook', // button label
+                          'label'=> Yii::t('app','log_in_with_facebook'), // button label
                           ]) ?>
                           <?= \powerkernel\bootstrapsocial\Button::widget([
                           'button' => 'google', // Available buttons see https://github.com/lipis/bootstrap-social/
                           'iconOnly' => false, // set true if only want the icon 
                           'link' => '#your-url', // the button URL
-                          'label'=> 'log in with google', // button label
+                          'label'=>Yii::t('app','log_in_with_google') , // button label
                           ]) ?>                                        
                    
                         </div>
