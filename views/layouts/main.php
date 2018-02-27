@@ -36,11 +36,11 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => Yii::t('app','Home'), 'url' => ['/site/index']],
-        ['label' => 'Why 300 Doller', 'url' => ['/site/why-300-doller']],
+        ['label' => Yii::t('app','why-300-doller'), 'url' => ['/site/why-300-doller']],
     ];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        $menuItems[] = ['label' => Yii::t('app','signup'), 'url' => ['/site/signup']];
+        $menuItems[] = ['label' => Yii::t('app','login'), 'url' => ['/site/login']];
     } else {
         $menuItems[] = [
             'label' => 'profile',

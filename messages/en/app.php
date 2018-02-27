@@ -1,5 +1,8 @@
 <?php
 
 return [
-	'Home'=>'Home'
+	'Home'=>'Home',
+	'why-300-doller'=>'why 300 doller',
+	'signup'=>'signup',
+	'login'=>'Login',
 ];
