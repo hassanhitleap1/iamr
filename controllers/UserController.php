@@ -82,6 +82,23 @@ class UserController extends Controller
         
     }
 
+    /**
+     * edit profile 
+     */
+    public function actionEdit(){
+
+        $model=$this->findModel(Yii::$app->user->id);
+
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['site/profile']);
+        } else {
+            return $this->render('edit', [
+                'model' => $model,
+            ]);
+        }
+    }
+
 
         /**
      * Finds the Ads model based on its primary key value.

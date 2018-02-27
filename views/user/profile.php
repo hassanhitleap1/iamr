@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-profile">
     <div class="row">
     <p>
-        <?= Html::a('Update profile', ['Edit Profile'], ['class' => 'btn btn-success pull-right']) ?>
+        <?= Html::a('Update profile', ['edit'], ['class' => 'btn btn-success pull-right']) ?>
     </p>
                     <div class="col-sm-6 col-md-4">
                         <img src="<?= Yii::$app->request->baseUrl.'/'.$user->image_name?>" alt="" class="img-rounded img-responsive" />
