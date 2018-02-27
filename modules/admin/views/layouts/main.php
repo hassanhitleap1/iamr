@@ -40,14 +40,15 @@ AppAsset::register($this);
     ]);
     
     if (Yii::$app->admin->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['default/login']];
-    } else {
+        //$menuItems[] = ['label' => 'Login', 'url' => ['default/login']];
         $menuItems = [
             ['label' => 'Home', 'url' => ['default/index']],
             ['label' => 'User', 'url' => ['user/index']],
             ['label' => 'Pages', 'url' => ['page/index']],
             ['label' => 'Translations', 'url' => ['translation/index']],
             ];
+    } else {
+
         $menuItems[] =   ['label' => 'Profile',
         'items' => [
             [
