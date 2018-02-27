@@ -57,6 +57,7 @@ class DefaultController extends Controller
      */
     public function actionLogin()
     {
+        
         if (!Yii::$app->user->isGuest) {
             return $this->render('index');
         }
@@ -77,7 +78,7 @@ class DefaultController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->user->logout();
+        Yii::$app->admin->logout();
         return $this->render('index');
     }
     /**
