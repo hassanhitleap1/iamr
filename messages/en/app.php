@@ -37,4 +37,5 @@ return [
 	'value'=>'value',
 	'full_address'=>'full address',
 	'Request'=>'Request',
+	'Your_Balance' => 'Your Balance',
 ];

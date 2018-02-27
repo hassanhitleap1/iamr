@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="user-referral">
     <div class="row">
         <div class="col-md-6">
-        <h2>Your Balance </h1>
+        <h2> <?= Yii::t('app', 'Your_Balance');?> </h1>
         <span class="glyphicon glyphicon-usd gi-lg"> <?= $balance->balance?></span>
         </div>
         <div class="col-md-6">

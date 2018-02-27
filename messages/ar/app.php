@@ -35,5 +35,6 @@ return [
 	'confirm_password'=>'تأكيد رقم السري ',
 	'value'=>'القيمة',
 	'full_address'=>'العنوان بالكامل ',
-	'Request'=>'طلب',	
+	'Request'=>'طلب',
+	'Your_Balance'=>'رصيدك',	
 ];
