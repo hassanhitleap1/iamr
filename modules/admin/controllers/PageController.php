@@ -3,7 +3,7 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\admin\Page;
+use app\models\Page;
 use app\models\admin\PageSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -105,7 +105,7 @@ class PageController extends Controller
 
         return $this->redirect(['index']);
     }
-            /**
+                /**
      * upload image 
      */
     public  function  actionUploadfile(){

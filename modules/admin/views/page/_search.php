@@ -17,11 +17,27 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'id') ?>
 
-    <?= $form->field($model, 'tite') ?>
+    <?= $form->field($model, 'title_en') ?>
 
-    <?= $form->field($model, 'disc') ?>
+    <?= $form->field($model, 'title_de') ?>
 
-    <?= $form->field($model, 'key_page') ?>
+    <?= $form->field($model, 'title_fr') ?>
+
+    <?= $form->field($model, 'title_it') ?>
+
+    <?php // echo $form->field($model, 'title_ar') ?>
+
+    <?php // echo $form->field($model, 'description_en') ?>
+
+    <?php // echo $form->field($model, 'description_de') ?>
+
+    <?php // echo $form->field($model, 'description_fr') ?>
+
+    <?php // echo $form->field($model, 'description_it') ?>
+
+    <?php // echo $form->field($model, 'description_ar') ?>
+
+    <?php // echo $form->field($model, 'key_page') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

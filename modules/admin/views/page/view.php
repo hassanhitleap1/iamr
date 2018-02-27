@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\models\admin\Page */
+/* @var $model app\models\Page */
 
 $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => 'Pages', 'url' => ['index']];
@@ -29,8 +29,16 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'tite',
-            'disc:ntext',
+            'title_en',
+            'title_de',
+            'title_fr',
+            'title_it',
+            'title_ar',
+            'description_en:ntext',
+            'description_de:ntext',
+            'description_fr:ntext',
+            'description_it:ntext',
+            'description_ar:ntext',
             'key_page',
         ],
     ]) ?>
