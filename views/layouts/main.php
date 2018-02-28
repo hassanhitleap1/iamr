@@ -49,14 +49,13 @@ AppAsset::register($this);
                 '<li class="divider"></li>',
                 ['label' => Yii::t('app','Referral'), 'url' => ['/user/referral']],
                 ['label' =>  Yii::t('app','Payment_Request'), 'url' => ['/payment-request/index']],
-           ],
-        ]; 
-          $menuItems[] = [
+                 [
                         'label' =>Yii::t('app','Logout') .' (' . Yii::$app->user->identity->email . ')',
                         'url' => ['/site/logout'],
                         'linkOptions' => ['data-method' => 'post']
-                    ];
-      
+                ]
+           ],
+        ];       
 
     }
       $menuItems[]= [

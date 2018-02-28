@@ -22,9 +22,6 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'JKNtnoyn?j29!$ndssPPJNM.==HIS',
         ],
-        'admin'=>[
-            
-        ],
          'i18n' => [
                 'translations' => [
                     'app*' => [
@@ -47,10 +44,9 @@ $config = [
             'enableSession' => true,
         ],
         'admin' => [
+            'class' => 'yii\web\User',
             'identityClass' => 'app\models\admin\Admin',
-            'class' => 'app\components\Admin',
-            'enableAutoLogin' => false,
-            'enableSession' => true,
+            'enableAutoLogin' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
