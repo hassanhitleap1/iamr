@@ -95,16 +95,21 @@ class UserController extends Controller
             $model =new EditForm;
     
         if ($model->load(Yii::$app->request->post()) ) {
-            if(!empty($model->file)){
-             $model->file = UploadedFile::getInstance($model, 'file');
-            $model->file->saveAs('image/' . $model->file->baseName . '.' . $model->file->extension);
-            $model->image_name='image/' . $model->file->baseName . '.' . $model->file->extension;
-            die "dsds";
+            $model->file = UploadedFile::getInstance($model, 'file');
+             
 
-            // if($model->save()){
-            //  return $this->redirect(['site/profile']);
-            // }
+            if(!empty($model->file)){
+                
+                $model->file->saveAs('image/' . $model->file->baseName . 
+                    '.' . $model->file->extension);
+                $model->image_name='image/' . $model->file->baseName . 
+                '.' . $model->file->extension;
+                
+            if($model->save()){
+             return $this->redirect(['site/profile']);
             }
+            }
+
         } 
 
            return $this->render('edit', [
