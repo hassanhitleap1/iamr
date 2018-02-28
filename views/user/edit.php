@@ -28,7 +28,7 @@ use yii\web\UploadedFile;
             'options' => ['multiple' => false, 'accept' => 'image/*'],
             'pluginOptions' => [
                        'initialPreview'=>[
-                        Html::img($user->image_name),
+                        Html::img($user->image_name,['class'=>'image-edit']),
                 ],
                 'previewFileType' => 'image',
                 'showUpload' => false,
