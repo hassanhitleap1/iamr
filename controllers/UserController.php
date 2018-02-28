@@ -104,10 +104,9 @@ class UserController extends Controller
                     '.' . $model->file->extension);
                 $model->image_name='image/' . $model->file->baseName . 
                 '.' . $model->file->extension;
-                
-            if($model->save()){
-             return $this->redirect(['site/profile']);
             }
+            if ($model->save()) {
+                return $this->redirect(['site/profile']);
             }
 
         } 
