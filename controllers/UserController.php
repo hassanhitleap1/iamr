@@ -2,13 +2,16 @@
 
 namespace app\controllers;
 use Yii;
-use yii\filters\AccessControl;
-use yii\web\Controller;
-use yii\filters\VerbFilter;
-use app\models\User;
-use yii\web\NotFoundHttpException;
 use app\models\Balance;
+use app\models\EditForm;
 use app\models\ReferralCode;
+use app\models\User;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\web\UploadedFile;
+
 class UserController extends Controller
 {
     /**
@@ -86,17 +89,31 @@ class UserController extends Controller
      * edit profile 
      */
     public function actionEdit(){
+            $id = Yii::$app->user->id;
 
-        $model=$this->findModel(Yii::$app->user->id);
+            $user = $this->findModel($id);
+            $model =new EditForm;
+    
+        if ($model->load(Yii::$app->request->post()) ) {
+            if(!empty($model->file)){
+             $model->file = UploadedFile::getInstance($model, 'file');
+            $model->file->saveAs('image/' . $model->file->baseName . '.' . $model->file->extension);
+            $model->image_name='image/' . $model->file->baseName . '.' . $model->file->extension;
+            die "dsds";
 
+            // if($model->save()){
+            //  return $this->redirect(['site/profile']);
+            // }
+            }
+        } 
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['site/profile']);
-        } else {
-            return $this->render('edit', [
+           return $this->render('edit', [
                 'model' => $model,
+                'user'=>$user,
             ]);
-        }
+        // else {
+         
+        // }
     }
 
 
@@ -110,6 +127,22 @@ class UserController extends Controller
     protected function findModel($id)
     {
         if (($model = User::findOne($id)) !== null) {
+            return $model;
+        }
+
+        throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+            /**
+     * Finds the Ads model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Ads the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModelEdit($id)
+    {
+        if (($model = EditForm::findOne($id)) !== null) {
             return $model;
         }
 
