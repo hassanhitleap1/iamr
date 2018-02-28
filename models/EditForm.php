@@ -6,7 +6,7 @@ use yii\base\Model;
 /**
  * Signup form
  */
-class EditForm extends User
+class EditForm extends Model
 {
 
     public $full_name;

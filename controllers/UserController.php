@@ -102,11 +102,15 @@ class UserController extends Controller
                 
                 $model->file->saveAs('image/' . $model->file->baseName . 
                     '.' . $model->file->extension);
-                $model->image_name='image/' . $model->file->baseName . 
-                '.' . $model->file->extension;
+                $user->image_name = 'image/' . $model->file->baseName .
+                    '.' . $model->file->extension;
             }
-            if ($model->save()) {
-                return $this->redirect(['site/profile']);
+            if ($model->validate()) {
+                $user->full_name=$model->full_name;
+                $user->about_me = $model->about_me;
+                $user->save();
+
+                return $this->redirect(['user/profile']);
             }
 
         } 
