@@ -6,12 +6,12 @@ namespace app\modules\admin\controllers;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\models\admin\LoginForm;
 use app\models\User;
 use app\models\InfoDevice;
+use app\modules\admin\controllers\BaseController;
 //use frontend\models\PasswordResetRequestForm;
 // use frontend\models\ResetPasswordForm;
 // use frontend\models\SignupForm;
@@ -19,7 +19,7 @@ use app\models\InfoDevice;
 /**
  * Site controller
  */
-class DefaultController extends Controller
+class DefaultController extends BaseController
 {
 
 
@@ -31,7 +31,7 @@ class DefaultController extends Controller
     public function actionIndex()
     {
         $avtiveCountUser =count (User::find()->active()->asArray()->all());
-       $disAvtiveCountUser = count(User::find()->disActive()->asArray()->all());
+        $disAvtiveCountUser = count(User::find()->disActive()->asArray()->all());
         $avtiveUser = User::find()->active()->asArray()->all();
         $disAvtiveUser = User::find()->disActive()->asArray()->all();
         $topContry= InfoDevice::countContry();
