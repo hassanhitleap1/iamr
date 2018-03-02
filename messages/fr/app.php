@@ -40,6 +40,6 @@ return [
 	'Your_Balance'=>'Votre solde',
 	'the_address_is_unknown' => "L'adresse est inconnue",
 	'Country' => 'Pays',
-	'address_like' => 'france - Paris - street. name street ',
+	'address_like' => 'france -  Name of province - city name - street. name street ',
 
 ];
