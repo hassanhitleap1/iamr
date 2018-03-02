@@ -64,12 +64,12 @@ class PaymentRequest extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'value' => Yii::t('app','Value'),
+            'value' => Yii::t('app','value'),
             'user_id' => Yii::t('app','User_ID'),
             'paypal' => Yii::t('app','Paypal'),
-            'western_union_full_name' =>  Yii::t('app','Full_Name'),
+            'western_union_full_name' =>  Yii::t('app', 'Full_Name'),
             'country' =>  Yii::t('app','Country'),
-            'full_address' =>  Yii::t('app','Full_Address'),
+            'full_address' =>  Yii::t('app', 'Full_address'),
             'accept' =>  Yii::t('app','Accept'),
         ];
     }

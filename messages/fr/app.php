@@ -35,9 +35,11 @@ return [
 	'Updated_At'=>'Mis à jour à',
 	'confirm_password'=>'Confirmez le mot de passe',
 	'value'=>'valeur',
-	'full_address'=>'adresse complète',
+	'Full_address'=>'adresse complète',
 	'Request'=>'Demande',
 	'Your_Balance'=>'Votre solde',
 	'the_address_is_unknown' => "L'adresse est inconnue",
+	'Country' => 'Pays',
+	'address_like' => 'france - Paris - street. name street ',
 
 ];

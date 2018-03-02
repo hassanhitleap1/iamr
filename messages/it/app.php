@@ -34,8 +34,10 @@ return [
 	'Updated_At'=>'Aggiornato a',
 	'confirm_password'=>'conferma password',
 	'value'=>'valore',
-	'full_address'=>'indirizzo completo',
+	'Full_address'=>'indirizzo completo',
 	'Request'=>'Richiesta',
 	'Your_Balance'=>'Il tuo bilancio',
 	'the_address_is_unknown' => "L'indirizzo è sconosciuto",
+	'Country' => 'Nazione',
+	'address_like' => 'Italy - Name of province - city name - street. name street ',
 ];

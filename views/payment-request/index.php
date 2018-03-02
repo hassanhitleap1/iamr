@@ -36,15 +36,15 @@ $this->title="payment-request";
 
                             <?= $form->field($model, 'value')->textInput(['placeholder'=>'1.00']) ?>
                              <hr> 
-                            <p class="message-payment-form"> if you wont paypal please just fill paypal filed</p>  
+                            <!-- <p class="message-payment-form"> if you wont paypal please just fill paypal filed</p>   -->
                             <?= $form->field($model, 'paypal')->textInput(['id' => 'input-paypal','maxlength' => true]) ?>
                             <hr>
-                            <p class="message-payment-form"> if you wont Western Union  please just fill  </p> 
+                            <!-- <p class="message-payment-form"> if you wont Western Union  please just fill  </p>  -->
                             <?= $form->field($model, 'western_union_full_name')->textInput(['id' => 'input-western-union','maxlength' => true ]) ?>
 
                             <?= $form->field($model, 'country')->textInput(['maxlength' => true]) ?>
                             
-                            <?= $form->field($model, 'full_address')->textInput(['maxlength' => true, 'placeholder'=>'address like  UK-lundon-amman']) ?>
+                            <?= $form->field($model, 'full_address')->textInput(['maxlength' => true, 'placeholder'=>Yii::t('app', 'address_like')]) ?>
 
                             <div class="form-group">
                                 <?= Html::submitButton( Yii::t('app','Request') , ['class' =>  'btn btn-primary']) ?>
@@ -62,17 +62,18 @@ $this->title="payment-request";
 $script = <<< JS
 $(document).ready(function(){
     
-    $( "#input-paypal" ).prop( "disabled", true );
-    $( "#input-western-union" ).prop( "disabled", false );
+    $( "#input-paypal" ).prop( "disabled", false );
+    $( "#input-western-union" ).prop( "disabled", true );
     $('[name=optradio]').click(function(){
        if ($('#paypal').is(":checked"))
         {
             $( "#input-paypal" ).prop( "disabled", false );
             $( "#input-western-union" ).prop( "disabled", true );
-        }else{
+        }
+        if ($('#western-union').is(":checked"))
+        {
             $( "#input-paypal" ).prop( "disabled", true );
             $( "#input-western-union" ).prop( "disabled", false );
-  
         }
       
 

@@ -35,9 +35,11 @@ return [
 	'Updated_At'=>'Updated_At',
 	'confirm_password'=>'confirm password',
 	'value'=>'value',
-	'full_address'=>'full address',
+	'Full_address'=>'full address',
 	'Request'=>'Request',
 	'Your_Balance'=>'Your Balance',
 	'the_address_is_unknown' => 'The address is unknown',
+	'Country' => 'Country',
+	'address_like' => 'USA - Name of province - city name - street. name street',
 ];
 

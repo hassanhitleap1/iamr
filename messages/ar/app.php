@@ -34,9 +34,10 @@ return [
 	'Updated_At'=>'تاريخ التحديث',
 	'confirm_password'=>'تأكيد رقم السري ',
 	'value'=>'القيمة',
-	'full_address'=>'العنوان بالكامل ',
+	'Full_address'=>'العنوان بالكامل ',
 	'Request'=>'طلب',
 	'Your_Balance'=>'رصيدك',
 	'the_address_is_unknown'=>'العنوان غير معروف',
-		
+	'Country'=>'الدولة',
+	'address_like'=> 'Saudi - Name of province - city name - street. name street',
 ];

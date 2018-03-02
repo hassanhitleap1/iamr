@@ -35,9 +35,11 @@ return [
 	'Updated_At'=>'Aktualisiert am',
 	'confirm_password'=>'Bestätige das Passwort',
 	'value'=>'Wert',
-	'full_address'=>'vollständige Adresse',
+	'Full_address'=>'vollständige Adresse',
 	'Request'=>'Anfordern',
 	'Your_Balance'=>'Dein Kontostand',
 	'the_address_is_unknown' => 'Die Adresse ist unbekannt',
+	'Country' => 'Land',
+	'address_like' => 'Germany - Name of province - city name - street. name street',
 
 ];
