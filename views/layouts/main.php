@@ -16,7 +16,8 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
+<?php $dir = Yii::$app->language=='ar'? 'rtl' : 'ltr' ?>
+<html lang="<?= Yii::$app->language ?>" dir= <?= $dir ?> >
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

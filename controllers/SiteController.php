@@ -17,6 +17,7 @@ use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
+use app\models\Page;
 
 class SiteController extends BaseController
 {
@@ -123,7 +124,11 @@ class SiteController extends BaseController
      */
     public function actionWhy300Doller()
     {
-        return $this->render('why-300-doller');
+        $model= Page::find()->where(['key_page'=> 'page_why'])->one();
+        return $this->render('why-300-doller',[
+            'model'=> $model,
+        ]
+        );
     }
 
 
