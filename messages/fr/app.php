@@ -38,5 +38,6 @@ return [
 	'full_address'=>'adresse complète',
 	'Request'=>'Demande',
 	'Your_Balance'=>'Votre solde',
+	'the_address_is_unknown' => "L'adresse est inconnue",
 
 ];

@@ -37,5 +37,6 @@ return [
 	'full_address'=>'العنوان بالكامل ',
 	'Request'=>'طلب',
 	'Your_Balance'=>'رصيدك',
+	'the_address_is_unknown'=>'العنوان غير معروف',
 		
 ];

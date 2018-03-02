@@ -38,5 +38,6 @@ return [
 	'full_address'=>'vollständige Adresse',
 	'Request'=>'Anfordern',
 	'Your_Balance'=>'Dein Kontostand',
+	'the_address_is_unknown' => 'Die Adresse ist unbekannt',
 
 ];

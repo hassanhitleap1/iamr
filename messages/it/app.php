@@ -37,4 +37,5 @@ return [
 	'full_address'=>'indirizzo completo',
 	'Request'=>'Richiesta',
 	'Your_Balance'=>'Il tuo bilancio',
+	'the_address_is_unknown' => "L'indirizzo è sconosciuto",
 ];

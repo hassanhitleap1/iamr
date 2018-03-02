@@ -38,4 +38,6 @@ return [
 	'full_address'=>'full address',
 	'Request'=>'Request',
 	'Your_Balance'=>'Your Balance',
+	'the_address_is_unknown' => 'The address is unknown',
 ];
+
