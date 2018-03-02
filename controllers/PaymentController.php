@@ -23,9 +23,11 @@ use app\models\User;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
+use app\controllers\BaseController;
 
 
-class PaymentController extends Controller
+
+class PaymentController extends BaseController
 {
 
     /**

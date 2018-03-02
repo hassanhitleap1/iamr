@@ -5,9 +5,10 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use Abraham\TwitterOAuth\TwitterOAuth;
+use app\controllers\BaseController;
 
 
-class TwitterController extends Controller
+class TwitterController extends BaseController
 {
     public function actionIndex(){
 

@@ -8,11 +8,12 @@ use app\models\admin\PaymentRequestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\controllers\BaseController;
 
 /**
  * PaymentRequestController implements the CRUD actions for PaymentRequest model.
  */
-class PaymentRequestController extends Controller
+class PaymentRequestController extends BaseController
 {
     /**
      * @inheritdoc

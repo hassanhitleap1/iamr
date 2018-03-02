@@ -5,10 +5,10 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use Facebook\Facebook;
+use app\controllers\BaseController;
 
 
-
-class FacebookController extends Controller
+class FacebookController extends BaseController
 {
 
     private $fb;

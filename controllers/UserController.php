@@ -11,8 +11,9 @@ use yii\filters\VerbFilter;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
+use app\controllers\BaseController;
 
-class UserController extends Controller
+class UserController extends BaseController
 {
     /**
      * @inheritdoc
