@@ -33,7 +33,7 @@ $this->title="payment-request";
                             </div>
                         </div>
                             <?php $form = ActiveForm::begin(); ?>
-
+                            <label><?=Yii::t('app', 'maximum_withdrawal_of_money') ." ( ". $balance . " ) " ?> </label>
                             <?= $form->field($model, 'value')->textInput(['placeholder'=>'1.00']) ?>
                              <hr> 
                             <!-- <p class="message-payment-form"> if you wont paypal please just fill paypal filed</p>   -->

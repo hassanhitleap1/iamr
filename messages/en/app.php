@@ -41,5 +41,6 @@ return [
 	'the_address_is_unknown' => 'The address is unknown',
 	'Country' => 'Country',
 	'address_like' => 'USA - Name of province - city name - street. name street',
+	'maximum_withdrawal_of_money' => 'Maximum withdrawal of money',
 ];
 

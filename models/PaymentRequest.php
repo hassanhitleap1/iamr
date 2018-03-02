@@ -35,6 +35,7 @@ class PaymentRequest extends \yii\db\ActiveRecord
     {
         return [
             [['value',  'country', 'full_address'], 'required'],
+            [['value'],'validateHaveBlance'],
             [['value'], 'number'],
             [['user_id', 'accept'], 'integer'],
             [['paypal'], 'string', 'max' => 50],
@@ -51,6 +52,17 @@ class PaymentRequest extends \yii\db\ActiveRecord
     
         if (empty($this->paypal) and empty($this->western_union_full_name)) {
             $this->addError($attribute, "must be fill paypal or western union full name ");
+            return false;
+        }
+
+        return true;
+    }
+
+    public function validateHaveBlance($attribute, $params)
+    {
+
+        if ($this->value > Yii::$app->user->identity->balance->balance ) {
+            $this->addError($attribute, Yii::t('app', 'maximum_withdrawal_of_money') . " (". Yii::$app->user->identity->balance->balance . " )" );
             return false;
         }
 

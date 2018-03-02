@@ -40,4 +40,5 @@ return [
 	'the_address_is_unknown' => "L'indirizzo è sconosciuto",
 	'Country' => 'Nazione',
 	'address_like' => 'Italy - Name of province - city name - street. name street ',
+	'maximum_withdrawal_of_money'=> 'Massimo prelievo di denaro',
 ];

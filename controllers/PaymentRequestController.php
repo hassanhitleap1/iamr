@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\controllers\BaseController;
 
+
 /**
  * PaymentRequestController implements the CRUD actions for PaymentRequest model.
  */
@@ -49,7 +50,17 @@ class PaymentRequestController extends BaseController
             }
            
         } 
-            return $this->render('index',['model'=>$model]);
+            if(Yii::$app->user->identity->balance !==null && Yii::$app->user->identity->balance->balance>0) {
+             return $this->render('index', ['model' => $model,
+             'balance'=>Yii::$app->user->identity->balance->balance,
+            ]);
+
+            }else {
+                throw new  \yii\web\NotFoundHttpException("can not requst pay becous don ont have maonty", 1);
+                
+            }
+        
+       
         
     }
 
