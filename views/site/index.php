@@ -15,7 +15,7 @@ $this->title = 'I AM RIACH';
                         <h4 class="card-title"><?= $user->full_name?></h4>
                         <p class="card-text"><?=  substr($user->about_me,0,40)?></p><a
                          href=<?=Yii::$app->request->baseUrl."/index.php/?r=site/view&id=$user->id"?> class="nav-toggle">Read More</a>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <p class="card-text"><small class="text-muted"><?= $user->created_at?></small></p>
                     </div>
             </div>
         </div>

@@ -42,5 +42,6 @@ return [
 	'Country' => 'Country',
 	'address_like' => 'USA - Name of province - city name - street. name street',
 	'maximum_withdrawal_of_money' => 'Maximum withdrawal of money',
+	'message_get_referral' => 'to get referral must be pay (donation) to the site and show your information for the world',
 ];
 

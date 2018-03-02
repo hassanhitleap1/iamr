@@ -119,7 +119,7 @@ AppAsset::register($this);
         <?php if(! Yii::$app->user->isGuest):?>
             <?php if(! Yii::$app->user->identity->status):?>
                     <div class="alert alert-info">
-                        <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['site/payment']);?> >to get referral must be pay (donation) to the site and show your information for the world  </a>
+                        <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['site/payment']);?> ><?= Yii::t('app','message_get_referral')?>  </a>
                     </div>
             <?php endif;?> 
         <?php endif;?> 

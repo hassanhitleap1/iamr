@@ -42,5 +42,6 @@ return [
 	'Country' => 'Pays',
 	'address_like' => 'france -  Name of province - city name - street. name street ',
 	'maximum_withdrawal_of_money' => "Retrait maximal d'argent",
+	'message_get_referral' => 'pour être référé, il faut payer (faire un don) sur le site et montrer vos informations pour le monde entier',
 
 ];

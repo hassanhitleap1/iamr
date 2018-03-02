@@ -41,4 +41,5 @@ return [
 	'Country' => 'Nazione',
 	'address_like' => 'Italy - Name of province - city name - street. name street ',
 	'maximum_withdrawal_of_money'=> 'Massimo prelievo di denaro',
+	'message_get_referral'=> 'per ottenere referenze deve essere pagato (donazione) al sito e mostrare le tue informazioni per il mondo',
 ];

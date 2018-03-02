@@ -41,4 +41,5 @@ return [
 	'Country'=>'الدولة',
 	'address_like'=> 'Saudi - Name of province - city name - street. name street',
 	'maximum_withdrawal_of_money' => 'الحد الأقصى لسحب الأموال',
+	'message_get_referral' => 'للحصول على الإحالة يجب أن تدفع (التبرع) إلى الموقع وتظهر المعلومات الخاصة بك للعالم',
 ];
