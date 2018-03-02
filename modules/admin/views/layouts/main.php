@@ -48,6 +48,7 @@ AppAsset::register($this);
             ['label' => 'User', 'url' => ['user/index']],
             ['label' => 'Pages', 'url' => ['page/index']],
             ['label' => 'Translations', 'url' => ['translation/index']],
+            ['label' => 'Payment Request', 'url' => ['payment-request/index']],
 
         ];
         $menuItems[] =   ['label' => 'Profile',

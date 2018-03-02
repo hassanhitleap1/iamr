@@ -61,7 +61,7 @@ class PaymentRequestController extends Controller
         $model = $this->findModel($id);
         if (!$model->accept) {
             $model->accept = PaymentRequest::ACCPET_PAYMENT;
-            $model->save();
+            $model->save(false);
         } 
      
         return $this->redirect(['index']);
