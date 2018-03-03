@@ -29,14 +29,15 @@ class PaymentRequestController extends BaseController
                 'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['index', 'alarm', 'error'],                        'allow' => true,
+                        'actions' => ['signup', 'login', 'requestPasswordReset'],
+                        'allow' => true,
                         'roles' => ['?'],
                         'denyCallback' => function ($rule, $action) {
                             return $this->goBack();
                         },
                     ],
                     [
-                        'actions' => ['index','alarm'],
+                        'actions' => ['index'],
                         'allow' => true,
                         'roles' => ['@'],
                         'denyCallback' => function ($rule, $action) {
