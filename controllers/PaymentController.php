@@ -24,13 +24,56 @@ use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\Response;
 use app\controllers\BaseController;
+use yii\filters\VerbFilter;
 
 
 
 class PaymentController extends BaseController
 {
 
-    
+
+
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['index', 'success', 'error'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->goBack();
+                        },
+                    ],
+                    [
+                        'actions' => [''],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return \Yii::$app->getUser()->loginRequired();
+                        },
+                    ],
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->goHome();
+                        },
+                    ],
+                ],
+
+            ],
+        ];
+    }
     /**
      * Displays homepage.
      *

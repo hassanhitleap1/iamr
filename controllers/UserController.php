@@ -29,7 +29,7 @@ class UserController extends BaseController
                 'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['profile', 'referral', 'edit'],
+                        'actions' => ['profile', 'referral', 'edit', 'alarm'],
                         'allow' => true,
                         'roles' => ['@'],
                         'denyCallback' => function ($rule, $action) {
@@ -132,7 +132,9 @@ class UserController extends BaseController
         // }
     }
 
-
+    public function actionAlarm(){
+        return $this->render('alarm');
+    }
         /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

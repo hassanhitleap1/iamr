@@ -29,15 +29,14 @@ class PaymentRequestController extends BaseController
                 'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['signup', 'login', 'requestPasswordReset'],
-                        'allow' => true,
+                        'actions' => ['index', 'alarm', 'error'],                        'allow' => true,
                         'roles' => ['?'],
                         'denyCallback' => function ($rule, $action) {
                             return $this->goBack();
                         },
                     ],
                     [
-                        'actions' => ['index'],
+                        'actions' => ['index','alarm'],
                         'allow' => true,
                         'roles' => ['@'],
                         'denyCallback' => function ($rule, $action) {
@@ -83,11 +82,11 @@ class PaymentRequestController extends BaseController
             ]);
 
             }else {
-                throw new  \yii\web\NotFoundHttpException("can not requst pay becous don ont have maonty", 1);
+                return $this->redirect(['user/alarm']);
                 
             }
-        
-       
+            
+            
         
     }
 
@@ -103,4 +102,5 @@ class PaymentRequestController extends BaseController
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 }
