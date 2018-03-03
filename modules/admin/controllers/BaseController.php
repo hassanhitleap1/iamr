@@ -8,57 +8,29 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
-//use frontend\models\PasswordResetRequestForm;
-// use frontend\models\ResetPasswordForm;
-// use frontend\models\SignupForm;
-// use frontend\models\ContactForm;
 /**
  * base controller
  */
 class BaseController extends Controller
 {
 
-    
-    public function behaviors()
+
+
+    public function beforeAction($action)
     {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['post'],
-                ],
-            ],
-            'access' => [
-                'class' => \yii\filters\AccessControl::className(),
-                'rules' => [
-                    [
-                        'actions' => ['signup', 'login'],
-                        'allow' => true,
-                        'roles' => ['?'],
-                        'denyCallback' => function ($rule, $action) {
-                            //return $this->redirect(['defualt/login']);
-                        },
-                    ],
-                    [
-                        'actions' => ['index'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                        'denyCallback' => function ($rule, $action) {
-                            return \Yii::$app->getAdmin()->loginRequired();
-                        },
-                    ],
-                    [
-                        'actions' => ['logout'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                        'denyCallback' => function ($rule, $action) {
-                          //  return $this->redirect(['defualt/login']);
-                        },
-                    ],
-                ],
-  
-            ],
-        ];
+    // your custom code here, if you want the code to run before action filters,
+    // which are triggered on the [[EVENT_BEFORE_ACTION]] event, e.g. PageCache or AccessControl
+
+        if (!parent::beforeAction($action)) {
+            return false;
+        }
+        if (Yii::$app->admin->isGuest) {
+           if ($action->id != "login"){
+                return $this->redirect(['default/login']);
+           }
+          
+        }   
+        return true;
     }
   
 }
