@@ -15,44 +15,51 @@ use app\controllers\BaseController;
 
 class UserController extends BaseController
 {
-    /**
-     * @inheritdoc
-     */
+
     public function behaviors()
     {
         return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
             'access' => [
-                'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
+                    [
+                        'actions' => ['profile', 'referral', 'edit'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->goBack();
+                        },
+                    ],
+                    [
+                        'actions' => [''],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return \Yii::$app->getUser()->loginRequired();
+                        },
+                    ],
                     [
                         'actions' => ['logout'],
                         'allow' => true,
                         'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->goHome();
+                        },
                     ],
                 ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'logout' => ['post'],
-                ],
+
             ],
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
-            ],
-        ];
-    }
-        /**
+    /** 
+        
      * Displays homepage.
      *
      * @return string

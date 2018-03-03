@@ -16,17 +16,44 @@ use app\controllers\BaseController;
  */
 class PaymentRequestController extends BaseController
 {
-    /**
-     * @inheritdoc
-     */
     public function behaviors()
     {
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['post'],
                 ],
+            ],
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['signup', 'login', 'requestPasswordReset'],
+                        'allow' => true,
+                        'roles' => ['?'],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->goBack();
+                        },
+                    ],
+                    [
+                        'actions' => ['index'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return \Yii::$app->getUser()->loginRequired();
+                        },
+                    ],
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                        'denyCallback' => function ($rule, $action) {
+                            return $this->goHome();
+                        },
+                    ],
+                ],
+
             ],
         ];
     }
