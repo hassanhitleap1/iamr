@@ -7,27 +7,14 @@ use app\models\PaymentRequest;
 use app\models\admin\PaymentRequestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
+use app\modules\admin\controllers\BaseController;
 
 /**
  * PaymentRequestController implements the CRUD actions for PaymentRequest model.
  */
-class PaymentRequestController extends Controller
+class PaymentRequestController extends BaseController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+    
 
     /**
      * Lists all PaymentRequest models.

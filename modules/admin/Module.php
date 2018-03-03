@@ -16,6 +16,32 @@ class Module extends \yii\base\Module
             /**
          * {@inheritdoc}
          */
+
+    public function behaviors()
+    {
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+            'access' => [
+                'class' => \yii\filters\AccessControl::className(),
+                'only' => ['login', 'logout'],
+                'rules' => [
+                            // allow authenticated users
+                    [
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],      // everything else is denied
+                ],
+                'denyCallback' => function () {
+                    return Yii::$app->response->redirect(['admin/default/login']);
+                },
+            ],
+        ];
+    }
    
     /**
      * @inheritdoc

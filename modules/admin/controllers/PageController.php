@@ -5,29 +5,17 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Page;
 use app\models\admin\PageSearch;
-use yii\web\Controller;
+use app\modules\admin\controllers\BaseController;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\Url;
 /**
  * PageController implements the CRUD actions for Page model.
  */
-class PageController extends Controller
+class PageController extends BaseController
+
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+  
 
     /**
      * Lists all Page models.

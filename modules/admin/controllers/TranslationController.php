@@ -8,26 +8,14 @@ use app\models\admin\TranslationSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\admin\controllers\BaseController;
 
 /**
  * TranslationController implements the CRUD actions for Translation model.
  */
-class TranslationController extends Controller
+class TranslationController extends BaseController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
+
 
     /**
      * Lists all Translation models.
