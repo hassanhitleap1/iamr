@@ -186,6 +186,15 @@ class SiteController extends BaseController
         return $this->render('view',['user'=>$user]);
     }
 
+    /**
+     * Logout action.
+     *
+     * @return Response
+     */
+    public function actionFreq()
+    {
+        return $this->render('freq');
+    }
 
 
             /**
