@@ -7,14 +7,15 @@ use yii\helpers\Html;
 $this->title = 'Frq';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<p data-toggle="collapse" data-target="#demo" style="color:blue; word-wrap: break-word;" >Collapsibl CollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsiblee</p>
-
-<div id="demo" class="collapse">
-Lorem ipsum dolor text....
+<?php $id=1;
+ foreach ($freqs as $freq) : ?>
+<p data-toggle="collapse" data-target="#<?= $freq->id_html ?>" 
+style="color:blue; word-wrap: break-word;" >
+<?= $id." . ".$freq['prg_' . Yii::$app->language];?>
+</p>
+<div id="<?= $freq->id_html ?>" class="collapse">
+<?= $freq['collapse_' . Yii::$app->language]; ?>
+<?php $id+=1;?>
 </div>
 <hr>
-<p data-toggle="collapse" data-target="#demo2" style="color:blue;word-wrap: break-word;" >Collapsible CollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsible</p>
-
-<div id="demo2" class="collapse">
-Lorem ipsum dolor text....
-</div>
+<?php endforeach; ?>

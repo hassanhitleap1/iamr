@@ -18,6 +18,7 @@ use yii\web\NotFoundHttpException;
 use yii\web\Response;
 use yii\web\UploadedFile;
 use app\models\Page;
+use app\models\Freq;
 
 class SiteController extends BaseController
 {
@@ -192,8 +193,9 @@ class SiteController extends BaseController
      * @return Response
      */
     public function actionFreq()
-    {
-        return $this->render('freq');
+    {   
+        $freqs= Freq::find()->all();
+        return $this->render('freq',['freqs'=> $freqs]);
     }
 
 
