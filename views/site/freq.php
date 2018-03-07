@@ -7,8 +7,14 @@ use yii\helpers\Html;
 $this->title = 'Frq';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<p data-toggle="collapse" data-target="#demo" style="color:red;" >Collapsible</p>
+<p data-toggle="collapse" data-target="#demo" style="color:blue; word-wrap: break-word;" >Collapsibl CollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsiblee</p>
 
 <div id="demo" class="collapse">
+Lorem ipsum dolor text....
+</div>
+<hr>
+<p data-toggle="collapse" data-target="#demo2" style="color:blue;word-wrap: break-word;" >Collapsible CollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsibleCollapsible</p>
+
+<div id="demo2" class="collapse">
 Lorem ipsum dolor text....
 </div>
