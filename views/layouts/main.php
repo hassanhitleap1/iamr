@@ -413,7 +413,7 @@ $(document).ready(function(){
 
 
 function setLang(lang){
-url='http://localhost/iamrich/web/index.php?r=base/language';
+url='index.php?r=base/language';
 
 $.ajax({
      url: url,
