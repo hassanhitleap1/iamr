@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-login">
      <div class="row">
         <div class="col-md-7 col-md-offset-3">
-             <div class="panel panel-primary">
+             <div class="panel panel-default">
                 <div class="panel-heading"><?=Yii::t('app','Plaase-Signin')?></div>
                 <div class="panel-body">
                     <div class="row">
