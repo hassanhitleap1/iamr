@@ -8,11 +8,12 @@ use app\models\FreqSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\admin\controllers\BaseController;
 
 /**
  * FreqController implements the CRUD actions for Freq model.
  */
-class FreqController extends Controller
+class FreqController extends BaseController
 {
     /**
      * @inheritdoc
