@@ -162,10 +162,6 @@ NavBar::end();
                     <a class="gplus-ic">
                         <i class="fa fa-google-plus white-text mr-lg-4"> </i>
                     </a>
-                    <!--Linkedin-->
-                    <a class="li-ic">
-                        <i class="fa fa-linkedin white-text mr-lg-4"> </i>
-                    </a>
                     <!--Instagram-->
                     <a class="ins-ic">
                         <i class="fa fa-instagram white-text mr-lg-4"> </i>
