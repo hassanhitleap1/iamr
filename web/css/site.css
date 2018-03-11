@@ -153,3 +153,36 @@ a.desc:after {
     width: 200px;
     height: 201px;
 }
+marging-line{
+border-left:1px solid #ccc;
+height:160px; 
+width: 29.994318px;
+}
+
+@media only screen and (max-width: 600px) {
+ marging-line{
+    height:20px !important; 
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+ marging-line{
+    height:20px !important; 
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+ marging-line{
+    height:20px !important; 
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {
+ marging-line{
+    height:10px !important; 
+    }
+}  */
+

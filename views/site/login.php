@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                           ]) ?>                                        
                    
                         </div>
-                        <div class="col-md-1" style="border-left:1px solid #ccc;height:160px; width: 29.994318px; "></div>
+                        <div class="col-md-1 marging-line" ></div>
                         <div class="col-md-7">
                                 <?php $form = ActiveForm::begin([
                                   'id' => 'login-form',
