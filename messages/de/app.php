@@ -43,5 +43,6 @@ return [
 	'address_like' => 'Germany - Name of province - city name - street. name street',
 	'maximum_withdrawal_of_money' => 'Maximaler Geldentzug',
 	'message_get_referral' => 'Um eine Überweisung zu erhalten, muss die Website bezahlt und die Informationen für die Welt angezeigt werden',
+	'Contact' => 'Kontakt',
 
 ];
