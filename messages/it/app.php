@@ -43,4 +43,5 @@ return [
 	'maximum_withdrawal_of_money'=> 'Massimo prelievo di denaro',
 	'message_get_referral'=> 'per ottenere referenze deve essere pagato (donazione) al sito e mostrare le tue informazioni per il mondo',
 	'Contact' => 'Contatto',
+	'desc_site' => "Un'organizzazione non profit che lavora per creare una scuola per proteggere i bambini dall'estremismo può ogni utente lavorare con noi e guadagnare denaro",
 ];

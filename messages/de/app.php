@@ -44,5 +44,6 @@ return [
 	'maximum_withdrawal_of_money' => 'Maximaler Geldentzug',
 	'message_get_referral' => 'Um eine Überweisung zu erhalten, muss die Website bezahlt und die Informationen für die Welt angezeigt werden',
 	'Contact' => 'Kontakt',
+	'desc_site' => 'Eine gemeinnützige Organisation, die daran arbeitet, eine Schule zu schaffen, um Kinder vor Extremismus zu schützen, kann jeder Benutzer mit uns arbeiten und Geld verdienen',
 
 ];

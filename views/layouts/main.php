@@ -184,8 +184,7 @@ NavBar::end();
                     <strong> i am rich</strong>
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit
-                    amet, consectetur adipisicing elit.</p>
+                <p><?=Yii::t('app','desc_site') ?></p>
             </div>
             <!--/.First column-->
 

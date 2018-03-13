@@ -44,5 +44,5 @@ return [
 	'maximum_withdrawal_of_money' => "Retrait maximal d'argent",
 	'message_get_referral' => 'pour être référé, il faut payer (faire un don) sur le site et montrer vos informations pour le monde entier',
 	'Contact' => 'Contact',
-
+	'desc_site' => "Une organisation à but non lucratif qui travaille à la création d'une école pour protéger les enfants contre l'extrémisme, chaque utilisateur peut travailler avec nous et gagner de l'argent",
 ];
