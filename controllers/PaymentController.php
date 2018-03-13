@@ -100,25 +100,25 @@ class PaymentController extends BaseController
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
         $item1 = new Item();
-        $item1->setName('Ground Coffee 40 oz')
+        $item1->setName('Donation for school')
             ->setCurrency('USD')
             ->setQuantity(1)
-            ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice(7.5);
+            ->setSku("100") // Similar to `item_number` in Classic API
+            ->setPrice(80);
         $item2 = new Item();
-        $item2->setName('Granola bars')
+        $item2->setName('Referal Rent')
             ->setCurrency('USD')
-            ->setQuantity(5)
-            ->setSku("321321") // Similar to `item_number` in Classic API
-            ->setPrice(2);
+            ->setQuantity(1)
+            ->setSku("200") // Similar to `item_number` in Classic API
+            ->setPrice(20);
 
         $itemList = new ItemList();
         $itemList->setItems(array($item1, $item2));
 
         $details = new Details();
-        $details->setShipping(1.2)
-            ->setTax(1.3)
-            ->setSubtotal(17.50);
+        $details->setShipping(0)
+            ->setTax(0)
+            ->setSubtotal(0);
 
         $amount = new Amount();
         $amount->setCurrency("USD")
@@ -126,19 +126,19 @@ class PaymentController extends BaseController
             ->setDetails($details);   
 
         $payee = new Payee();
-        $payee->setEmail("stevendcoffey-facilitator@gmail.com");
+        $payee->setEmail(Yii::$app->user->identity->email);
 
 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($itemList)
-            ->setDescription("Payment description")
+            ->setDescription("donation for school")
             ->setPayee($payee)
             ->setInvoiceNumber(uniqid());
 
 
            
-        $baseUrl = 'http://localhost/'.Yii::$app->getUrlManager()->getBaseUrl();
+        $baseUrl = 'http://'.Yii::$app->getUrlManager()->getBaseUrl();
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
                      ->setCancelUrl("$baseUrl/index.php?r=payment/error"); 
