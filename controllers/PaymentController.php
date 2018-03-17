@@ -137,8 +137,7 @@ class PaymentController extends BaseController
             ->setInvoiceNumber(uniqid());
 
 
-           
-        $baseUrl = 'http://'.Yii::$app->getUrlManager()->getBaseUrl();
+        $baseUrl = 'http://localhost/' . Yii::$app->getUrlManager()->getBaseUrl();
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
                      ->setCancelUrl("$baseUrl/index.php?r=payment/error"); 

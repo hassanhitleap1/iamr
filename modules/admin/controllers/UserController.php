@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\modules\admin\controllers\BaseController;
+use app\components\UserHelper;
 
 /**
  * UserController implements the CRUD actions for User model.
@@ -71,11 +72,16 @@ class UserController extends BaseController
     public function actionAcrivation($id)
     {
         $model = $this->findModel($id);
+        if ($model->balance == null) {
+            UserHelper::setBalance($model->id);
+            UserHelper::setReferralCode($model->id);
+        }
         if ($model->status) {
         $model->status=User::STATUS_DELETED;
         }else{
         $model->status = User::STATUS_ACTIVE;   
         }
+        exit;
         $model->save();
         return $this->redirect(['index']);
         
