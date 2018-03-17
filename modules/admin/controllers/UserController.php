@@ -81,7 +81,6 @@ class UserController extends BaseController
         }else{
         $model->status = User::STATUS_ACTIVE;   
         }
-        exit;
         $model->save();
         return $this->redirect(['index']);
         
