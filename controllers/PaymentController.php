@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use PHPUnit\TextUI\ResultPrinter;
 use PayPal\Api\Amount;
 use PayPal\Api\Details;
@@ -15,7 +16,6 @@ use PayPal\Api\Transaction;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Exception\PPConnectionException;
 use PayPal\Rest\ApiContext;
-use Yii;
 use app\components\UserHelper;
 use app\models\Balance;
 use app\models\Translation;
@@ -83,9 +83,9 @@ class PaymentController extends BaseController
     {
         $apiContext = new ApiContext(
          new OAuthTokenCredential(
-            'AeO8hUruUMAr8mH2pY9t63mefVJnrJCAZf3gevFwAc4yEWSFV-YijJF000zBpX5JUIyKdQYIsV2Dse_S',
-            'EF5ls3mJ2r6cRCPNDmKQUAnwIJDyXfX8lguSfWNheFl5GOB3c5wjRPc4q2C8XBatPL2cT9ImQAtdKRK3'
-         )
+                'AfHF4nIpvGzjcBKQRWXqyODvkaVVJPqvSEVPxRAq7t9G5SkTY5_HBjC4Jvw3xXudWrcg5uqIg04boPKc',
+                'ECM4OX6Rtu_G6pt91Dk3nGdu_QP_DpKpP3GCO9VyA4a8SjLtIfWkG9WMLKGuBI84aH4UyPGwy2lvu4Xo'
+            )
         );
         
         $apiContext->setConfig([
@@ -137,7 +137,7 @@ class PaymentController extends BaseController
             ->setInvoiceNumber(uniqid());
 
 
-        $baseUrl = 'http://localhost/' . Yii::$app->getUrlManager()->getBaseUrl();
+        $baseUrl = 'http://' . Yii::$app->getUrlManager()->getBaseUrl();
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
                      ->setCancelUrl("$baseUrl/index.php?r=payment/error"); 
