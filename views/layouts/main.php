@@ -41,6 +41,7 @@ $menuItems = [
     ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
     ['label' => Yii::t('app', 'why-100-doller'), 'url' => ['/site/why-100-doller']],
     ['label' => Yii::t('app', 'Freq'), 'url' => ['/site/freq']],
+    ['label' => Yii::t('app', 'make-money'), 'url' => ['/site/make-money']],
 ];
 if (Yii::$app->user->isGuest) {
     $menuItems[] = ['label' => Yii::t('app', 'signup'), 'url' => ['/site/signup']];

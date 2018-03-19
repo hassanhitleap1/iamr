@@ -3,6 +3,7 @@
 return [
 	'Home'=>'Home',
 	'why-100-doller'=>'why 100 doller',
+	'make-money' => 'Make Money',
 	'signup'=>'signup',
 	'login'=>'Login',
 	'profile'=>'profile',

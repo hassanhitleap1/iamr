@@ -3,6 +3,7 @@
 return [
 	'Home'=>'Zuhause',
 	'why-100-doller'=>'warum 100 Dollar',
+	'make-money' => 'Geld verdienen',
 	'signup'=>'Anmelden',
 	'login'=>'Anmeldung',
 	'profile'=>'Profil',

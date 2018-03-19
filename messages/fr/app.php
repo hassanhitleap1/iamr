@@ -3,6 +3,7 @@
 return [
 	'Home'=>'maison',
 	'why-100-doller'=>'pourquoi 100 dollars',
+	'make-money' => "faire de l'argent",
 	'signup'=>"S'inscrire",
 	'login'=>"S'identifier",
 	'profile'=>'profil',

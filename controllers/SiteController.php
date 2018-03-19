@@ -132,6 +132,19 @@ class SiteController extends BaseController
         );
     }
 
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionMakeMoney()
+    {
+        $model = Page::find()->where(['key_page' => 'make-money'])->one();
+        return $this->render('make-money', [
+            'model' => $model,
+        ]);
+    }
+    
 
         /**
      * Signs user up.
