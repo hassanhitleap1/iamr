@@ -2,7 +2,7 @@
 
 return [
 	'Home'=>'Home',
-	'why-300-doller'=>'why 300 doller',
+	'why-100-doller'=>'why 100 doller',
 	'signup'=>'signup',
 	'login'=>'Login',
 	'profile'=>'profile',

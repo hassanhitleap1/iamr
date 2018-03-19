@@ -2,7 +2,7 @@
 
 return [
 	'Home'=>'casa',
-	'why-300-doller'=>'perché 300 dollari',
+	'why-100-doller'=>'perché 100 dollari',
 	'signup'=>'Iscriviti',
 	'login'=>'Accesso',
 	'profile'=>'profilo',

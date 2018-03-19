@@ -123,10 +123,10 @@ class SiteController extends BaseController
      *
      * @return string
      */
-    public function actionWhy300Doller()
+    public function actionWhy100Doller()
     {
         $model= Page::find()->where(['key_page'=> 'page_why'])->one();
-        return $this->render('why-300-doller',[
+        return $this->render('why-100-doller',[
             'model'=> $model,
         ]
         );
