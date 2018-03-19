@@ -1,0 +1,7 @@
+# prevent directory listings
+Options -Indexes
+IndexIgnore */*
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(/.+)?$ web/$1 [L,PT]
+</IfModule>
