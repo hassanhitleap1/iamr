@@ -82,66 +82,78 @@ class PaymentController extends BaseController
     public function actionIndex()
     {
         $apiContext = new ApiContext(
-         new OAuthTokenCredential(
-                'AfHF4nIpvGzjcBKQRWXqyODvkaVVJPqvSEVPxRAq7t9G5SkTY5_HBjC4Jvw3xXudWrcg5uqIg04boPKc',
-                'ECM4OX6Rtu_G6pt91Dk3nGdu_QP_DpKpP3GCO9VyA4a8SjLtIfWkG9WMLKGuBI84aH4UyPGwy2lvu4Xo'
+            new OAuthTokenCredential(
+                'AcUkbdtN6Tto3T9xu9FZJGfBtU8DCrfy8XUvVCUN0pTkTuEt8ICQbqxdGqlc43_X5dEwSL-wOzhVJUlD',
+                'EMdubpGHRxTbQSxdWADuHLFDTBkjIPZtK2OMW2jtuK9lBRnVVPp5EF0aqFTJHiiZRdK4WwiQ38zw6oZy'
             )
         );
-        
-        $apiContext->setConfig([
-         'mode'=>'sandbox',
-         'http.ConnectionTimeOut'=>30,
-         'log.LogEnabled'=>false,
-         'log.FileName'=>'',
-         'log.LogLevel'=>'FINE',
-         'validation.level'=>'log'
-        ]);
+
+        $apiContext->setConfig(
+            array(
+                'mode' => 'sandbox',
+                'http.ConnectionTimeOut' => 30,
+                'log.LogEnabled' => false,
+                'log.FileName' => '',
+                'log.LogLevel' => 'FINE',
+                'validation.level' => 'log'
+            )
+        );
 
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");
+   // ### Itemized information
+   // (Optional) Lets you specify item wise
+   // information
         $item1 = new Item();
         $item1->setName('Donation for school')
             ->setCurrency('USD')
             ->setQuantity(1)
-            ->setSku("100") // Similar to `item_number` in Classic API
+            ->setSku("123123") // Similar to `item_number` in Classic API
             ->setPrice(80);
         $item2 = new Item();
-        $item2->setName('Referal Rent')
+        $item2->setName('pay for referral')
             ->setCurrency('USD')
             ->setQuantity(1)
-            ->setSku("200") // Similar to `item_number` in Classic API
+            ->setSku("321321") // Similar to `item_number` in Classic API
             ->setPrice(20);
-
         $itemList = new ItemList();
         $itemList->setItems(array($item1, $item2));
-
+   // ### Additional payment details
+   // Use this optional field to set additional
+   // payment information such as tax, shipping
+   // charges etc.
         $details = new Details();
         $details->setShipping(0)
             ->setTax(0)
-            ->setSubtotal(0);
-
+            ->setSubtotal(100);
+   // ### Amount
+   // Lets you specify a payment amount.
+   // You can also specify additional details
+   // such as shipping, tax.
         $amount = new Amount();
         $amount->setCurrency("USD")
-            ->setTotal(20)
-            ->setDetails($details);   
-
-        $payee = new Payee();
-        $payee->setEmail(Yii::$app->user->identity->email);
-
-
+            ->setTotal(100)
+            ->setDetails($details);
+   // ### Transaction
+   // A transaction defines the contract of a
+   // payment - what is the payment for and who
+   // is fulfilling it. 
         $transaction = new Transaction();
         $transaction->setAmount($amount)
             ->setItemList($itemList)
-            ->setDescription("donation for school")
-            ->setPayee($payee)
+            ->setDescription("Payment description")
             ->setInvoiceNumber(uniqid());
+   // ### Redirect urls
+   // Set the urls that the buyer must be redirected to after 
+   // payment approval/ cancellation.
+        $baseUrl = 'http://localhost' . Yii::$app->getUrlManager()->getBaseUrl();
 
-
-        $baseUrl = 'http://' . Yii::$app->getUrlManager()->getBaseUrl();
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
-                     ->setCancelUrl("$baseUrl/index.php?r=payment/error"); 
-
+            ->setCancelUrl("$baseUrl/index.php?r=payment/error");
+   // ### Payment
+   // A Payment Resource; create one using
+   // the above types and intent set to 'sale'
         $payment = new Payment();
         $payment->setIntent("sale")
             ->setPayer($payer)
@@ -149,27 +161,28 @@ class PaymentController extends BaseController
             ->setTransactions(array($transaction));
 
         $request = clone $payment;
-       
-      
 
         try {
             $payment->create($apiContext);
-            $hash= md5($payment->getId());
-            $_SESSION['paypal_hash']=$hash;
-            $trsns=new Translation;
-            $trsns->user_id= Yii::$app->user->id;
-            $trsns->hash=$hash;
-            $trsns->payment_id=$payment->getId();
-            $trsns->completed=0;
+            $hash = md5($payment->getId());
+            $_SESSION['paypal_hash'] = $hash;
+            $trsns = new Translation;
+            $trsns->user_id = Yii::$app->user->id;
+            $trsns->hash = $hash;
+            $trsns->payment_id = $payment->getId();
+            $trsns->completed = 0;
             $trsns->save();
-
         } catch (Exception $ex) {
+       // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY
             ResultPrinter::printError("Created Payment Using PayPal. Please visit the URL to Approve.", "Payment", null, $request, $ex);
             exit(1);
         }
+
         $approvalUrl = $payment->getApprovalLink();
-        return $this->redirect($approvalUrl); 
-   
+
+
+        return $this->redirect($approvalUrl);
+
 
     }
 
