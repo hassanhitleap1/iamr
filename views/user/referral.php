@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?php foreach(Yii::$app->user->identity->referrals as $referrals):?>
                     <tr>
                         <td><?= $referrals->user->full_name;?></td>
-                        <td><?=$referrals->user->created_at?></td>
+                        <td><?=date('Y-m-d', $referrals->user->created_at); ?></td>
                         <td><?= $referrals->user->status? "Active": "Disactive"  ?></td>
                         <td><?= $referrals->user->status? "Pay": "Not Pay"  ?></td>
                     </tr>
