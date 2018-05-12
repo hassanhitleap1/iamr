@@ -12,6 +12,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
 use app\controllers\BaseController;
+use app\models\Referral;
+
 
 class UserController extends BaseController
 {
@@ -82,9 +84,15 @@ class UserController extends BaseController
         if (Yii::$app->user->identity->status) {
             $blance= Balance::find()->where(['user_id'=>Yii::$app->user->id])->one();
             $referralCode=ReferralCode::find()->where(['user_id'=>Yii::$app->user->id])->one();
+            //SELECT * FROM `user` WHERE id in (SELECT user_id_referral FROM referral WHERE user_id=26)
+            $subQuery = Referral::find()->select('user_id_referral')->where(['user_id'=>Yii::$app->user->identity->id]);
+            $query = User::find()->where(['in', 'id', $subQuery]);
+            $referalUsers = $query->all();
+          
             return $this->render('referral',[
                 'balance'=>$blance,
                 'referralCode'=>$referralCode,
+                'referalUsers'=>$referalUsers,
             ]);
         }else {
             return $this->render('alarm');

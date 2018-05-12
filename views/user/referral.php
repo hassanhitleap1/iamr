@@ -42,13 +42,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
                 </thead>
                 <tbody>
-                <?php if(!empty( Yii::$app->user->identity->referrals)):?>
-                    <?php foreach(Yii::$app->user->identity->referrals as $referrals):?>
+                <?php if(!empty( $referalUsers)):?>
+                    <?php foreach($referalUsers as $referalUser):?>
                     <tr>
-                        <td><?= $referrals->user->full_name;?></td>
-                        <td><?=date('Y-m-d', $referrals->user->created_at); ?></td>
-                        <td><?= $referrals->user->status? "Active": "Disactive"  ?></td>
-                        <td><?= $referrals->user->status? "Pay": "Not Pay"  ?></td>
+                        <td><?= $referalUser->full_name;?></td>
+                        <td><?=date('Y-m-d', $referalUser->created_at); ?></td>
+                        <td><?= $referalUser->status? "Active": "Disactive"  ?></td>
+                        <td><?= $referalUser->status? "Pay": "Not Pay"  ?></td>
                     </tr>
                     <?php endforeach;?>
                 <?php endif;?>      
