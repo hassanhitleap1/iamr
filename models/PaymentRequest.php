@@ -39,6 +39,7 @@ class PaymentRequest extends \yii\db\ActiveRecord
             [['value'], 'number'],
             [['user_id', 'accept'], 'integer'],
             [['paypal'], 'string', 'max' => 50],
+            [['paypal'],'email'],
             [['western_union_full_name'], 'string', 'max' => 255],
             [['country'], 'string', 'max' => 100],
             [['full_address'], 'string', 'max' => 200],

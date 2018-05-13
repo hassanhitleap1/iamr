@@ -71,7 +71,7 @@ class PaymentRequestController extends BaseController
             $model->create_at = date('Y-m-d H:m:s');
             $model->accept= PaymentRequest::NOT_ACCPET_PAYMENT;
             
-            if($model->validate()){
+            if($model->save()){
                 Yii::$app->session->setFlash('record', 'the payment request submited ');
                 return $this->redirect(['index']);
             }
