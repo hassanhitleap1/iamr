@@ -182,7 +182,7 @@ NavBar::end();
             <!--First column-->
             <div class="col-md-3 col-lg-4 col-xl-3 mb-4 dark-grey-text">
                 <h6 class="text-uppercase font-weight-bold">
-                    <strong> i am rich</strong>
+                    <strong> you are a rich</strong>
                 </h6>
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><?=Yii::t('app','desc_site') ?></p>
@@ -240,7 +240,7 @@ NavBar::end();
                 <p>
                     <i class="fa fa-home mr-3"></i> Amman HKJ, NY 10012, HKJ</p>
                 <p>
-                    <i class="fa fa-envelope mr-3"></i> connect@iamrich.com</p>
+                    <i class="fa fa-envelope mr-3"></i> connect@youarearich.com</p>
                 <p>
             </div>
             <!--/.Fourth column-->
