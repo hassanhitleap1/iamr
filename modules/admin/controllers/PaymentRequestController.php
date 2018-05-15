@@ -49,8 +49,10 @@ class PaymentRequestController extends BaseController
         if (!$model->accept) {
             $model->accept = PaymentRequest::ACCPET_PAYMENT;
             $balanceModel= \app\models\Balance::find()->where(['user_id'=>$model->user_id])->one();
-            $balanceModel->balance -= $model->value;
-            $balanceModel->save();
+            if( $model->value <= $balanceModel->balance){
+                $balanceModel->balance -= $model->value;
+                $balanceModel->save();
+            }
             $model->save(false);
         } 
      
