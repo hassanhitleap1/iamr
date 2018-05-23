@@ -1,7 +1,7 @@
 <?php
 use  yii\helpers\Url; 
 /* @var $this yii\web\View */
-$this->title = 'I AM RIACH';
+$this->title = 'You are a rich';
 ?>
 <div class="site-why-300-doller">
 

@@ -2,7 +2,7 @@
 use  yii\helpers\Url; 
 use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
-$this->title = 'I AM RIACH';
+$this->title = 'You are a rich';
 ?>
 <div class="site-index">
     <div class="row">
