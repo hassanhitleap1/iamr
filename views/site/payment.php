@@ -81,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>300</span> total donation</a>
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>100</span> total donation</a>
                 </li>
             </ul>
             <br/>

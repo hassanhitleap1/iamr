@@ -14,10 +14,10 @@ class FacebookController extends BaseController
     private $fb;
     private $helper;
     public function actionIndex(){
-        $appId         = '394173574379206'; //Facebook App ID
-        $appSecret     = 'dc097ecfce1f15f89b39acf9300c0305'; //Facebook App Secret
-        $baseUrl = 'http://localhost/'.Yii::$app->getUrlManager()->getBaseUrl();
-        $redirectURL   = "http://localhost/iamrich/web/index.php?r=facebook%2Fredirect"; //Callback URL
+        $appId         = '481289342307305'; //Facebook App ID
+        $appSecret     = '98e1a261c1631ca3e032e7ad0ee0f641'; //Facebook App Secret
+        $baseUrl = 'https://youarearich.org/'.Yii::$app->getUrlManager()->getBaseUrl();
+        $redirectURL   = "https://youarearich.org/web/index.php?r=facebook/redirect"; //Callback URL
         $permissions = array('email');  //Optional permissions
         $this->fb = new Facebook(array(
             'app_id' => $appId,

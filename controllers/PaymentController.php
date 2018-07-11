@@ -83,14 +83,14 @@ class PaymentController extends BaseController
     {
         $apiContext = new ApiContext(
             new OAuthTokenCredential(
-                'AcUkbdtN6Tto3T9xu9FZJGfBtU8DCrfy8XUvVCUN0pTkTuEt8ICQbqxdGqlc43_X5dEwSL-wOzhVJUlD',
-                'EMdubpGHRxTbQSxdWADuHLFDTBkjIPZtK2OMW2jtuK9lBRnVVPp5EF0aqFTJHiiZRdK4WwiQ38zw6oZy'
+                'AZbhDhaLkyCCKVEEb2goVJqZblLGFqKABBHh34TUkg0nTNP4kNccefV5lDH0gr8cPNwzKi6xAm0EsUkj',
+                'EBATldnlJhjbZIR3nyn7uEG64Mvp6YVDX95TCq6F5_Ad_U0ThImz2ZRRofqnkyRozSNnDU0jsL6YbAP1'
             )
         );
 
         $apiContext->setConfig(
             array(
-                'mode' => 'sandbox',
+                'mode' => 'live',
                 'http.ConnectionTimeOut' => 30,
                 'log.LogEnabled' => false,
                 'log.FileName' => '',
@@ -146,7 +146,7 @@ class PaymentController extends BaseController
    // ### Redirect urls
    // Set the urls that the buyer must be redirected to after 
    // payment approval/ cancellation.
-        $baseUrl = 'http://localhost' . Yii::$app->getUrlManager()->getBaseUrl();
+        $baseUrl = 'http://youarearich.org' . Yii::$app->getUrlManager()->getBaseUrl();
 
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")

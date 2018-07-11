@@ -13,10 +13,10 @@ use yii\web\View;
 use richardfan\widget\JSRegister;
 
 AppAsset::register($this);
+$dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<?php $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr' ?>
 <html lang="<?= Yii::$app->language ?>" dir= <?= $dir ?> >
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
@@ -64,7 +64,7 @@ if (Yii::$app->user->isGuest) {
 
 }
 $menuItems[] = [
-    'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ENG</span> ',
+    'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ENG</span> ',
     'linkOptions' => [
         'data-toggle' => 'dropdown', 'role' => 'button',
         'aria-expanded' => 'false'
@@ -74,35 +74,35 @@ $menuItems[] = [
 
         '<li>
                 <a id="navEng" href="#" class="language">
-                    <img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  
+                    <img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavEng">English</span>
                 </a>
             </li>',
 
         '<li>
                 <a id="navIta" href="#" class="language">
-                     <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  
+                     <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  
                      <span id="lanNavIta">Italiano</span>
                  </a>
             </li>',
 
         '<li>
                 <a id="navDeu" href="#" class="language">
-                     <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small"> 
-                      <span id="lanNavDeu">Deutsch</span>
+                     <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small"> 
+                      <span id="lanNavDeu">Deutsch</span>
                  </a>
              </li>',
 
         '<li>
                 <a id="navFra" href="#" class="language">
-                    <img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  
+                    <img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavFra">Francais</span>
                 </a>
             </li>',
 
         '<li>
                 <a id="navArb" href="#" class="language">
-                    <img id="imgNavArb" src="" alt="..." class="img-thumbnail icon-small">  
+                    <img id="imgNavArb" src="" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavEng">Arbic</span>
                 </a>
             </li>',
@@ -117,6 +117,15 @@ NavBar::end();
 ?>
 
     <div class="container">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 970 x 90 Large Leaderboard -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:970px;height:90px"
+     data-ad-client="ca-pub-2718585271266913"
+     data-ad-slot="9807506790"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -253,10 +262,12 @@ NavBar::end();
     <div class="footer-copyright py-3 text-center">
         © <?=date('Y')?> Copyright:
         <a href="#">
-            <strong> iamrich.com</strong>
+            <strong> youarearich.org</strong>
         </a>
     </div>
     <!--/.Copyright -->
+    <script type="text/javascript" src="https://cdn.ywxi.net/js/1.js" async></script>
+    <span id="siteseal" style="position: fixed;bottom: 0;right: 100;"><script async type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=vl8Hd17J7pmKMFrso8RaOYgs5WQOgVQGygpElPu8nNASgAT1aOjLpWsT8c12"></script></span>
 
 </footer>
 <!--/.Footer-->
@@ -264,11 +275,11 @@ NavBar::end();
 <?php JSRegister::begin(); ?>
 <script>
 $(document).ready(function(){
-    var itaImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Italien.gif";
-    var engImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Grossbritanien.gif";
-    var deuImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Deutschland.gif";
-    var fraImgLink = "http://www.roemheld.de/IT/Data/Images/Address/Frankreich.gif";
-    var arbImgLink = "https://images-na.ssl-images-amazon.com/images/I/31VsQPsLJFL._SL500_AC_SS350_.jpg";
+    var itaImgLink = "https://youarearich.org/web/img-site/Italien.gif";
+    var engImgLink = "https://youarearich.org/web/img-site/Grossbritanien.gif";
+    var deuImgLink = "https://youarearich.org/web/img-site/Deutschland.gif";
+    var fraImgLink = "https://youarearich.org/web/img-site/Frankreich.gif";
+    var arbImgLink = "https://youarearich.org/web/img-site/sadi.jpg";
 
     var imgBtnSel = $('#imgBtnSel');
     var imgBtnIta = $('#imgBtnIta');
@@ -442,7 +453,9 @@ return "";
 }
 
 </script>
+
 <?php JSRegister::end(); ?>
+
 <?php $this->endBody() ?>
 </body>
 </html>

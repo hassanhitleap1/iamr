@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <?= \powerkernel\bootstrapsocial\Button::widget([
                                     'button' => 'facebook', 
                                     'iconOnly' => false, // set true if only want the icon 
-                                    'link' => '#your_url', // the button URL
+                                    'link' => '#your-url', // the button URL
                                     'label'=> Yii::t('app','singup_with_facebook'), // button label
                                     'class'=>'btn-lg',
                                     ]) ?>                   
