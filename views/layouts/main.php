@@ -117,15 +117,7 @@ NavBar::end();
 ?>
 
     <div class="container">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- 970 x 90 Large Leaderboard -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:970px;height:90px"
-     data-ad-client="ca-pub-2718585271266913"
-     data-ad-slot="9807506790"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+ 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
@@ -275,11 +267,11 @@ NavBar::end();
 <?php JSRegister::begin(); ?>
 <script>
 $(document).ready(function(){
-    var itaImgLink = "https://youarearich.org/web/img-site/Italien.gif";
-    var engImgLink = "https://youarearich.org/web/img-site/Grossbritanien.gif";
-    var deuImgLink = "https://youarearich.org/web/img-site/Deutschland.gif";
-    var fraImgLink = "https://youarearich.org/web/img-site/Frankreich.gif";
-    var arbImgLink = "https://youarearich.org/web/img-site/sadi.jpg";
+    var itaImgLink = "http://localhost/iamrich/web/img-site/Italien.gif";
+    var engImgLink = "http://localhost/iamrich/web/img-site/Grossbritanien.gif";
+    var deuImgLink = "http://localhost/iamrich/web/img-site/Deutschland.gif";
+    var fraImgLink = "http://localhost/iamrich/web/img-site/Frankreich.gif";
+    var arbImgLink = "http://localhost/iamrich/web/img-site/sadi.jpg";
 
     var imgBtnSel = $('#imgBtnSel');
     var imgBtnIta = $('#imgBtnIta');
