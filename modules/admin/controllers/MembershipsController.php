@@ -9,10 +9,11 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
+
 /**
  * MembershipsController implements the CRUD actions for Memberships model.
  */
-class MembershipsController extends Controller
+class MembershipsController extends BaseController
 {
     /**
      * {@inheritdoc}
