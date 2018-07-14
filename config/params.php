@@ -2,5 +2,5 @@
 
 return [
     'adminEmail' => 'admin@example.com',
-    'siteURL'=> Yii::$app->getUrlManager()->getBaseUrl(),
+   // 'siteURL'=> Yii::$app->getUrlManager()->getBaseUrl(),
 ];
