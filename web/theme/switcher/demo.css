@@ -1,0 +1,97 @@
+#switcher{color:#222;border-right:1px solid #e5e5e5;padding:30px 10px;
+	background:#fff;font-size:10px;position:fixed;z-index:500;top:0px;left:0;
+	z-index:99999;
+	font-size:13px;width:300px;
+	box-sizing:border-box;margin-left:-300px;height:100%;}
+#switcher .clearfix{margin-bottom:10px;}
+#switcher span{font-size:14px;display:block;margin-bottom:5px;}
+.spacing-10{margin-top:10px;clear:both;}
+.custom-show:after,.custom-close:after{position:absolute;display:inline-block;width:40px;height:40px;padding:10px;background:#fff;cursor:pointer;content:"\f013";
+font-family:"FontAwesome";font-size:22px;font-weight:normal;line-height:20px;border:1px solid #e5e5e5;border-left: 0;}
+#switcher span.custom-close,#switcher span.custom-show{position:absolute;right:-30px;margin-top:120px;display:block;width:40px;height:40px;padding:10px;}
+#tm-color{padding:0;margin:0;}
+
+#tm-color li{
+	width: 43px;
+	height: 43px;
+	display: inline-block;
+	
+	margin-bottom: 9px;
+	margin-right: 9px;
+	overflow: hidden;
+	cursor: pointer;
+}
+#tm-color li span {
+    width: 100%;
+    float: left;
+    height: 100%;
+}
+
+#tm-color li.color1 span
+{
+	background: url(images/set1.png);
+	background-size: cover;
+}
+
+
+
+#tm-color li.color2 span
+{
+	background: url(images/set2.png);
+	background-size: cover;
+}
+
+
+
+#tm-color li.color3 span
+{
+		
+	background: url(images/set3.png);
+	background-size: cover;
+}
+
+
+#tm-color li.color4 span
+{
+	background: url(images/set4.png);
+	background-size: cover;
+}
+
+
+
+#tm-color li.color5 span
+{
+	background: url(images/set5.png);
+	background-size: cover;
+}
+#tm-color li.color6 span
+{
+	background: url(images/set6.png);
+	background-size: cover;
+}
+#tm-color li.color7 span
+{
+	background: url(images/set7.png);
+	background-size: cover;
+}
+#tm-color li.color8 span
+{
+	background: url(images/set8.png);
+	background-size: cover;
+}
+#tm-color li.color9 span
+{
+	background: url(images/set9.png);
+	background-size: cover;
+}
+
+.reset{background: #ffb600;line-height: 50px;padding:0 50px;display: block;text-align: center;color:#fff;}
+.reset{border-radius: 0;outline: 0;box-shadow: none;border:0;}
+.reset:hover{color:#fff;background:#ffb600; }
+.ot-btn-classic{
+	background: #0a2c4e;line-height: 50px;padding:0 50px;display: block;text-align: center;color:#fff;margin-bottom: 60px;
+}
+.ot-btn-classic:hover{
+	background: #0a2c4e;
+	color:#fff;
+}

@@ -1,0 +1,198 @@
+/* Color Picker #e84c3d */
+/* Color */
+.main-nav > ul > li.active > a,
+.main-nav > ul > li:hover > a,
+.main-nav > ul > li:focus > a,
+.btn-search-header:hover,
+.btn-search-header:focus,
+.form-search-navi .form-control,
+.color-theme,
+.custom.horizontal .tp-bullet::before,
+.rev_slider .ot-btn:hover,
+.experience-year span,
+.border-dark:hover,
+.btn-style-2,
+.btn-style-2:hover,
+.owl-page-h .owl-controls .owl-dot::before,
+.btn-1:hover,
+.on-dark .ot-btn:hover,
+.widget-social-list li a:hover,
+.custom.vertical .tp-bullet::before,
+.portfolio-home2-item .btn-detail-project,
+.portfolio-home2-item h4 a:hover,
+.portfolio-home2-item .cate-project:hover,
+.footer-portfolio .ot-btn:hover,
+.item-latest-post h4 a:hover,
+.left-nav > ul > li.active > a,
+.left-nav > ul > li > a:hover,
+.left-nav > ul > li > a:focus,
+.left-nav > ul > li > ul li:hover > a,
+.title-block-number .big-number,
+.projectFilter a:hover,
+.projectFilter a.current,
+.meta-single-post a:hover,
+.current-page,
+.item-post h4 a:hover,
+.list-comments .c-reply,
+.special-product .product-details h3 a:hover,
+.product .price,
+.widget_product_search .search-form button:hover,
+.widget li a:hover,
+.page-pagination.style-2 li span.current,
+.page-pagination.style-2 li a:hover,
+.woocommerce .star-rating span,
+.woocommerce ul.product_list_widget li .price,
+.woocommerce table.shop_table a:hover,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.woocommerce p.stars a:hover,
+.product h3 a:hover,
+.warp-404 strong,
+.warp-comingsoon-inner strong,
+.btn-menu-mobile:hover,
+.btn-menu-mobile:focus,
+.acc-box a:hover,
+.top_cart_list_product .product-detail a:hover,
+.ot-btn-border-classic:hover,
+.icon-cart:hover,
+.footer-link li a:hover,
+.footer-link li a:focus,
+.tabs-left > li.active a {
+  color: #e84c3d;
+}
+/* Darken color */
+/* Placeholder */
+.form-control::-webkit-input-placeholder {
+  color: #e84c3d;
+}
+.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: #e84c3d;
+}
+.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #e84c3d;
+}
+.form-control:-ms-input-placeholder {
+  color: #e84c3d;
+}
+/* Background */
+::-moz-selection,
+.main-nav > ul > li > ul li:hover > a,
+.main-nav > ul > li > ul li:focus > a,
+.custom.horizontal .tp-bullet.selected,
+.custom.horizontal .tp-bullet::after,
+.fixbtt,
+.owl-page-h .owl-controls .owl-dot.active,
+.owl-page-h .owl-controls .owl-dot::after,
+.custom.vertical .tp-bullet.selected,
+.custom.vertical .tp-bullet::after,
+.owl-page-top-right .owl-controls .owl-dot.active,
+.left-nav > ul > li::after,
+.widget_nav_menu ul li:hover,
+.widget_nav_menu ul li.current-menu-item,
+.widget-prochures li a.button-brochures:hover,
+.page-pagination.style-1 li span.current,
+.page-pagination.style-1 li a:hover,
+.page-pagination.style-1 li span:hover,
+.page-pagination.style-1 li span::after,
+.product .product-buttons:hover a,
+.widget_product_tag_cloud a:hover,
+.woocommerce a.remove:hover,
+.woocommerce input.button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.summary.entry-summary .single_add_to_cart_button,
+.woocommerce #respond input#submit,
+.mini-cart-counter,
+.ot-btn-classic {
+  background: #e84c3d;
+}
+::selection,
+.main-nav > ul > li > ul li:hover > a,
+.main-nav > ul > li > ul li:focus > a,
+.custom.horizontal .tp-bullet.selected,
+.custom.horizontal .tp-bullet::after,
+.fixbtt,
+.owl-page-h .owl-controls .owl-dot.active,
+.owl-page-h .owl-controls .owl-dot::after,
+.custom.vertical .tp-bullet.selected,
+.custom.vertical .tp-bullet::after,
+.owl-page-top-right .owl-controls .owl-dot.active,
+.left-nav > ul > li::after,
+.widget_nav_menu ul li:hover,
+.widget_nav_menu ul li.current-menu-item,
+.widget-prochures li a.button-brochures:hover,
+.page-pagination.style-1 li span.current,
+.page-pagination.style-1 li a:hover,
+.page-pagination.style-1 li span:hover,
+.page-pagination.style-1 li span::after,
+.product .product-buttons:hover a,
+.widget_product_tag_cloud a:hover,
+.woocommerce a.remove:hover,
+.woocommerce input.button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.summary.entry-summary .single_add_to_cart_button,
+.woocommerce #respond input#submit,
+.mini-cart-counter,
+.ot-btn-classic {
+  background: #e84c3d;
+}
+/* Darken background */
+.fixbtt:hover,
+.woocommerce input.button:hover,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+.checkout-button:hover,
+.summary.entry-summary .single_add_to_cart_button:hover,
+.woocommerce #respond input#submit:hover,
+.ot-btn-classic:hover {
+  background: #d82a1a;
+}
+/* Border */
+.border-theme::before,
+.border-theme::after,
+.custom.horizontal .tp-bullet.selected,
+.border-theme:hover::after,
+.border-theme:hover::before,
+.border-dark:hover::after,
+.border-dark:hover::before,
+.btn-style-2:hover::before,
+.btn-style-2:hover::after,
+.btn-style-2::before,
+.btn-style-2::after,
+.owl-page-h .owl-controls .owl-dot.active,
+.contact-input:hover,
+.contact-input:focus,
+.textarea-contact:hover,
+.textarea-contact:focus,
+.custom.vertical .tp-bullet.selected,
+.owl-page-top-right .owl-controls .owl-dot.active,
+.page-pagination.style-1 li span.current,
+.page-pagination.style-1 li a:hover,
+.page-pagination.style-1 li span:hover,
+.comment-form .contact-input:hover,
+.comment-form .contact-input:focus,
+.product .product-buttons:hover a,
+.custom-select:focus,
+.custom-select:hover,
+.top_cart_list_product,
+.ot-btn-border-classic:hover {
+  border-color: #e84c3d;
+}
+/* Border -  */
+.form-search-navi .form-control {
+  border-bottom-color: #e84c3d;
+}
+/* Darken Border */
+/* Darken--  border */
+/* Image Filter For Demo Only Remove it or your images go wrong*/
+.logo img,
+.icon-box-inline img,
+.partner-item a:hover img,
+.icon-box-block img,
+.icon-box-center img {
+  -webkit-filter: hue-rotate(-22deg) saturate(79%) brightness(107%);
+          filter: hue-rotate(-22deg) saturate(79%) brightness(107%);
+}
