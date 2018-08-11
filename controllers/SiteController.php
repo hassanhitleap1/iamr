@@ -19,6 +19,7 @@ use yii\web\Response;
 use yii\web\UploadedFile;
 use app\models\Page;
 use app\models\Freq;
+use app\components\Membership;
 
 class SiteController extends BaseController
 {
@@ -176,12 +177,12 @@ class SiteController extends BaseController
                             $referral->user_id_referral=Yii::$app->user->id;
 
                            if(!$referral->save()){
-                             return $this->render('payment');
+                             return $this->render('membership');
                            }     
                         }
                     }
                   
-                    return $this->render('payment');
+                    return $this->render('membership');
                 }
             }
         }
@@ -191,10 +192,14 @@ class SiteController extends BaseController
     }
 
 
-    public  function actionPayment(){
-        return $this->render('payment');
+    public  function actionPayment($id){
+        $membership =  new Membership($id);
+        return $this->render('payment',['membership'=> $membership]);
     }
-
+    public function actionMembership()
+    {
+        return $this->render('membership');
+    }
     public function actionView($id){
         $user= $this->findModel($id);
         return $this->render('view',['user'=>$user]);

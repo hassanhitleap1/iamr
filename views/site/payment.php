@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Url;
+use yii\bootstrap\Html;
 /* @var $this yii\web\View */
 
 $this->title = 'Payment';
@@ -81,10 +82,10 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span>100</span> total donation</a>
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span><?= $membership->price ?></span> total donation</a>
                 </li>
             </ul>
             <br/>
-            <a href="<?=Url::to(['/payment'])?>" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
+            <?= Html::a('Pay', ['/payment', 'id' => $membership->id], ['class' => 'btn btn-success btn-lg btn-block', "role" => "button"]) ?>
         </div>   
 </div>    

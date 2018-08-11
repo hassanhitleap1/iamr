@@ -25,6 +25,7 @@ use yii\web\Controller;
 use yii\web\Response;
 use app\controllers\BaseController;
 use yii\filters\VerbFilter;
+use app\components\Membership;
 
 
 
@@ -79,8 +80,10 @@ class PaymentController extends BaseController
      *
      * @return string
      */
-    public function actionIndex()
+    public function actionIndex($id)
     {
+
+        $membership = new Membership($id);
         $apiContext = new ApiContext(
             new OAuthTokenCredential(
                 'AZbhDhaLkyCCKVEEb2goVJqZblLGFqKABBHh34TUkg0nTNP4kNccefV5lDH0gr8cPNwzKi6xAm0EsUkj',
