@@ -217,6 +217,27 @@ class SiteController extends BaseController
     }
 
 
+        /**
+     * Displays homepage.
+     *
+     * @return string
+     */
+    public function actionSuccessStory()
+    {
+        $query = User::find()->where(['status' => 10]);
+        $countQuery = clone $query;
+        $pages = new Pagination(['totalCount' => $countQuery->count() ,'pageSize'=>12]);
+        $users = $query->offset($pages->offset)
+            ->limit($pages->limit)
+            ->all();
+    
+        return $this->render('successs-story', [
+             'users' => $users,
+             'pages' => $pages,
+        ]);
+
+        //return $this->render('index', ['users' => $users,'pagination' => $pagination]);
+    }
             /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
