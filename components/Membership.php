@@ -14,6 +14,8 @@ class Membership extends BaseObject
     public $limitedReferrl;
     public $percentagePerReferral;
     public $daysForPay;
+    public $commission;
+
 
     public function __construct($id)
     {
@@ -24,6 +26,7 @@ class Membership extends BaseObject
                 $this->limitedReferrl=100;
                 $this->percentagePerReferral=0.10;
                 $this->daysForPay=10;
+                $this->commission=0.10;
                 break;
             case 2:
                 $this->id = 2;
@@ -31,6 +34,7 @@ class Membership extends BaseObject
                 $this->limitedReferrl = null;
                 $this->percentagePerReferral = 0.20;
                 $this->daysForPay = 5;
+                $this->commission=0.20;
                 break;
             case 3:
                 $this->id = 3;
@@ -38,6 +42,7 @@ class Membership extends BaseObject
                 $this->limitedReferrl = null;
                 $this->percentagePerReferral = 0.50;
                 $this->daysForPay = 1;
+                $this->commission=0.50;
                 break;
                  default:
                 $this->id = 1;
@@ -45,12 +50,14 @@ class Membership extends BaseObject
                 $this->limitedReferrl = 100;
                 $this->percentagePerReferral = 0.10;
                 $this->daysForPay = 10;
+                $this->commission=0.10;
         }
         $data["id"] =$this->id ;
         $data["price"] =$this->price ;
         $data["limitedReferrl"]  = $this->limitedReferrl ;
         $data["percentagePerReferral"]  = $this->percentagePerReferral ;
         $data["daysForPay"]  = $this->daysForPay ;
+        $data["commission"]  = $this->commission ;
         return $data;
         
     }
@@ -73,6 +80,9 @@ class Membership extends BaseObject
         return $this->daysForPay;
     }
 
+    public function getCommission(){
+      return  $this->commission;
+    }
     
 }
 
