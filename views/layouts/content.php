@@ -1,46 +1,3 @@
-
-
-<!DOCTYPE html>
-<html lang="en">
-
-<!-- Mirrored from templates.thememodern.com/amwal/index_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Jul 2018 19:27:43 GMT -->
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Amwal Homepage Verision 2</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/css/bootstrap.css">
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&amp;subset=devanagari,latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/fonts/IcoMoon/icomoon.css">
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/fonts/linearicon/style.css">
-    <!-- Mobile Menu -->
-    <link type="text/css" rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/css/jquery.mmenu.all.css" />
-    <!-- OWL CAROUSEL
-        ================================================== -->
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/css/owl.carousel.css">
-    <!-- SELECTBOX
-        ================================================== -->
-    <link rel="stylesheet" type="text/css" href="<?= Yii::getAlias('@theme')?>/css/fancySelect.css" media="screen" />
-    <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" type="text/css" href="<?= Yii::getAlias('@theme')?>/revolution/css/settings.css">
-    <!-- REVOLUTION LAYERS STYLES -->
-    <link rel="stylesheet" type="text/css" href="<?= Yii::getAlias('@theme')?>/revolution/css/layers.css">
-    <!-- REVOLUTION NAVIGATION STYLES -->
-    <link rel="stylesheet" type="text/css" href="<?= Yii::getAlias('@theme')?>/revolution/css/navigation.css">
-    <!-- Main Style -->
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/style.css">
-    <!-- color scheme -->
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/switcher/demo.css" type="text/css">
-    <link rel="stylesheet" href="<?= Yii::getAlias('@theme')?>/switcher/colors/index.html" type="text/css" id="colors">
-
-    <!-- Favicons
-        ================================================== -->
-    <link rel="shortcut icon" href="<?= Yii::getAlias('@theme')?>/images/favicon.png">
-</head>
-<body class="royal_loader">
 <!-- royal_loader -->
 <div id="page">
     <!-- Mobile Menu -->
@@ -210,7 +167,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="navi-warp-home-2">
-                            <a href="index-2.html" class="logo"><img src="<?= Yii::getAlias('@theme')?>/images/Logo-on-light.png" class="img-responsive" alt="Image"></a>
+                            <a href="index-2.html" class="logo"><img src="images/Logo-on-light.png" class="img-responsive" alt="Image"></a>
                             <nav>
                                 <ul class="navi-level-1 active-subcolor">
                                     <li class="active">
@@ -371,8 +328,7 @@
                     <!-- SLIDE  -->
                     <li data-title="FOCUS ON">
                         <!-- MAIN IMAGE -->
-                        <img src="<?= Yii::getAlias('@theme')?>/images
-//Slider/home2/1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                        <img src="images/Slider/home2/1.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
                         <!-- LAYER NR. 0 -->
                         <div class="tp-caption tp-resizeme "
@@ -384,8 +340,7 @@
                              data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                              data-start="1000"
                              data-responsive_offset="on"
-                        ><img src="<?= Yii::getAlias('@theme')?>/images
-//Slider/home2/person1.png" class="img-responsive hidden-sm hidden-xs" alt="Image">
+                        ><img src="images/Slider/home2/person1.png" class="img-responsive hidden-sm hidden-xs" alt="Image">
                         </div>
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption tp-resizeme sl-s4"
@@ -454,8 +409,7 @@
                     <!-- SLIDE  -->
                     <li data-title="FOCUS ON">
                         <!-- MAIN IMAGE -->
-                        <img src="<?= Yii::getAlias('@theme')?>/images
-//Slider/home2/2.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                        <img src="images/Slider/home2/2.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
                         <!-- LAYER NR. 0 -->
                         <div class="tp-caption tp-resizeme "
@@ -467,8 +421,7 @@
                              data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                              data-start="1000"
                              data-responsive_offset="on"
-                        ><img src="<?= Yii::getAlias('@theme')?>/images
-//Slider/home2/person2.png" class="img-responsive hidden-sm hidden-xs" alt="Image">
+                        ><img src="images/Slider/home2/person2.png" class="img-responsive hidden-sm hidden-xs" alt="Image">
                         </div>
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption tp-resizeme sl-s4"
@@ -537,8 +490,7 @@
                     <!-- SLIDE  -->
                     <li data-title="FOCUS ON">
                         <!-- MAIN IMAGE -->
-                        <img src="<?= Yii::getAlias('@theme')?>/images
-//Slider/home2/3.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+                        <img src="images/Slider/home2/3.jpg"  alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
                         <!-- LAYERS -->
                         <!-- LAYER NR. 0 -->
                         <div class="tp-caption tp-resizeme "
@@ -550,8 +502,7 @@
                              data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
                              data-start="1000"
                              data-responsive_offset="on"
-                        ><img src="<?= Yii::getAlias('@theme')?>/images
-//Slider/home2/person3.png" class="img-responsive hidden-sm hidden-xs" alt="Image">
+                        ><img src="images/Slider/home2/person3.png" class="img-responsive hidden-sm hidden-xs" alt="Image">
                         </div>
                         <!-- LAYER NR. 1 -->
                         <div class="tp-caption tp-resizeme sl-s4"
@@ -743,8 +694,7 @@
                     <div class="col-md-6">
                         <div class="left-whyus-h2">
                             <div class="demo-style-1-warp">
-                                <img src="<?= Yii::getAlias('@theme')?>/images
-//Content/demo-style-1.jpg" class="img-responsive" alt="Image">
+                                <img src="images/Content/demo-style-1.jpg" class="img-responsive" alt="Image">
                                 <div class="demo-style-1-box-text right">
                                     <p>Today,</p>
                                     <p>Tomorrow,</p>
@@ -982,44 +932,34 @@
                 <div class="col-md-12">
                     <div id="partner-h2" class="owl-partner-h2">
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/1.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/1.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/2.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/2.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/3.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/3.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/4.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/4.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/5.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/5.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/6.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/6.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/7.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/7.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/8.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/8.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/6.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/6.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                         <div class="item-partner" >
-                            <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Partner/7.jpg" class="img-responsive partner-img" alt="Image"></a>
+                            <a href="#"><img src="images/Partner/7.jpg" class="img-responsive partner-img" alt="Image"></a>
                         </div>
                     </div>
                 </div>
@@ -1090,14 +1030,12 @@
                         </div>
                         <ul class="footer-list-news">
                             <li>
-                                <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Footer/linknews-1.jpg" class="img-responsive" alt="Image"></a>
+                                <a href="#"><img src="images/Footer/linknews-1.jpg" class="img-responsive" alt="Image"></a>
                                 <a href="#">Lorem Ipsum simply ems dummy text of the Ipsum.</a>
                                 <small class="time">22  March 2015</small>
                             </li>
                             <li>
-                                <a href="#"><img src="<?= Yii::getAlias('@theme')?>/images
-//Footer/linknews-2.jpg" class="img-responsive" alt="Image"></a>
+                                <a href="#"><img src="images/Footer/linknews-2.jpg" class="img-responsive" alt="Image"></a>
                                 <a href="#">Lorem Ipsum simply ems dummy text of the Ipsum.</a>
                                 <small class="time">22  March 2015</small>
                             </li>
@@ -1205,55 +1143,3 @@
     </a>
 </div>
 <!-- End Switcher -->
-<!-- SCRIPT -->
-<script src="<?= Yii::getAlias('@theme')?>/js/vendor/jquery.min.js"></script>
-<script src="<?= Yii::getAlias('@theme')?>/js/vendor/bootstrap.js"></script>
-
-<!-- Mobile Menu
-    ================================================== -->
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/js/plugins/jquery.mmenu.all.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/js/plugins/mobilemenu.js"></script>
-<!-- REVOLUTION JS FILES -->
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/jquery.themepunch.revolution.min.js"></script>
-<!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/revolution/js/extensions/revolution.extension.video.min.js"></script>
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/slider-home-2.js"></script>
-<!-- Initializing Owl Carousel
-    ================================================== -->
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/owl.carousel.js"></script>
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/owl.js"></script>
-<!-- PreLoad
-    ================================================== -->
-<script type="text/javascript" src="<?= Yii::getAlias('@theme')?>/js/plugins/royal_preloader.js"></script>
-<!-- Parallax -->
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/jquery.parallax-1.1.3.js"></script>
-<!-- <script src="js/plugins/parallax.js"></script> -->
-<!-- Fancy Select -->
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/fancySelect.js"></script>
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/lang-select.js"></script>
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/cb-select.js"></script>
-<!-- Initializing Counter Up
-    ================================================== -->
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/jquery.counterup.min.js"></script>
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/counterup.js"></script>
-<!-- Global Js
-    ================================================== -->
-<script src="<?= Yii::getAlias('@theme')?>/js/plugins/template.js"></script>
-<!-- Demo Switcher
-================================================== -->
-<script src="<?= Yii::getAlias('@theme')?>/switcher/demo.js"></script>
-
-</body>
-
-<!-- Mirrored from templates.thememodern.com/amwal/index_2.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 09 Jul 2018 19:29:45 GMT -->
-</html>
-

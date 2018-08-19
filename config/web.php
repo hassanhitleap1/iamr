@@ -7,7 +7,10 @@ $config = [
     'id' => 'basic',
     'name'=> 'you are a rich',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'app\components\Aliases',
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
