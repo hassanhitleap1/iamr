@@ -194,6 +194,9 @@ class SiteController extends BaseController
 
     public  function actionPayment($id){
         $membership =  new Membership($id);
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(['site/signup']);
+        }
         return $this->render('payment',['membership'=> $membership]);
     }
     public function actionMembership()
