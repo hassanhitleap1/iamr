@@ -46,5 +46,6 @@ return [
 	'message_get_referral' => 'to get referral must be pay (donation) to the site and show your information for the world',
 	'Contact' => 'Contact',
 	'desc_site' => 'A nonprofit organization that works to create a school to protect children from extremism can each user work with us and earn money',
+	'success_story' => 'Success Story',
 ];
 
