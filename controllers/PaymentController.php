@@ -82,20 +82,23 @@ class PaymentController extends BaseController
      */
     public function actionIndex($id)
     {
-
         $membership = new Membership($id);
-        $priceRefreral= $membership->price * 0.20;
-        $priceMembership=$membership->price -$priceRefreral;
+        $priceRefreral = $membership->price * $membership->percentagePerReferral;
+        $priceMembership = $membership->price - $priceRefreral;
+         echo $priceRefreral .'   ' ;
+         echo $priceMembership . '   ';
+        echo $membership->price . '   ';
+        //exit;
         $apiContext = new ApiContext(
             new OAuthTokenCredential(
-                'AZbhDhaLkyCCKVEEb2goVJqZblLGFqKABBHh34TUkg0nTNP4kNccefV5lDH0gr8cPNwzKi6xAm0EsUkj',
-                'EBATldnlJhjbZIR3nyn7uEG64Mvp6YVDX95TCq6F5_Ad_U0ThImz2ZRRofqnkyRozSNnDU0jsL6YbAP1'
+                'AcUkbdtN6Tto3T9xu9FZJGfBtU8DCrfy8XUvVCUN0pTkTuEt8ICQbqxdGqlc43_X5dEwSL-wOzhVJUlD',
+                'EMdubpGHRxTbQSxdWADuHLFDTBkjIPZtK2OMW2jtuK9lBRnVVPp5EF0aqFTJHiiZRdK4WwiQ38zw6oZy'
             )
         );
 
         $apiContext->setConfig(
             array(
-                'mode' => 'live',
+                'mode' => 'sandbox',
                 'http.ConnectionTimeOut' => 30,
                 'log.LogEnabled' => false,
                 'log.FileName' => '',
@@ -114,7 +117,7 @@ class PaymentController extends BaseController
             ->setCurrency('USD')
             ->setQuantity(1)
             ->setSku("123123") // Similar to `item_number` in Classic API
-            ->setPrice($priceRefreral);
+            ->setPrice($priceMembership);
         $item2 = new Item();
         $item2->setName('pay for referral')
             ->setCurrency('USD')
@@ -129,8 +132,8 @@ class PaymentController extends BaseController
    // charges etc.
         $details = new Details();
         $details->setShipping(0)
-            ->setTax(0)
-            ->setSubtotal($membership->price);
+                ->setTax(0)
+                ->setSubtotal($priceMembership + $priceRefreral);
    // ### Amount
    // Lets you specify a payment amount.
    // You can also specify additional details
@@ -151,24 +154,11 @@ class PaymentController extends BaseController
    // ### Redirect urls
    // Set the urls that the buyer must be redirected to after 
    // payment approval/ cancellation.
-    //     $baseUrl = 'http://localhost' . Yii::$app->getUrlManager()->getBaseUrl();
-    //    $successUrl= $baseUrl."/index.php?r=payment/success";
-    //    $errorUrl= $baseUrl . "/index.php?r=payment/error";
-    //     $redirectUrls = new RedirectUrls();
-    //     $redirectUrls->setReturnUrl($successUrl)
-    //         ->setCancelUrl($errorUrl);
-    try{
-            $baseUrl = 'http://localhost' . Yii::$app->getUrlManager()->getBaseUrl();
-            $redirectUrls = new RedirectUrls();
-            $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
-                ->setCancelUrl("$baseUrl/index.php?r=payment?error");
-        
-    }catch(Exeption $e){
-            echo $e->getCode();
-            echo $e->getData();
-            die($e);
-    }
-        
+        $baseUrl = 'http://localhost' . Yii::$app->getUrlManager()->getBaseUrl();
+
+        $redirectUrls = new RedirectUrls();
+        $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
+            ->setCancelUrl("$baseUrl/index.php?r=payment/error");
    // ### Payment
    // A Payment Resource; create one using
    // the above types and intent set to 'sale'
@@ -205,21 +195,21 @@ class PaymentController extends BaseController
     }
 
 
-    public function  actionSuccess()
+    public function actionSuccess()
     {
         $paymentId = $_GET['paymentId'];
         $payerID = $_GET['PayerID'];
-        $trans= Translation::find()->where(['payment_id'=>$paymentId])->one();
-        if(!empty($trans)){
-            $trans->completed=1;
+        $trans = Translation::find()->where(['payment_id' => $paymentId])->one();
+        if (!empty($trans)) {
+            $trans->completed = 1;
             $user = $this->findModel(Yii::$app->user->id);
-            $user->status=User::STATUS_ACTIVE;
-            $userRfId= $user->referral['user_id'];
-            if (!is_array($userRfId)&& !empty($userRfId)) {
-                $balance= Balance::find()->where(['user_id'=>$userRfId])->one();
-                $balance->balance+=20;
-                
-                if(!$balance->save()){
+            $user->status = User::STATUS_ACTIVE;
+            $userRfId = $user->referral['user_id'];
+            if (!is_array($userRfId) && !empty($userRfId)) {
+                $balance = Balance::find()->where(['user_id' => $userRfId])->one();
+                $balance->balance += 20;
+
+                if (!$balance->save()) {
                     var_dump($balance->getErrors());
                 }
             }
@@ -227,25 +217,25 @@ class PaymentController extends BaseController
 
             $user->save();
             $trans->save();
-          
-            
+
+
             UserHelper::setBalance(Yii::$app->user->id);
             UserHelper::setReferralCode(Yii::$app->user->id);
 
             return $this->redirect(['user/profile']);
         }
-        return  $this->redirect(['site/payment']);
-        
+        return $this->redirect(['site/payment']);
+
     }
 
 
     public function actionError()
     {
-        return  $this->redirect(['site/payment']);
+        return $this->redirect(['site/payment']);
     }
 
 
-     /**
+    /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
