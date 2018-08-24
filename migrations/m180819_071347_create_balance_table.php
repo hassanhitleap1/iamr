@@ -17,6 +17,15 @@ class m180819_071347_create_balance_table extends Migration
             'balance'=>$this->float()->notNull(),
             'user_id'=>$this->integer()->notNull(),
         ]);
+        // add foreign key for table `user`
+        $this->addForeignKey(
+            'fk-balance-user_id',
+            'balance',
+            'user_id',
+            'user',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**

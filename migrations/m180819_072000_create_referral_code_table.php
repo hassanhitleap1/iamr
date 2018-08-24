@@ -18,6 +18,15 @@ class m180819_072000_create_referral_code_table extends Migration
             'js_code'=>$this->text(),
             'user_id'=>$this->integer(11),
         ]);
+                // add foreign key for table `user`
+        $this->addForeignKey(
+            'fk-referral_code-user_id',
+            'referral_code',
+            'user_id',
+            'user',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**

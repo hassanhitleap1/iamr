@@ -21,6 +21,15 @@ class m180819_072020_create_translation_table extends Migration
             'membership_id'=> $this->tinyint(4)->defaultValue(0),
 
         ]);
+                        // add foreign key for table `user`
+        $this->addForeignKey(
+            'fk-translation-user_id',
+            'translation',
+            'user_id',
+            'user',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**

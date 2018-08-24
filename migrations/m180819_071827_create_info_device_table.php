@@ -30,6 +30,15 @@ class m180819_071827_create_info_device_table extends Migration
             'as' => $this->string(50),
             'user_id' => $this->integer(11),
         ]);
+        // add foreign key for table `user`
+        $this->addForeignKey(
+            'fk-info_device-user_id',
+            'info_device',
+            'user_id',
+            'user',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**

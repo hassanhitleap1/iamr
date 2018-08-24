@@ -23,6 +23,15 @@ class m180819_071914_create_payment_request_table extends Migration
             'create_at'=>$this->date(),
             'accept'=> $this->tinyint(3),
         ]);
+        // add foreign key for table `user`
+        $this->addForeignKey(
+            'fk-payment_request-user_id',
+            'payment_request',
+            'user_id',
+            'user',
+            'id',
+            'CASCADE'
+        );
     }
 
     /**

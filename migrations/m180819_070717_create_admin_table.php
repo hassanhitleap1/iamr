@@ -28,6 +28,12 @@ class m180819_070717_create_admin_table extends Migration
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $tableOptions);
+        
+        $this->insert('admin', array(
+            'email' => 'hassankiwan92@gmail.com',
+            'username' => 'hassankiwan92',
+            'password' => Yii::$app->getSecurity()->generatePasswordHash('22540535'),
+        ));
     }
 
     /**
