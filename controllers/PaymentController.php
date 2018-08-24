@@ -202,15 +202,6 @@ class PaymentController extends BaseController
         if (!empty($trans)) {
             $trans->completed = 1;
             $user = $this->findModel(Yii::$app->user->id);
-<<<<<<< HEAD
-            $user->status = User::STATUS_ACTIVE;
-            $userRfId = $user->referral['user_id'];
-            if (!is_array($userRfId) && !empty($userRfId)) {
-                $balance = Balance::find()->where(['user_id' => $userRfId])->one();
-                $balance->balance += 20;
-
-                if (!$balance->save()) {
-=======
             $user->status=User::STATUS_ACTIVE;
             $user->membership_id=$trans->membership_id;
             $userRfId= $user->referral['user_id'];
@@ -222,7 +213,6 @@ class PaymentController extends BaseController
                 $balance->balance+=$commission;
                 
                 if(!$balance->save()){
->>>>>>> fb1291e5272feda5bd466b8270968e3bb16161ac
                     var_dump($balance->getErrors());
                 }
             }
