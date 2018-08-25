@@ -83,9 +83,9 @@ class PaymentController extends BaseController
         $membership = new Membership($id);
         $priceRefreral = $membership->price * $membership->percentagePerReferral;
         $priceMembership = $membership->price - $priceRefreral;
-         echo $priceRefreral .'   ' ;
-         echo $priceMembership . '   ';
-        echo $membership->price . '   ';
+        echo $priceRefreral ;
+        echo $priceMembership ;
+        echo $membership->price;
         //exit;
         $apiContext = new ApiContext(
             new OAuthTokenCredential(
@@ -131,14 +131,14 @@ class PaymentController extends BaseController
         $details = new Details();
         $details->setShipping(0)
                 ->setTax(0)
-                ->setSubtotal($priceMembership + $priceRefreral);
+                ->setSubtotal($membership->price);
    // ### Amount
    // Lets you specify a payment amount.
    // You can also specify additional details
    // such as shipping, tax.
         $amount = new Amount();
         $amount->setCurrency("USD")
-            ->setTotal(100)
+            ->setTotal($membership->price)
             ->setDetails($details);
    // ### Transaction
    // A transaction defines the contract of a
@@ -177,7 +177,7 @@ class PaymentController extends BaseController
             $trsns->hash = $hash;
             $trsns->payment_id = $payment->getId();
             $trsns->completed = 0;
-            $trans->membership_id=$id;
+            $trsns->membership_id = $id;
             $trsns->save();
         } catch (Exception $ex) {
        // NOTE: PLEASE DO NOT USE RESULTPRINTER CLASS IN YOUR ORIGINAL CODE. FOR SAMPLE ONLY

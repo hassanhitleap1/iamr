@@ -49,13 +49,8 @@ font-size: 16px;
                             <hr>
                             <li>10% <?= Yii::t('app', 'per_buy_users_membaership') ?>  </li>
                             <hr>
-<<<<<<< HEAD
-                            <li>price 20$ doller</li>
-                            <hr>
-=======
                             <li><?= Yii::t('app', 'price') ?>  $20 doller </li>
                              <hr>
->>>>>>> fb1291e5272feda5bd466b8270968e3bb16161ac
                             <li>100 <?= Yii::t('app', 'direct_referral') ?> </li>
                             <hr>
                             <li><?= Yii::t('app', 'pay_every_10_days') ?></li>
@@ -75,11 +70,7 @@ font-size: 16px;
                             <hr>
                             <li>10% <?= Yii::t('app', 'per_buy_users_membaership') ?></li>
                             <hr>
-<<<<<<< HEAD
-                            <li>price 50$ doller</li>
-=======
                             <li><?= Yii::t('app', 'price') ?>  $50 doller </li>
->>>>>>> fb1291e5272feda5bd466b8270968e3bb16161ac
                             <hr>
                             <li>100 <?= Yii::t('app', 'direct_referral') ?></li>
                             <hr>
@@ -101,11 +92,7 @@ font-size: 16px;
                             <hr>    
                             <li>10% <?= Yii::t('app', 'per_buy_users_membaership') ?></li>
                             <hr>
-<<<<<<< HEAD
-                            <li>price 100$ doller</li>
-=======
                             <li><?= Yii::t('app', 'price') ?>  $100 doller </li>
->>>>>>> fb1291e5272feda5bd466b8270968e3bb16161ac
                             <hr>
                             <li>100 <?= Yii::t('app', 'direct_referral') ?> </li>
                             <hr>
