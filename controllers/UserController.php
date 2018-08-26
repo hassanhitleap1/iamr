@@ -85,7 +85,7 @@ class UserController extends BaseController
             $blance= Balance::find()->where(['user_id'=>Yii::$app->user->id])->one();
             $referralCode=ReferralCode::find()->where(['user_id'=>Yii::$app->user->id])->one();
             //SELECT * FROM `user` WHERE id in (SELECT user_id_referral FROM referral WHERE user_id=26)
-            $subQuery = Referral::find()->select('user_id_referral')->where(['user_id'=>Yii::$app->user->identity->id]);
+            $subQuery = Referral::find()->select('user_id_referral')->where(['user_id'=>Yii::$app->user->id]);
             $query = User::find()->where(['in', 'id', $subQuery]);
             $referalUsers = $query->all();
           

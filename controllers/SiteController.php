@@ -158,7 +158,7 @@ class SiteController extends BaseController
         if (!empty($_GET['ref'])){ 
             $session->set('ref',$_GET['ref']);
         }
-
+       
         $model = new SignupForm();
         
         if (!Yii::$app->user->isGuest) {return $this->redirect(['site/index']);}
@@ -174,7 +174,7 @@ class SiteController extends BaseController
                         if(!empty($userRef)){
                             $referral= new Referral;
                             $referral->user_id=$userRef->id;
-                            $referral->user_id_referral=Yii::$app->user->id;
+                            $referral->user_id_referral=Yii::$app->user->id ;
 
                            if(!$referral->save()){
                              return $this->render('membership');

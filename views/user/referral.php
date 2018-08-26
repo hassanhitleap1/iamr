@@ -17,15 +17,11 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="referral">
                 <div class="form-group">
                     <label for="comment">Referral: html</label>
-                    <textarea class="form-control" rows="2" id="comment"  >
-                       <?= $referralCode->html_code ?>
-                    </textarea>
+                    <textarea class="form-control" rows="2" id="comment"><?= $referralCode->html_code ?></textarea>
                 </div>
                 <div class="form-group">
                         <label for="comment">Referral: script</label>
-                        <textarea class="form-control" rows="2" id="comment">
-                             <?= $referralCode->js_code ?>
-                        </textarea>
+                        <textarea class="form-control" rows="2" id="comment"><?= $referralCode->js_code ?></textarea>
                 </div>                
             </div>
         </div>

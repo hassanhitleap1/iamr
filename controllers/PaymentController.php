@@ -208,7 +208,7 @@ class PaymentController extends BaseController
             if (!is_array($userRfId)&& !empty($userRfId)) {
                 $balance= Balance::find()->where(['user_id'=>$userRfId])->one();
                 $membershipParent = new Membership($user->membership_id);
-                $membershipChiled = new Membership(Yii::$app->user->membership_id);
+                $membershipChiled = new Membership(Yii::$app->user->identity->membership_id);
                 $commission =$membershipChiled->price *$membershipParent->commission;
                 $balance->balance+=$commission;
                 
