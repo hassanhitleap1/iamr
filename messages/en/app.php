@@ -47,5 +47,14 @@ return [
 	'Contact' => 'Contact',
 	'desc_site' => 'A nonprofit organization that works to create a school to protect children from extremism can each user work with us and earn money',
 	'success_story' => 'Success Story',
+	'per_buy_users_membaership'=>'per buy users membaership',
+	'price:{0}'=>'price {0} doller ',
+	'direct_referral'=>'direct referral',
+	'pay_every:{0}'=>'pay every {0} dayes',
+	'unlimited_direct_referral'=>'unlimited direct referral',
+	'Standerd'=>'Standerd',
+	'Golden'=>'Golden',
+	'Premium'=>'Premium',
+
 ];
 
