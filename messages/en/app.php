@@ -55,6 +55,7 @@ return [
 	'Standerd'=>'Standerd',
 	'Golden'=>'Golden',
 	'Premium'=>'Premium',
+	'Order_now' => 'Order now',
 
 ];
 

@@ -55,4 +55,5 @@ return [
 	'Standerd'=>'Standard',
 	'Golden'=>"d'oro",
 	'Premium'=>'premio',
+	'Order_now'=> 'ordina adesso',
 ];

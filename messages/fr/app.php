@@ -55,4 +55,5 @@ return [
 	'Standerd'=>'la norme',
 	'Golden'=>"d'or",
 	'Premium'=>'Prime',
+	'Order_now' => 'Commandez maintenant',
 ];

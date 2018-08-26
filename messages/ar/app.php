@@ -54,5 +54,6 @@ return [
 	'Standerd'=>'ستاندرد',
 	'Golden'=>'ذهبي',
 	'Premium'=>'بريميوم ',
+	'Order_now' => 'اطلب الان',
 
 ];

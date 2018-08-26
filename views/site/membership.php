@@ -49,14 +49,14 @@ font-size: 16px;
                             <hr>
                             <li>10% <?= Yii::t('app', 'per_buy_users_membaership') ?>  </li>
                             <hr>
-                            <li><?= Yii::t('app', 'price') ?>  $20 doller </li>
-                             <hr>
+                            <li><?= Yii::t('app', 'price:{0}', 20) ?> </li>
+                            <hr>
                             <li>100 <?= Yii::t('app', 'direct_referral') ?> </li>
                             <hr>
-                            <li><?= Yii::t('app', 'pay_every_10_days') ?></li>
+                            <li><?= \Yii::t('app', 'pay_every:{0}', 10); ?></li>
                             <hr>
                     </ul>
-                    <?= Html::a('Order now', ['site/payment', 'id' => 1], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
+                    <?= Html::a(Yii::t('app', 'Order_now'), ['site/payment', 'id' => 1], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
                 </div>
             </div>
     </div>
@@ -68,17 +68,17 @@ font-size: 16px;
                 <div class="panel-body">
                     <ul class="list-unstyled">
                             <hr>
-                            <li>10% <?= Yii::t('app', 'per_buy_users_membaership') ?></li>
+                            <li>20% <?= Yii::t('app', 'per_buy_users_membaership') ?></li>
                             <hr>
-                            <li><?= Yii::t('app', 'price') ?>  $50 doller </li>
+                            <li><?= Yii::t('app', 'price:{0}', 50) ?> </li>
                             <hr>
-                            <li>100 <?= Yii::t('app', 'direct_referral') ?></li>
+                            <li><?= Yii::t('app', 'unlimited_direct_referral') ?></li>
                             <hr>
-                            <li><?= Yii::t('app', 'pay_every_10_days') ?> </li>
+                            <li><?= \Yii::t('app', 'pay_every:{0}', 5); ?></li>
                             <hr>
 
                     </ul>
-                    <?= Html::a('Order now', ['site/payment', 'id' => 2], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
+                    <?= Html::a(Yii::t('app', 'Order_now'), ['site/payment', 'id' => 2], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
                 </div>
             </div>
     </div>
@@ -90,17 +90,17 @@ font-size: 16px;
                 <div class="panel-body">
                     <ul class="list-unstyled">
                             <hr>    
-                            <li>10% <?= Yii::t('app', 'per_buy_users_membaership') ?></li>
+                            <li>50% <?= Yii::t('app', 'per_buy_users_membaership') ?></li>
                             <hr>
-                            <li><?= Yii::t('app', 'price') ?>  $100 doller </li>
+                            <li><?= Yii::t('app', 'price:{0}', 100) ?> </li>
                             <hr>
-                            <li>100 <?= Yii::t('app', 'direct_referral') ?> </li>
+                            <li><?= Yii::t('app', 'unlimited_direct_referral') ?> </li>
                             <hr>
-                            <li> <?= Yii::t('app', 'pay_every_10_days') ?> </li>
+                            <li><?= \Yii::t('app', 'pay_every:{0}', 1); ?></li>
                             <hr>
 
                     </ul>
-                    <?= Html::a('Order now', ['site/payment', 'id' => 3], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
+                    <?= Html::a(Yii::t('app', 'Order_now'), ['site/payment', 'id' => 3], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
                 </div>
             </div>
     </div>

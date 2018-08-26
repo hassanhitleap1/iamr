@@ -91,7 +91,7 @@ font-size: 16px;
                             <li><?=\Yii::t('app', 'pay_every:{0}', 10); ?></li>
                             <hr>
                     </ul>
-                    <?= Html::a('Order now', ['site/payment', 'id' => 1], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
+                    <?= Html::a(Yii::t('app', 'Order_now'), ['site/payment', 'id' => 1], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
                 </div>
             </div>
     </div>
@@ -113,7 +113,7 @@ font-size: 16px;
                             <hr>
 
                     </ul>
-                    <?= Html::a('Order now', ['site/payment', 'id' => 2], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
+                    <?= Html::a(Yii::t('app', 'Order_now'), ['site/payment', 'id' => 2], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
                 </div>
             </div>
     </div>
@@ -135,7 +135,7 @@ font-size: 16px;
                             <hr>
 
                     </ul>
-                    <?= Html::a('Order now', ['site/payment', 'id' => 3], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
+                    <?= Html::a(Yii::t('app', 'Order_now'), ['site/payment', 'id' => 3], ['class' => 'btn btn-primary center-block', "target" => "_blank"]) ?>
                 </div>
             </div>
     </div>
