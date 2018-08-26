@@ -47,4 +47,12 @@ return [
 	'Contact' => 'Contact',
 	'desc_site' => "Une organisation à but non lucratif qui travaille à la création d'une école pour protéger les enfants contre l'extrémisme, chaque utilisateur peut travailler avec nous et gagner de l'argent",
 	'success_story' => 'succès',
+	'per_buy_users_membaership'=>"Abonnement d'achat par utilisateur",
+	'price:{0}'=>'Le prix est de {0} ',
+	'direct_referral'=>'référence directe',
+	'pay_every:{0}'=>'payer tous les {0} jours',
+	'unlimited_direct_referral'=>'référence directe illimitée',
+	'Standerd'=>'la norme',
+	'Golden'=>"d'or",
+	'Premium'=>'Prime',
 ];

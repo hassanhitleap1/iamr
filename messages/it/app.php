@@ -47,4 +47,12 @@ return [
 	'Contact' => 'Contatto',
 	'desc_site' => "Un'organizzazione non profit che lavora per creare una scuola per proteggere i bambini dall'estremismo può ogni utente lavorare con noi e guadagnare denaro",
 	'success_story' => 'storia di successo',
+	'per_buy_users_membaership'=>'Iscrizione utente per utente',
+	'price:{0}'=>'Il prezzo è $ {0}',
+	'direct_referral'=>'referral diretto',
+	'pay_every:{0}'=>'pagare ogni {0} giorni',
+	'unlimited_direct_referral'=>'referral diretto illimitato',
+	'Standerd'=>'Standard',
+	'Golden'=>"d'oro",
+	'Premium'=>'premio',
 ];

@@ -47,4 +47,8 @@ return [
 	'Contact' => 'Kontakt',
 	'desc_site' => 'Eine gemeinnützige Organisation, die daran arbeitet, eine Schule zu schaffen, um Kinder vor Extremismus zu schützen, kann jeder Benutzer mit uns arbeiten und Geld verdienen',
 	'success_story' => 'Erfolgsgeschichte',
+	'per_buy_users_membaership'=>'Pro Benutzer erwerben Mitgliedschaft',
+	'price:{0}'=>'Il prezzo è $ {0}',
+	'direct_referral'=>'direkte Überweisung',
+	'pay_every:{0}'=>'Bezahlen Sie alle {0} Tage',
 ];
