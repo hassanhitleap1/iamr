@@ -215,10 +215,17 @@ class PaymentController extends BaseController
             $user = $this->findModel(Yii::$app->user->id);
             $user->status = User::STATUS_ACTIVE;
             $userRfId = $user->referral['user_id'];
+            exit;
+            $membershipUser = new Membership($trans->membership_id);
+            $membershipRef = new Membership($user->referral['membership_id']);
+            $countRef= Referral::find()->where(['user_id'=> $userRfId])->count();
             if (!is_array($userRfId) && !empty($userRfId)) {
                 $balance = Balance::find()->where(['user_id' => $userRfId])->one();
-                $balance->balance += 20;
-
+                if($membershipRef->limitedReferrl == null or $membershipRef->limitedReferrl <= $countRef){
+                    $commission=  $membershipRef->commission * $membershipRef->price;
+                    $balance->balance += $commission;  
+                }
+                
                 if (!$balance->save()) {
                     var_dump($balance->getErrors());
                 }
