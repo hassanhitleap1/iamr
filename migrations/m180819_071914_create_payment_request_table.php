@@ -21,7 +21,7 @@ class m180819_071914_create_payment_request_table extends Migration
             'country'=>$this->string(100),
             'full_address'=>$this->string(200),
             'create_at'=>$this->date(),
-            'accept'=> $this->tinyint(3),
+            'accept'=> 'tinyint(3)',
         ]);
     }
 
