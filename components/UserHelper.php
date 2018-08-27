@@ -7,6 +7,7 @@ use yii\base\BaseObject;
 use app\models\Balance;
 use app\models\Referral;
 use app\models\ReferralCode;
+use app\models\PaymentRequest;
 
 
 class UserHelper extends BaseObject
@@ -47,6 +48,24 @@ class UserHelper extends BaseObject
         $referralCode->save();
 
     }
+
+
+    public static function isAcceptRqustMoanyNow(){
+        $membership= new Membership(Yii::$app->user->identity->membership_id);
+        $lastRequst=PaymentRequest::find()->where(['user_id'=>Yii::$app->user->id])->orderBy(['create_at'=>SORT_DESC])->one();
+        $today = new \DateTime('now'); 
+        $lastRequstDate   = new \DateTime($lastRequst->create_at); 
+        $dteDiff  = $today->diff($lastRequstDate); 
+      
+         if($membership->daysForPay <= $dteDiff->days){
+             return true;
+             
+         }else{
+             return $dteDiff;
+            
+         }
+
+    } 
 }
 
 ?>

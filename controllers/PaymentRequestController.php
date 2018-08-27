@@ -9,6 +9,8 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\controllers\BaseController;
+use app\components\Membership;
+use app\components\UserHelper;
 
 
 /**
@@ -65,7 +67,16 @@ class PaymentRequestController extends BaseController
     public function actionIndex()
     {
         $model = new PaymentRequest();
-
+        
+        $dteDiff=UserHelper::isAcceptRqustMoanyNow();
+        if( $dteDiff===true){
+          
+        }else{
+            $dateWait =  '  must be wait  ' .$dteDiff->format("%d %H:%I:%S"); 
+            Yii::$app->session->setFlash('record', $dateWait);
+           
+        }
+    
         if ($model->load(Yii::$app->request->post())) {
             $model->user_id= Yii::$app->user->id;
             $model->create_at = date('Y-m-d H:m:s');
