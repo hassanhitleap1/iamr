@@ -42,26 +42,21 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'accept' => function ($url, $model) {
                             if ($model->accept) {
-                                return Html::a(
-                                '<span class="glyphicon glyphicon-remove-sign" style="color:red;" ></span>',
-                                $url,
-                                [
-                                'title' => 'Accept',
-                                'data' =>
-                                [
-                                'confirm' => 'Are you sure you want to Disactive this user?', 'method' => 'post'],
-                                'data-ajax' => '1'
-                                ] );
-                                } else {
+                                return 
+                                '<span class="glyphicon glyphicon-ok-sign" style="color:blue;" ></span>';
+                                } 
+                                else {
                                     return Html::a(
-                                    '<span class="glyphicon glyphicon-ok-sign" ></span>',
-                                    $url,
-                                    [
-                                        'title' => 'Accept',
-                                        'data' =>
-                                        ['confirm' => 'Are you sure you want to active this user?', 'method' => 'post'],
-                                        'data-ajax' => '1'
-                                        ] );}
+                                                '<span class="glyphicon glyphicon-credit-card" style="color:red;" ></span>',
+                                                $url,
+                                                    [
+                                                    'title' => 'Accept',
+                                                    'data' =>
+                                                            ['confirm' => 'Are you sure you want to payout this user?', 'method' => 'post'],
+                                                        'data-ajax' => '1'
+                                                    ] 
+                                            );
+                                        }
                                     },
                                 ],
             ],
