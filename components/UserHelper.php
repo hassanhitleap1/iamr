@@ -53,17 +53,22 @@ class UserHelper extends BaseObject
     public static function isAcceptRqustMoanyNow(){
         $membership= new Membership(Yii::$app->user->identity->membership_id);
         $lastRequst=PaymentRequest::find()->where(['user_id'=>Yii::$app->user->id])->orderBy(['create_at'=>SORT_DESC])->one();
-        $today = new \DateTime('now'); 
-        $lastRequstDate   = new \DateTime($lastRequst->create_at); 
-        $dteDiff  = $today->diff($lastRequstDate); 
-      
-         if($membership->daysForPay <= $dteDiff->days){
-             return true;
-             
-         }else{
-             return $dteDiff;
-            
-         }
+        if(!empty($lastRequst)){
+            $today = new \DateTime('now'); 
+            $lastRequstDate   = new \DateTime($lastRequst->create_at); 
+            $dteDiff  = $today->diff($lastRequstDate); 
+          
+             if($membership->daysForPay <= $dteDiff->days){
+                 return true;
+                 
+             }else{
+                 return $dteDiff;
+                
+             }
+        }else{
+            return true;
+        }
+
 
     } 
 }
