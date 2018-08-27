@@ -16,7 +16,7 @@ class m180819_072000_create_referral_code_table extends Migration
             'id' => $this->primaryKey(),
             'html_code'=>$this->string(600),
             'js_code'=>$this->text(),
-            'user_id'=>$this->integer(11),
+            'user_id'=>$this->integer(11)->notNull()->unique(),
         ]);
                 // add foreign key for table `user`
         $this->addForeignKey(
