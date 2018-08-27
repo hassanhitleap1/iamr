@@ -58,6 +58,7 @@ return [
 	'Order_now' => 'Order now',
 	'your_membership'=>'your membership',
 	'Number'=>'Number',
+	'why_get_membership'=>'why get membership',
 
 ];
 

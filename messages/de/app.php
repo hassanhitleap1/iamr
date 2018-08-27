@@ -54,4 +54,5 @@ return [
 	'Order_now' => 'jetzt bestellen',
 	'your_membership'=>'Deine Mitgliedschaft',
 	'Number'=>'Nummer',
+	'why_get_membership'=>'Warum Mitgliedschaft bekommen?',
 ];

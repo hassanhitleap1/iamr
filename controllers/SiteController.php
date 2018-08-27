@@ -133,6 +133,20 @@ class SiteController extends BaseController
         );
     }
 
+        /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionWhyGetMembership()
+    {
+        $model= Page::find()->where(['key_page'=> 'page_why'])->one();
+        return $this->render('why-get-membership',[
+            'model'=> $model,
+        ]
+        );
+    }
+
     /**
      * Displays about page.
      *

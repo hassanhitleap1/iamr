@@ -58,4 +58,5 @@ return [
 	'Order_now' => 'Commandez maintenant',
 	'your_membership'=>'votre adhésion',
 	'Number'=>'Nombre',
+	'why_get_membership'=>'pourquoi adhérer',
 ];
