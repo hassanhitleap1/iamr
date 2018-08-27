@@ -32,7 +32,7 @@ class m180819_070717_create_admin_table extends Migration
         $this->insert('admin', array(
             'email' => 'hassankiwan92@gmail.com',
             'username' => 'hassankiwan92',
-            'password' => Yii::$app->getSecurity()->generatePasswordHash('22540535'),
+            'password_hash' => Yii::$app->getSecurity()->generatePasswordHash('22540535'),
         ));
     }
 
