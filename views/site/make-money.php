@@ -44,19 +44,19 @@ $this->title =  Yii::t('app','make-money');
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="standerd"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Standerd')?></label>
-                    <input type="number" class="form-control" id="standerd" value="0"  min="0">
+                    <input type="number" class="form-control" id="standerd" value=0  min=0>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="golden"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Golden')?></label>
-                    <input type="number" class="form-control" id="golden" value="0" min="0">
+                    <input type="number" class="form-control" id="golden" value=0 min=0>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="premium"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Premium')?></label>
-                    <input type="number" class="form-control" id="premium" value="0"  min="0">
+                    <input type="number" class="form-control" id="premium" value=0  min=0>
                 </div>
             </div>
             <div class="col-md-6">
@@ -93,18 +93,15 @@ $(document).ready(function(){
     });
 });
 function calculat() {
-    var standerd = $("#standerd").val();
-    var golden = $("#golden").val();
-    var premium = $("#premium").val();
-    var membership= $("#membership").val();
+    var standerd = parseInt($("#standerd").val());
+    var golden =parseInt($("#golden").val());
+    var premium = parseInt($("#premium").val());
+    var membership= parseInt($("#membership").val());
+    if(membership==1 && (standerd + golden + premium)>100){
+        return 'The Maximum referral must be  100';
+    }
     return calculatStanderd(standerd,membership) + calculatGolden(golden,membership)+ calculatPremium(premium,membership); 
-    
-    // if(membership==1 and (standerd+ golden+ premium)>100){
-    //     return 'number of referral must be max 100';
-    // }else{
-        
-    // }
-    
+
 
 }
 
