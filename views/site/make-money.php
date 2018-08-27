@@ -31,15 +31,37 @@ $this->title =  Yii::t('app','make-money');
     </div>
     <div class="container calculator">
         <div class="row">
-            <div class="col-md-4 col-md-offset-2">
+            <div class="col-md-3">
                 <div class="form-group">
-                <label for="ref">Number of Referral:</label>
-                <input type="number" class="form-control" id="ref" value="1">
+                    <label for="ref"><?= Yii ::t('app','your_membership')?></label>
+                    <select type="number" class="form-control" id="membership">
+                        <option  selected value=1><?= Yii ::t('app','Standerd')?></option>
+                        <option value=2><?= Yii ::t('app','Golden')?></option>
+                        <option value=3><?= Yii ::t('app','Premium')?></option>
+                    </select>
+                </div>
             </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="standerd"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Standerd')?></label>
+                    <input type="number" class="form-control" id="standerd" value="1"  min="0">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="golden"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Golden')?></label>
+                    <input type="number" class="form-control" id="golden" value="1" min="0">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label for="premium"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Premium')?></label>
+                    <input type="number" class="form-control" id="premium" value="1"  min="0">
+                </div>
             </div>
             <div class="col-md-6">
                 <div class="" style="font-size: 32px;">
-                    <span class="glyphicon glyphicon-usd" > </span> <strong id="amount">20 </strong>
+                    <span class="glyphicon glyphicon-usd" > </span> <strong id="amount"> </strong>
                 </div>
             </div>
         </div>
@@ -49,17 +71,95 @@ $this->title =  Yii::t('app','make-money');
 <?php JSRegister::begin(); ?>
 <script>
 $(document).ready(function(){
-    $( "#ref" ).change(function() {
-    var number = $(this).val();
-    if( 0 >= number ){
-    $( "#amount" ).text( "error number must be real number" );
-    }else{
-    amount = number*20;
-    $( "#amount" ).text( amount );
-    }
 
-    
+         amount=calculat();
+         $( "#amount" ).text( amount );
+
+    $( "#standerd" ).change(function() {
+        amount=calculat();
+        $( "#amount" ).text( amount );
+    });
+    $( "#golden" ).change(function() {
+        amount=calculat();
+        $( "#amount" ).text( amount );
+    });
+    $( "#premium" ).change(function() {
+        amount=calculat();
+        $( "#amount" ).text( amount );
+    });
+    $( "#membership" ).change(function() {
+        amount=calculat();
+        $( "#amount" ).text( amount );
     });
 });
+function calculat() {
+    var standerd = $("#standerd").val();
+    var golden = $("#golden").val();
+    var premium = $("#premium").val();
+    var membership= $("#membership").val();
+    
+     return calculatStanderd(standerd,membership) + calculatGolden(golden,membership)+ calculatPremium(premium,membership)
+
+}
+
+function calculatStanderd(number,membership){
+  
+    var perOne;    
+    switch(membership) 
+    {
+        case 1:
+        perOne=20*0.10;
+            break;
+        case 2:
+        perOne=20*0.20;
+            break;
+        case 3:
+        perOne=20*0.50;
+            break;
+        default:
+        perOne=20*0.10;
+    }  
+    return perOne*number;
+}
+function calculatGolden(number,membership){
+    var perOne;
+    
+    switch(membership) 
+    {
+        case 1:
+        perOne=50*0.10;
+            break;
+        case 2:
+        perOne=50*0.20;
+            break;
+        case 3:
+        perOne=50*0.50;
+            break;
+        default:
+        perOne=50*0.10;
+    }  
+    return perOne*number;
+}
+function calculatPremium(number,membership){
+    var perOne;
+    
+    switch(membership) 
+    {
+        case 1:
+        perOne=100*0.10;
+            break;
+        case 2:
+        perOne=100*0.20;
+            break;
+        case 3:
+        perOne=100*0.50;
+            break;
+        default:
+        perOne=100*0.10;
+    }  
+    return perOne*number;
+}
+
+
 </script>
 <?php JSRegister::end(); ?>

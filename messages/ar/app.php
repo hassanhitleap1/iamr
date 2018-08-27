@@ -55,5 +55,7 @@ return [
 	'Golden'=>'ذهبي',
 	'Premium'=>'بريميوم ',
 	'Order_now' => 'اطلب الان',
+	'your_membership'=>'عضويتك',
+	'Number'=>'عدد',
 
 ];

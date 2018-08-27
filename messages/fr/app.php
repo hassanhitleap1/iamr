@@ -56,4 +56,6 @@ return [
 	'Golden'=>"d'or",
 	'Premium'=>'Prime',
 	'Order_now' => 'Commandez maintenant',
+	'your_membership'=>'votre adhésion',
+	'Number'=>'Nombre',
 ];

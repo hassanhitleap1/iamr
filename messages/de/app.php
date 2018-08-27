@@ -51,6 +51,7 @@ return [
 	'price:{0}'=>'Il prezzo è $ {0}',
 	'direct_referral'=>'direkte Überweisung',
 	'pay_every:{0}'=>'Bezahlen Sie alle {0} Tage',
-	'Order_now' => 'jetzt bestellen
-',
+	'Order_now' => 'jetzt bestellen',
+	'your_membership'=>'Deine Mitgliedschaft',
+	'Number'=>'Nummer',
 ];

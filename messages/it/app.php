@@ -56,4 +56,6 @@ return [
 	'Golden'=>"d'oro",
 	'Premium'=>'premio',
 	'Order_now'=> 'ordina adesso',
+	'your_membership'=>'la tua iscrizione',
+	'Number'=>'Numero',
 ];
