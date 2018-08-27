@@ -32,7 +32,7 @@ class m180819_071852_create_page_table extends Migration
             'key_page' => $this->string(300),
         ], $tableOptions);
 
-        $this->insert('admin', array(
+        $this->insert('page', array(
             'title_en' => 'You pay a little put it means a lot to us Help us to build a developed society by building a secure school',
             'title_de' => 'Wir sammeln das Geld für den Schulbau',
             'title_fr' => "nous recueillons l'argent pour la construction de l'école",

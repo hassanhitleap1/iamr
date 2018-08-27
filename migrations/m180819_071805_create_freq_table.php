@@ -13,6 +13,21 @@ class m180819_071805_create_freq_table extends Migration
     public function safeUp()
     {
         $this->createTable('freq', [
+            'id' => $this->primaryKey(),
+            'id_html' => $this->string(60),
+            'prg_en' => $this->string(300),
+            'prg_de' => $this->string(300),
+            'prg_it' => $this->string(300),
+            'prg_ar' => $this->string(300),
+            'prg_fr' => $this->string(300),
+            'collapse_en' => $this->text(),
+            'collapse_it' => $this->text(),
+            'collapse_de' => $this->text(),
+            'collapse_fr' => $this->text(),
+            'collapse_ar' => $this->text(),
+
+        ]);
+        $this->insert('freq', array(
             'id' => 'make-maony',
             'id_html' => 'how to make money through youarearich',
             'prg_en' => 'wie man Geld verdient',
@@ -26,7 +41,7 @@ class m180819_071805_create_freq_table extends Migration
             'collapse_fr' => 'Vous pouvez vous enregistrer sur le site "youarearich" et payer le montant du don et obtenir un lien de référence et le publier parmi vos amis, blogs et sites de réseautage social afin que vous obtenez chaque lien de parrainage 20 $ donnés',
             'collapse_ar' => 'يمكن تسجيل في موقع "youarearich" ودفع مبلغ التبرع والحصول على رابط الأحالة  ونشره بين اصدقاءك والمدونات ومواقع التواصل الاجتمعية بحيث تحصل على كل رابط احالة ٢٠ دولار تم التبرع له ',
 
-        ]);
+        ));
         $this->insert('freq', array(
             'id_html' => 'referral-link',
             'prg_en' => 'How can I get a referral link',
