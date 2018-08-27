@@ -10,6 +10,7 @@ use yii\base\Component;
 class Membership extends BaseObject
 {
     public $id;
+    public $name;
     public $price;
     public $limitedReferrl;
     public $percentagePerReferral;
@@ -22,6 +23,7 @@ class Membership extends BaseObject
         switch ($id) {
             case 1:
                 $this->id=1;
+                $this->name="Standerd";
                 $this->price=20;
                 $this->limitedReferrl=100;
                 $this->percentagePerReferral=0.10;
@@ -30,6 +32,7 @@ class Membership extends BaseObject
                 break;
             case 2:
                 $this->id = 2;
+                $this->name="Golden";
                 $this->price = 50;
                 $this->limitedReferrl = null;
                 $this->percentagePerReferral = 0.20;
@@ -38,6 +41,7 @@ class Membership extends BaseObject
                 break;
             case 3:
                 $this->id = 3;
+                $this->name="Premium";
                 $this->price = 100;
                 $this->limitedReferrl = null;
                 $this->percentagePerReferral = 0.50;
@@ -46,6 +50,7 @@ class Membership extends BaseObject
                 break;
                  default:
                 $this->id = 1;
+                $this->name="Standerd";
                 $this->price = 20;
                 $this->limitedReferrl = 100;
                 $this->percentagePerReferral = 0.10;

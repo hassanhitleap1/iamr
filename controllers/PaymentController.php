@@ -205,19 +205,29 @@ class PaymentController extends BaseController
             $user->status=User::STATUS_ACTIVE;
             $user->membership_id=$trans->membership_id;
             $userRfId= $user->referral['user_id'];
+            $userParent = $this->findModel($userRfId);
             if (!is_array($userRfId)&& !empty($userRfId)) {
                 $balance= Balance::find()->where(['user_id'=>$userRfId])->one();
-                $membershipParent = new Membership($user->membership_id);
-                $membershipChiled = new Membership(Yii::$app->user->identity->membership_id);
-                $commission =$membershipChiled->price *$membershipParent->commission;
-                $balance->balance+=$commission;
-                
+                $membershipParent = new Membership($userParent->membership_id);
+                $membershipChiled = new Membership($trans->membership_id);
+                if($membershipParent->id == 1){
+                    if($userParent->referralCount<= $membershipParent->limitedReferrl){
+                        $commission =$membershipChiled->price *$membershipParent->commission;
+                        $balance->balance+=$commission;
+                    }
+                }else{
+                    $commission =$membershipChiled->price *$membershipParent->commission;
+                    $balance->balance+=$commission; 
+                }
+
+              
+    
                 if(!$balance->save()){
                     var_dump($balance->getErrors());
                 }
             }
 
-
+          
             $user->save();
             $trans->save();
 

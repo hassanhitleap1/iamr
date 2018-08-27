@@ -249,6 +249,13 @@ class User extends ActiveRecord implements IdentityInterface
     /**
      * @return \yii\db\ActiveQuery
      */
+    public function getReferralCount()
+    {
+        return $this->hasOne(Referral::className(), ['user_id' => 'id'])->count();
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
     public function getReferralCode()
     {
         return $this->hasOne(ReferralCode::className(), ['user_id' => 'id']);
