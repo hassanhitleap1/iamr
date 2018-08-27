@@ -15,7 +15,7 @@ class m180819_071914_create_payment_request_table extends Migration
         $this->createTable('payment_request', [
             'id' => $this->primaryKey(),
             'value'=>$this->float(),
-            'user_id'=>$this->integer(11),
+            'user_id'=>$this->integer(11)->notNull()->unique(),
             'paypal'=>$this->string(50),
             'western_union_full_name'=>$this->string(255),
             'country'=>$this->string(100),

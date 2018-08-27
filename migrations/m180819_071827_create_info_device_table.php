@@ -28,7 +28,7 @@ class m180819_071827_create_info_device_table extends Migration
             'isp' => $this->string(50),
             'org' => $this->string(50),
             'as' => $this->string(50),
-            'user_id' => $this->integer(11),
+            'user_id' => $this->integer(11)->notNull()->unique(),
         ]);
         // add foreign key for table `user`
         $this->addForeignKey(

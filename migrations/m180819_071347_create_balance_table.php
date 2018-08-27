@@ -15,7 +15,7 @@ class m180819_071347_create_balance_table extends Migration
         $this->createTable('balance', [
             'id' => $this->primaryKey(),
             'balance'=>$this->float()->notNull(),
-            'user_id'=>$this->integer()->notNull(),
+            'user_id'=>$this->integer()->notNull()->unique(),
         ]);
         // add foreign key for table `user`
         $this->addForeignKey(
