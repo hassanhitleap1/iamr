@@ -205,29 +205,28 @@ class PaymentController extends BaseController
             $user->status=User::STATUS_ACTIVE;
             $user->membership_id=$trans->membership_id;
             $userRfId= $user->referral['user_id'];
-            $userParent = $this->findModel($userRfId);
-            if (!is_array($userRfId)&& !empty($userRfId)) {
-                $balance= Balance::find()->where(['user_id'=>$userRfId])->one();
-                $membershipParent = new Membership($userParent->membership_id);
-                $membershipChiled = new Membership($trans->membership_id);
-                if($membershipParent->id == 1){
-                    if($userParent->referralCount<= $membershipParent->limitedReferrl){
+            if(!empty($userRfId)){
+                $userParent = $this->findModel($userRfId);
+                if (!is_array($userRfId)&& !empty($userRfId)) {
+                    $balance= Balance::find()->where(['user_id'=>$userRfId])->one();
+                    $membershipParent = new Membership($userParent->membership_id);
+                    $membershipChiled = new Membership($trans->membership_id);
+                    if($membershipParent->id == 1){
+                        if($userParent->referralCount<= $membershipParent->limitedReferrl){
+                            $commission =$membershipChiled->price *$membershipParent->commission;
+                            $balance->balance+=$commission;
+                        }
+                    }else{
                         $commission =$membershipChiled->price *$membershipParent->commission;
-                        $balance->balance+=$commission;
+                        $balance->balance+=$commission; 
                     }
-                }else{
-                    $commission =$membershipChiled->price *$membershipParent->commission;
-                    $balance->balance+=$commission; 
-                }
 
-              
-    
-                if(!$balance->save()){
-                    var_dump($balance->getErrors());
+                    if(!$balance->save()){
+                        var_dump($balance->getErrors());
+                    }
                 }
             }
-
-          
+           
             $user->save();
             $trans->save();
 
