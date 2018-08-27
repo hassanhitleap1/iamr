@@ -44,19 +44,19 @@ $this->title =  Yii::t('app','make-money');
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="standerd"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Standerd')?></label>
-                    <input type="number" class="form-control" id="standerd" value="1"  min="0">
+                    <input type="number" class="form-control" id="standerd" value="0"  min="0">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="golden"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Golden')?></label>
-                    <input type="number" class="form-control" id="golden" value="1" min="0">
+                    <input type="number" class="form-control" id="golden" value="0" min="0">
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="form-group">
                     <label for="premium"> <?= Yii ::t('app','Number').' '.Yii ::t('app','Premium')?></label>
-                    <input type="number" class="form-control" id="premium" value="1"  min="0">
+                    <input type="number" class="form-control" id="premium" value="0"  min="0">
                 </div>
             </div>
             <div class="col-md-6">
@@ -97,66 +97,49 @@ function calculat() {
     var golden = $("#golden").val();
     var premium = $("#premium").val();
     var membership= $("#membership").val();
+    return calculatStanderd(standerd,membership) + calculatGolden(golden,membership)+ calculatPremium(premium,membership); 
     
-     return calculatStanderd(standerd,membership) + calculatGolden(golden,membership)+ calculatPremium(premium,membership)
+    // if(membership==1 and (standerd+ golden+ premium)>100){
+    //     return 'number of referral must be max 100';
+    // }else{
+        
+    // }
+    
 
 }
 
 function calculatStanderd(number,membership){
   
     var perOne;    
-    switch(membership) 
-    {
-        case 1:
+    if(membership==1){
         perOne=20*0.10;
-            break;
-        case 2:
+    } else if(membership==2){
         perOne=20*0.20;
-            break;
-        case 3:
+    }else if(membership==3){
         perOne=20*0.50;
-            break;
-        default:
-        perOne=20*0.10;
-    }  
+    }
     return perOne*number;
 }
 function calculatGolden(number,membership){
-    var perOne;
-    
-    switch(membership) 
-    {
-        case 1:
+    var perOne;    
+    if(membership==1){
         perOne=50*0.10;
-            break;
-        case 2:
+    } else if(membership==2){
         perOne=50*0.20;
-            break;
-        case 3:
+    }else if(membership==3){
         perOne=50*0.50;
-            break;
-        default:
-        perOne=50*0.10;
-    }  
+    }
     return perOne*number;
 }
 function calculatPremium(number,membership){
-    var perOne;
-    
-    switch(membership) 
-    {
-        case 1:
+    var perOne;    
+    if(membership==1){
         perOne=100*0.10;
-            break;
-        case 2:
+    } else if(membership==2){
         perOne=100*0.20;
-            break;
-        case 3:
+    }else if(membership==3){
         perOne=100*0.50;
-            break;
-        default:
-        perOne=100*0.10;
-    }  
+    }
     return perOne*number;
 }
 
