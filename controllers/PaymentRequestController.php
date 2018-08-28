@@ -72,7 +72,8 @@ class PaymentRequestController extends BaseController
         if( $dteDiff===true){
           
         }else{
-            $dateWait =  '  must be wait  ' .$dteDiff->format("%d %H:%I:%S"); 
+            $membership= new Membership(Yii::$app->user->identity->membership_id);
+            $dateWait =  ' must be wait to complete '.  $membership->daysForPay." dayes {{ It's been a while :- ".$dteDiff->format("%d dayes and %H:%I").' }}'; 
             Yii::$app->session->setFlash('record', $dateWait);
            
         }
