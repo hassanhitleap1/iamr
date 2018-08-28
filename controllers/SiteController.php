@@ -185,6 +185,7 @@ class SiteController extends BaseController
                      Device::setDeviceUser();
                     if(Yii::$app->session->has('ref')){
                         $userRef= User::find()->where(['ref'=>Yii::$app->session->get('ref')])->one();
+                        Yii::$app->session->remove('ref');
                         if(!empty($userRef)){
                             $referral= new Referral;
                             $referral->user_id=$userRef->id;
