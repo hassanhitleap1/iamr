@@ -71,6 +71,17 @@ class UserHelper extends BaseObject
 
 
     } 
+
+
+    public static function sendEmailValidation(){
+        Yii::$app->mailer->compose()
+        ->setFrom(Yii::$app->params['adminEmail'])
+        ->setTo(Yii::$app->user->identity->email)
+        ->setSubject('Send Validation Email')
+        ->setTextBody('Verification Code is ' .Yii::$app->user->identity->verification_code_email )
+       // ->setHtmlBody('<b>HTML content</b>')
+        ->send();
+    }
 }
 
 ?>

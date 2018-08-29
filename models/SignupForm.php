@@ -61,6 +61,7 @@ class SignupForm extends Model
         $user->setPassword($this->password);
         $user->generateRef();
         $user->generateAuthKey();
+        $user->generateValidationCodeEmail();
         
         return $user->save() ? $user : null;
     }
