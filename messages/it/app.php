@@ -59,4 +59,5 @@ return [
 	'your_membership'=>'la tua iscrizione',
 	'Number'=>'Numero',
 	'why_get_membership'=>"perché ottenere l'adesione",
+	'Conect_Us'=>'connettici',
 ];

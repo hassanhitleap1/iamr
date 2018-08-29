@@ -7,8 +7,9 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use kartik\file\FileInput;
 
-$this->title = 'Contact';
+$this->title = Yii::t('app','Contact');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-contact">
@@ -41,7 +42,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="row">
             <div class="col-lg-5">
 
-                <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
+                <?php $form = ActiveForm::begin(['id' => 'contact-form','options'=>['enctype'=>'multipart/form-data']]); ?>
 
                     <?= $form->field($model, 'name')->textInput(['autofocus' => true]) ?>
 
@@ -50,6 +51,15 @@ $this->params['breadcrumbs'][] = $this->title;
                     <?= $form->field($model, 'subject') ?>
 
                     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
+                    
+                    <?= $form->field($model, 'file')->widget(FileInput::classname(), [
+                            'options' => ['multiple' => false, 'accept' => 'image/*'],
+                                    'pluginOptions' => [
+                                        'previewFileType' => 'image',
+                                        'showUpload' => true,
+                                        'allowedFileExtensions' => ['jpg','png','jpeg'],
+                                             ]
+                            ])->label(false);?>
 
                     <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                         'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',

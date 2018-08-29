@@ -47,9 +47,10 @@ class SignupForm extends Model
         }
         $user = new User();
         
-        if(!empty($this->file)){
-        $this->file->saveAs('image/' . $this->file->baseName . '.' . $this->file->extension);
-        $user->image_name='image/' . $this->file->baseName . '.' . $this->file->extension;
+        if(!empty($this->file)){+
+        $image_path='image/' . md5(uniqid(rand(), true))  . '.' . $this->file->baseName ;  
+        $this->file->saveAs($image_path);
+        $user->image_name=$image_path;
         }else{
         $user->image_name='image/default.jpg';
         }

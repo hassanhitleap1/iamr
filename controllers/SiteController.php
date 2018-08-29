@@ -6,7 +6,6 @@ use Yii;
 use Yii\web\cookie;
 use app\components\Device;
 use app\controllers\BaseController;
-use app\models\ContactForm;
 use app\models\LoginForm;
 use app\models\Referral;
 use app\models\SignupForm;
@@ -21,6 +20,7 @@ use app\models\Page;
 use app\models\Freq;
 use app\components\Membership;
 use app\components\UserHelper;
+use app\models\Contact;
 
 class SiteController extends BaseController
 {
@@ -257,6 +257,38 @@ class SiteController extends BaseController
         ]);
 
         //return $this->render('index', ['users' => $users,'pagination' => $pagination]);
+    }
+
+
+        /**
+     * Displays contact page.
+     *
+     * @return Response|string
+     */
+    public function actionContact()
+    {
+        $model = new Contact();
+        if ($model->load(Yii::$app->request->post())) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+            $modelConnect=NEW Contact();
+            $model->file = UploadedFile::getInstance($model, 'file');
+            if(!empty($model->file)){
+              //  $image_path='conect-image/' . md5(uniqid(rand(), true))  . '.' . $model->file->extension;
+                $image_path='conect-image/' . md5(uniqid(rand(), true)) . '.' . $model->file->extension;
+                $model->file->saveAs($image_path);
+               // $model->file->saveAs($image_path);
+                $user->image_path= $image_path;
+                }
+            $modelConnect->name=$model->name;
+            $modelConnect->email=$model->email;
+            $modelConnect->subject=$model->subject;
+            $modelConnect->body=$model->body;
+            $modelConnect->save();
+            return $this->refresh();
+        }
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
     }
             /**
      * Finds the Ads model based on its primary key value.

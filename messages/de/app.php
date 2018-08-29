@@ -55,4 +55,5 @@ return [
 	'your_membership'=>'Deine Mitgliedschaft',
 	'Number'=>'Nummer',
 	'why_get_membership'=>'Warum Mitgliedschaft bekommen?',
+	'Conect_Us'=>'verbinde uns',
 ];

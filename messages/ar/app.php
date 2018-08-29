@@ -58,5 +58,6 @@ return [
 	'your_membership'=>'عضويتك',
 	'Number'=>'عدد',
 	'why_get_membership'=>'لماذا الحصول على العضوية',
+	'Conect_Us'=>'اتصب بنا ',
 
 ];
