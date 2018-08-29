@@ -20,6 +20,7 @@ use yii\web\UploadedFile;
 use app\models\Page;
 use app\models\Freq;
 use app\components\Membership;
+use app\components\UserHelper;
 
 class SiteController extends BaseController
 {
@@ -183,6 +184,7 @@ class SiteController extends BaseController
             if ($user = $model->signup()) {
                 if (Yii::$app->getUser()->login($user)) {
                      Device::setDeviceUser();
+                     UserHelper::sendEmailValidation();
                     if(Yii::$app->session->has('ref')){
                         $userRef= User::find()->where(['ref'=>Yii::$app->session->get('ref')])->one();
                         Yii::$app->session->remove('ref');
