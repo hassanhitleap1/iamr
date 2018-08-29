@@ -16,30 +16,36 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="panel-heading"><?=Yii::t('app','Plaase-Signin')?></div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-md-4">
-                          <?= \powerkernel\bootstrapsocial\Button::widget([
-                          'button' => 'twitter', 
-                          'iconOnly' => false, // set true if only want the icon 
-                          'link' => '#your-url', // the button URL
-                          'label'=> Yii::t('app','log_in_with_twitter'), // button label
-                          'class'=>'btn-lg',
-                          ]) ?>
-                          <?= \powerkernel\bootstrapsocial\Button::widget([
-                          'button' => 'facebook', // Available buttons see https://github.com/lipis/bootstrap-social/
-                          'iconOnly' => false, // set true if only want the icon 
-                          'link' => '#your-url', // the button URL
-                          'label'=> Yii::t('app','log_in_with_facebook'), // button label
-                          ]) ?>
-                          <?= \powerkernel\bootstrapsocial\Button::widget([
-                          'button' => 'google', // Available buttons see https://github.com/lipis/bootstrap-social/
-                          'iconOnly' => false, // set true if only want the icon 
-                          'link' => '#your-url', // the button URL
-                          'label'=>Yii::t('app','log_in_with_google') , // button label
-                          ]) ?>                                        
+                        <!-- <div class="col-md-4">
+                          <?php 
+                        //   \powerkernel\bootstrapsocial\Button::widget([
+                        //   'button' => 'twitter', 
+                        //   'iconOnly' => false, // set true if only want the icon 
+                        //   'link' => '#your-url', // the button URL
+                        //   'label'=> Yii::t('app','log_in_with_twitter'), // button label
+                        //   'class'=>'btn-lg',
+                        //   ]) 
+                          ?>
+                          <?php
+                        //    \powerkernel\bootstrapsocial\Button::widget([
+                        //   'button' => 'facebook', // Available buttons see https://github.com/lipis/bootstrap-social/
+                        //   'iconOnly' => false, // set true if only want the icon 
+                        //   'link' => '#your-url', // the button URL
+                        //   'label'=> Yii::t('app','log_in_with_facebook'), // button label
+                        //   ]) 
+                          ?>
+                          <?php 
+                        //   \powerkernel\bootstrapsocial\Button::widget([
+                        //   'button' => 'google', // Available buttons see https://github.com/lipis/bootstrap-social/
+                        //   'iconOnly' => false, // set true if only want the icon 
+                        //   'link' => '#your-url', // the button URL
+                        //   'label'=>Yii::t('app','log_in_with_google') , // button label
+                        //   ]) 
+                          ?>                                        
                    
-                        </div>
-                        <div class="col-md-1 marging-line" ></div>
-                        <div class="col-md-7">
+                        </div> -->
+                        <!-- <div class="col-md-1 marging-line" ></div> -->
+                        <div class="col-md-12">
                                 <?php $form = ActiveForm::begin([
                                   'id' => 'login-form',
                               ]); ?>
