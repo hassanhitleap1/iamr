@@ -15,37 +15,43 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default ">
                     <div class="panel-heading">
-                        signup
+                        <h3><?= Yii::t('app','signup');?></h3>
                     </div>
                       <div class="panel-body">
                            <div class="row">
                                <div class="col-md-4">
-                                    <?= \powerkernel\bootstrapsocial\Button::widget([
-                                    'button' => 'twitter', 
-                                    'iconOnly' => false, // set true if only want the icon 
-                                    'link' => '#your-url', // the button URL
-                                    'label'=> Yii::t('app','singup_with_twitter'), // button 
-                                    'class'=>'btn-lg',
-                                    ]) ?>   
+                                    <?php
+                                    //  \powerkernel\bootstrapsocial\Button::widget([
+                                    // 'button' => 'twitter', 
+                                    // 'iconOnly' => false, // set true if only want the icon 
+                                    // 'link' => '#your-url', // the button URL
+                                    // 'label'=> Yii::t('app','singup_with_twitter'), // button 
+                                    // 'class'=>'btn-lg',
+                                    // ]) 
+                                    ?>   
                   
                                </div>
                                <div class="col-md-4">
-                                    <?= \powerkernel\bootstrapsocial\Button::widget([
-                                    'button' => 'facebook', 
-                                    'iconOnly' => false, // set true if only want the icon 
-                                    'link' => '#your-url', // the button URL
-                                    'label'=> Yii::t('app','singup_with_facebook'), // button label
-                                    'class'=>'btn-lg',
-                                    ]) ?>                   
+                                    <?php
+                                    // \powerkernel\bootstrapsocial\Button::widget([
+                                    // 'button' => 'facebook', 
+                                    // 'iconOnly' => false, // set true if only want the icon 
+                                    // 'link' => '#your-url', // the button URL
+                                    // 'label'=> Yii::t('app','singup_with_facebook'), // button label
+                                    // 'class'=>'btn-lg',
+                                    // ]) 
+                                    ?>                   
                                </div>
                                <div class="col-md-4">
-                                    <?= \powerkernel\bootstrapsocial\Button::widget([
-                                    'button' => 'google', 
-                                    'iconOnly' => false, // set true if only want the icon 
-                                    'link' => '#your-url', // the button URL
-                                    'label'=> Yii::t('app','singup_with_google'), // button label
-                                    'class'=>'btn-lg',
-                                    ]) ?>                   
+                                    <?php 
+                                    // \powerkernel\bootstrapsocial\Button::widget([
+                                    // 'button' => 'google', 
+                                    // 'iconOnly' => false, // set true if only want the icon 
+                                    // 'link' => '#your-url', // the button URL
+                                    // 'label'=> Yii::t('app','singup_with_google'), // button label
+                                    // 'class'=>'btn-lg',
+                                    // ])
+                                     ?>                   
                                </div>
                            </div>
                            <hr>
