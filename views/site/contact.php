@@ -52,8 +52,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
                     <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
                     
-                    <?= $form->field($model, 'file')->widget(FileInput::classname(), [
-                            'options' => ['multiple' => false, 'accept' => 'image/*'],
+                    <?= $form->field($model, 'files[]')->widget(FileInput::classname(), [
+                            'options' => ['multiple' => true, 'accept' => 'image/*'],
                                     'pluginOptions' => [
                                         'previewFileType' => 'image',
                                         'showUpload' => true,
