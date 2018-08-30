@@ -16,10 +16,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php Pjax::begin(); ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a(Yii::t('app', 'Create Contact'), ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -31,10 +27,39 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'subject',
             'body:ntext',
-            
+            [
+                'attribute' => 'image_prime',
+                'format' => 'raw',
+                'value'=> function ($data) {
+                    return   Html::img('@web/' . $data->imageContact['image_path'], ['class' => '', 'style' => 'width: 144px;
+                    height: 124px;']) ;
+                   
+                }
+            ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            [
+                'class' => 'yii\grid\ActionColumn',
+                'template' => '{view} {complete}',
+                'buttons' => [
+                    'complete' => function ($url,$model) {
+                        if(!$model->complete){
+                            return Html::a(
+                                '<span class="glyphicon glyphicon-ok" style="color:red;"></span> ',
+                                $url, 
+                                [
+                                    'data' => [
+                                        'confirm' => 'are you sure.',
+                                        'method' => 'post',
+                                    ],
+                                ]
+                            ); 
+                        }
+                    },
+                ],
+            ],
         ],
     ]); ?>
     <?php Pjax::end(); ?>
 </div>
+
+

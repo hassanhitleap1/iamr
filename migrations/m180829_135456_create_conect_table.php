@@ -23,6 +23,7 @@ class m180829_135456_create_conect_table extends Migration
             'email'=>$this->string(),
             'subject'=>$this->string(),
             'body'=>$this->text(),
+            'complete'=>$this->smallInteger()->notNull()->defaultValue(0),
         
         ],$tableOptions);
     }

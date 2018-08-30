@@ -18,6 +18,8 @@ class Contact extends \yii\db\ActiveRecord
 {
     public $files;
     public $verifyCode;
+    const complete=1;
+    const uncomplete=0;
     /**
      * @inheritdoc
      */
@@ -69,5 +71,21 @@ class Contact extends \yii\db\ActiveRecord
         } else {
             return false;
         }
+    }
+
+
+        /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImagesContact()
+    {
+        return $this->hasMany(ImageConecatUs::className(), ['conecat_id' => 'id']);
+    }
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getImageContact()
+    {
+        return $this->hasMany(ImageConecatUs::className(), ['conecat_id' => 'id'])->where(['image_conecat_us.prime'=>1])->one();
     }
 }
