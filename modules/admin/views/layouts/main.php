@@ -50,6 +50,7 @@ AppAsset::register($this);
             ['label' => 'Translations', 'url' => ['translation/index']],
             ['label' => 'Payment Request', 'url' => ['payment-request/index']], 
             ['label' => 'Freq', 'url' => ['freq/index']],
+            ['label' => 'Contact', 'url' => ['contact/index']],
 
         ];
         $menuItems[] =   ['label' => 'Profile',
