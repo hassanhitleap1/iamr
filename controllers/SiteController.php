@@ -21,6 +21,7 @@ use app\models\Freq;
 use app\components\Membership;
 use app\components\UserHelper;
 use app\models\Contact;
+use app\models\ImageConecatUs;
 
 class SiteController extends BaseController
 {
@@ -260,7 +261,7 @@ class SiteController extends BaseController
     }
 
 
-        /**
+    /**
      * Displays contact page.
      *
      * @return Response|string
@@ -268,28 +269,35 @@ class SiteController extends BaseController
     public function actionContact()
     {
         $model = new Contact();
-        if ($model->load(Yii::$app->request->post())) {
+
+        if ($model->load(Yii::$app->request->post()) ) {
             Yii::$app->session->setFlash('contactFormSubmitted');
-            $modelConnect=NEW Contact();
-            $model->file = UploadedFile::getInstance($model, 'file');
-            if(!empty($model->file)){
-              //  $image_path='conect-image/' . md5(uniqid(rand(), true))  . '.' . $model->file->extension;
-                $image_path='conect-image/' . md5(uniqid(rand(), true)) . '.' . $model->file->extension;
-                $model->file->saveAs($image_path);
-               // $model->file->saveAs($image_path);
-                $user->image_path= $image_path;
+            if($model->save()){
+                $model->files = UploadedFile::getInstances($model, 'files');
+                if ($paths = $model->upload()) {
+                // file is uploaded successfully
+                    $prime=1;
+                   
+                    foreach ($paths as $path) {
+                        $modeImge = new ImageConecatUs();
+                        $modeImge->image_path = $path;
+                        $modeImge->prime =$prime;
+                        $modeImge->conecat_id = $model->id;
+                        $modeImge->save();
+                        $prime=0;
+                    }
+                    return $this->refresh();
                 }
-            $modelConnect->name=$model->name;
-            $modelConnect->email=$model->email;
-            $modelConnect->subject=$model->subject;
-            $modelConnect->body=$model->body;
-            $modelConnect->save();
-            return $this->refresh();
+                return $this->refresh();
+            }
         }
-        return $this->render('contact', [
-            'model' => $model,
-        ]);
+
+            return $this->render('contact', [
+                'model' => $model,
+            ]);
+
     }
+
             /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

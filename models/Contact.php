@@ -16,14 +16,14 @@ use Yii;
  */
 class Contact extends \yii\db\ActiveRecord
 {
-    public $file;
+    public $files;
     public $verifyCode;
     /**
      * @inheritdoc
      */
     public static function tableName()
     {
-        return 'conect';
+        return 'contact';
     }
 
     /**
@@ -35,7 +35,8 @@ class Contact extends \yii\db\ActiveRecord
             [['body'], 'string'],
             [['name', 'email', 'subject'], 'string', 'max' => 255],
             [['email'],'email'],
-            [['file'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg'],
+            [['body','name','subject','body','email','files'],'required'],
+            [['files'], 'image', 'skipOnEmpty' => true, 'extensions' => 'png, jpg', 'maxFiles' => 5],
         ];
     }
 
@@ -53,5 +54,20 @@ class Contact extends \yii\db\ActiveRecord
         ];
     }
 
-
+        /*
+    * upload images for post
+    */
+    public function upload()
+    {
+        if ($this->validate()) { 
+            foreach ($this->files as $file) {
+                $path='contact-image/' . md5(uniqid(rand(), true)) . '.' . $file->extension;
+                $file->saveAs($path);
+               $paths[]= $path;
+            }
+            return $paths;
+        } else {
+            return false;
+        }
+    }
 }
