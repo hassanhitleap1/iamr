@@ -39,10 +39,11 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
     ]);
     $menuItems = [
         ['label' => Yii::t('app', 'Home'), 'url' => ['/site/index']],
-        ['label' => Yii::t('app', 'why_get_membership'), 'url' => ['/site/why-get-membership']],
-        ['label' => Yii::t('app', 'Freq'), 'url' => ['/site/freq']],
+        ['label' => Yii::t('app', 'why_get_membership'), 'url' => ['/site/why-get-membership']], 
         ['label' => Yii::t('app', 'make-money'), 'url' => ['/site/make-money']],
+        ['label' => Yii::t('app', 'success_story'), 'url' => ['/site/success-story']],
         ['label' => Yii::t('app', 'Conect_Us'), 'url' => ['/site/contact']],
+        ['label' => Yii::t('app', 'Freq'), 'url' => ['/site/freq']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => Yii::t('app', 'signup'), 'url' => ['/site/signup']];
