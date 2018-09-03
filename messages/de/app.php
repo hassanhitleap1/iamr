@@ -56,4 +56,5 @@ return [
 	'Number'=>'Nummer',
 	'why_get_membership'=>'Warum Mitgliedschaft bekommen?',
 	'Conect_Us'=>'verbinde uns',
+	'Load_more' => 'Mehr laden',
 ];

@@ -60,4 +60,5 @@ return [
 	'Number'=>'Numero',
 	'why_get_membership'=>"perché ottenere l'adesione",
 	'Conect_Us'=>'connettici',
+	'Load_more' => 'carica di più',
 ];

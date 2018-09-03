@@ -60,6 +60,7 @@ return [
 	'Number'=>'Number',
 	'why_get_membership'=>'why get membership',
 	'Conect_Us'=>'Conect Us',
+	'Load_more' => 'Load more',
 
 ];
 

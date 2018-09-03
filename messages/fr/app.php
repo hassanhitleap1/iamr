@@ -59,4 +59,5 @@ return [
 	'your_membership'=>'votre adhésion',
 	'Number'=>'Nombre',
 	'why_get_membership'=>'pourquoi adhérer',
+	'Load_more' => 'charger plus',
 ];
