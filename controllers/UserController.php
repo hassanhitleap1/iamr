@@ -31,7 +31,7 @@ class UserController extends BaseController
                 'class' => \yii\filters\AccessControl::className(),
                 'rules' => [
                     [
-                        'actions' => ['profile', 'referral', 'edit', 'alarm'],
+                        'actions' => ['profile', 'referral', 'edit', 'alarm','verification-email'],
                         'allow' => true,
                         'roles' => ['@'],
                         'denyCallback' => function ($rule, $action) {
@@ -70,7 +70,16 @@ class UserController extends BaseController
     {
         return 'index';
     }
-
+    public function actionVerificationEmail(){
+        $codeValidate=@$_GET['verification_email'];
+        if(Yii::$app->user->identity->verification_email==$codeValidate){
+          $model = $this->findModel(Yii::$app->user->id);
+          $model->verification_email= 1;
+          $model->save();
+          return $this->redirect(['/']);
+        }
+        return $this->render('verification-email');
+    }
     /**
      * 
      */
@@ -100,7 +109,7 @@ class UserController extends BaseController
         }
         
     }
-
+    
     /**
      * edit profile 
      */
@@ -143,6 +152,8 @@ class UserController extends BaseController
     public function actionAlarm(){
         return $this->render('alarm');
     }
+
+
         /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
