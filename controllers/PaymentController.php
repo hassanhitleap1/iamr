@@ -152,7 +152,7 @@ class PaymentController extends BaseController
    // ### Redirect urls
    // Set the urls that the buyer must be redirected to after 
    // payment approval/ cancellation.
-        $baseUrl = 'http://localhost' . Yii::$app->getUrlManager()->getBaseUrl();
+        $baseUrl = Yii::$app->params['siteUrl'] . Yii::$app->getUrlManager()->getBaseUrl();
 
         $redirectUrls = new RedirectUrls();
         $redirectUrls->setReturnUrl("$baseUrl/index.php?r=payment/success")
