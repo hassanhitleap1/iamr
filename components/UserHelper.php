@@ -83,6 +83,15 @@ class UserHelper extends BaseObject
        // ->setHtmlBody('<b>HTML content</b>')
         ->send();
     }
+
+    public static function returnHrmlEamilValidatonCode()
+    {
+        return ;
+    } 
+
+
 }
+
+
 
 ?>

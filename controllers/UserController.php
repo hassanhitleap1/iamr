@@ -71,6 +71,8 @@ class UserController extends BaseController
         return 'index';
     }
     public function actionVerificationEmail(){
+        $this->layout = 'danylayouts'   ;
+        return $this->render('verification-email');
         $codeValidate=@$_GET['verification_email'];
         if(Yii::$app->user->identity->verification_email==$codeValidate){
           $model = $this->findModel(Yii::$app->user->id);
