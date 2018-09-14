@@ -34,7 +34,7 @@ class m180819_071805_create_freq_table extends Migration
         ],$tableOptions);
         $this->insert('freq', array(
             'id' => 'make-maony',
-            'id_html' => 'how to make money through youarearich',
+            'id_html' => 'how-to-make-money',
             'prg_en' => 'wie man Geld verdient',
             'prg_de' => 'come fare soldi attraverso',
             'prg_it' => 'come fare soldi attraverso',

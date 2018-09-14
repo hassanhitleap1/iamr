@@ -74,7 +74,7 @@ class UserController extends BaseController
     public function actionVerificationEmail(){
         $codeValidate=@$_GET['verification_email'];   
         if(!empty($codeValidate)){
-            if(Yii::$app->user->identity->verification_email === $codeValidate){
+            if(Yii::$app->user->identity->verification_email == $codeValidate){
             $model = $this->findModel(Yii::$app->user->id);
             $model->verification_email= 1;
             $model->save();
