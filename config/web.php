@@ -58,11 +58,11 @@ $config = [
             'class' => 'yii\swiftmailer\Mailer',
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
-                'host' => 'smtp.gmail.com',
-                'username' => 'hassanhitleap1@gmail.com',
+                'host' => 'smtpout.secureserver.net',
+                'username' => 'support@youarearich.org',
                 'password' => 'programerhk92',
-                'port' => '587',
-                'encryption' => 'tls',
+                'port' => '465',
+                'encryption' => 'ssl',
             ],
         ],
         'log' => [
