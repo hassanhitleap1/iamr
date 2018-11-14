@@ -2,5 +2,5 @@
 
 return [
     'adminEmail' => 'support@youarearich.org',
-    'siteUrl'=> 'http://youarearich.org/web',
+    'siteUrl'=> 'https://youarearich.org/web',
 ];

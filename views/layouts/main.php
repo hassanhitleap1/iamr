@@ -273,12 +273,13 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
 
 <?php JSRegister::begin(); ?>
 <script>
+    var Site_Url="<?=Yii::$app->params["siteUrl"];?>";
     $(document).ready(function(){
-        var itaImgLink = "http://localhost/iamrich/web/img-site/Italien.gif";
-        var engImgLink = "http://localhost/iamrich/web/img-site/Grossbritanien.gif";
-        var deuImgLink = "http://localhost/iamrich/web/img-site/Deutschland.gif";
-        var fraImgLink = "http://localhost/iamrich/web/img-site/Frankreich.gif";
-        var arbImgLink = "http://localhost/iamrich/web/img-site/sadi.jpg";
+        var itaImgLink =Site_Url+"/img-site/Italien.gif";
+        var engImgLink = Site_Url+"/img-site/Grossbritanien.gif";
+        var deuImgLink = Site_Url+"/img-site/Deutschland.gif";
+        var fraImgLink = Site_Url+"/img-site/Frankreich.gif";
+        var arbImgLink = Site_Url+"/img-site/sadi.jpg";
 
         var imgBtnSel = $('#imgBtnSel');
         var imgBtnIta = $('#imgBtnIta');
