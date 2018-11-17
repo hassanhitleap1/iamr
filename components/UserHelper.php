@@ -75,13 +75,19 @@ class UserHelper extends BaseObject
 
 
     public static function sendEmailValidation(){
-        Yii::$app->mailer->compose()
-        ->setFrom(Yii::$app->params['adminEmail'])
-        ->setTo(Yii::$app->user->identity->email)
-        ->setSubject('Send Validation Email')
-       // ->setTextBody(self::returnHrmlEamilValidatonCode())
-        ->setHtmlBody(self::returnHrmlEamilValidatonCode())
-        ->send();
+
+        error_reporting(E_ALL);
+
+        $to = Yii::$app->user->identity->email;
+        $subject = 'Send Validation Email';
+        $message = self::returnHrmlEamilValidatonCode();
+        $headers = 'From: support@youarearich.org' . "\r\n" .
+            'Reply-To: support@youarearich.org' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+        mail($to, $subject, $message, $headers);
+
     }
 
     public static function returnHrmlEamilValidatonCode()
@@ -216,7 +222,7 @@ class UserHelper extends BaseObject
                 <div class="bs-calltoaction bs-calltoaction-info">
                     <div class="row">
                         <div class="col-md-9 cta-contents">
-                            <h1 class="cta-title">Thank you '. Yii::$app->user->identity->full_name .'for registration in youarearich.org </h1>
+                            <h1 class="cta-title">Thank you '. Yii::$app->user->identity->full_name . 'for registration in <a href=" ' . Yii::$app->params["siteUrl"] . '/index.php?r=user/verification-email&verification_email=' . Yii::$app->user->identity->verification_code_email . '">youarearich.org</a> </h1>
                             <div class="cta-desc">
                                 <p>'. Yii::$app->user->identity->full_name .' we are needed to confirmation email to save your account from any hacking or do reset your password. </p>
                                 <p>To confirm your email click in button <a href=" '. Yii::$app->params["siteUrl"] . '/index.php?r=user/verification-email&verification_email='.Yii::$app->user->identity->verification_code_email.'">Go.</a></p>
