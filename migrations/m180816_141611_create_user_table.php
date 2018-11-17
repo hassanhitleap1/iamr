@@ -30,7 +30,7 @@ class m180816_141611_create_user_table extends Migration
             'verification_code_email'=> $this->string()->unique(),
             'verification_email'=>$this->smallInteger()->notNull()->defaultValue(0),
             'status' => $this->smallInteger()->notNull()->defaultValue(10),
-            'ref' => $this->char(4),
+            'ref' => $this->string(),
             'membership_id' => $this->smallInteger()->notNull()->defaultValue(0),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
