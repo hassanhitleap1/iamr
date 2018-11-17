@@ -248,7 +248,7 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
                 <p>
                     <i class="fa fa-home mr-3"></i> Amman HKJ, NY 10012, HKJ</p>
                 <p>
-                    <i class="fa fa-envelope mr-3"></i> connect@youarearich.com</p>
+                    <i class="fa fa-envelope mr-3"></i> connect@youarearich.org</p>
                 <p>
             </div>
             <!--/.Fourth column-->
