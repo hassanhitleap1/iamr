@@ -35,6 +35,22 @@ class SignupForm extends Model
 
         ];
     }
+
+
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'full_name' => Yii::t('app','Full_Name'),
+            'about_me' => Yii::t('app','About_Me'),
+            'image_name' => Yii::t('app','Image_Name'),
+            'Password ' => Yii::t('app','Password'),
+            'email' => Yii::t('app','Email'),
+            'confirm_password'=> Yii::t('app','confirm_password'),
+        ];
+    }   
     /**
      * Signs user up.
      *

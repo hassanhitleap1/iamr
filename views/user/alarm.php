@@ -8,5 +8,5 @@ $this->title = 'alram';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-user">
-<div class="alert alert-danger ">user can not be requst becouse dont have moany </div>
+<div class="alert alert-danger "> <?= Yii::t('app','Cant_Request_Money')?></div>
 </div>

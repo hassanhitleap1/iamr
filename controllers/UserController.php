@@ -128,11 +128,10 @@ class UserController extends BaseController
              
 
             if(!empty($model->file)){
-                
-                $model->file->saveAs('image/' . $model->file->baseName . 
-                    '.' . $model->file->extension);
-                $user->image_name = 'image/' . $model->file->baseName .
-                    '.' . $model->file->extension;
+                $image='image/' .uniqid(). '.' . $model->file->extension;
+                $model->file->saveAs($image);
+
+                $user->image_name = $image;
             }
             if ($model->validate()) {
                 $user->full_name=$model->full_name;
