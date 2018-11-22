@@ -18,13 +18,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php if (Yii::$app->session->hasFlash('contactFormSubmitted')): ?>
 
         <div class="alert alert-success">
-            Thank you for contacting us. We will respond to you as soon as possible.
+            <?=Yii::t('app','Thank_Contact');?>
         </div>
 
     <?php else: ?>
 
         <div class="row">
-            <div class="col-lg-5">
+            <div class="col-lg-12">
 
                 <?php $form = ActiveForm::begin(['id' => 'contact-form','options'=>['enctype'=>'multipart/form-data']]); ?>
 
@@ -46,7 +46,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ])->label(false);?>
 
                     <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                        'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                        'template' => '<div class="row"><div class="col-lg-12">{image}</div><div class="col-lg-12">{input}</div></div>',
                     ]) ?>
 
                     <div class="form-group">

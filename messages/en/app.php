@@ -61,6 +61,15 @@ return [
 	'why_get_membership'=>'why get membership',
 	'Conect_Us'=>'Conect Us',
 	'Load_more' => 'Load more',
+	'Thank_Contact'=>'Thank you for contacting us. We will respond to you as soon as possible.',
+	'Name'=>'Name',
+	'Subject'=>'Subject',
+	'Body'=>'Body',
+	'Freq'=>'Frequent',
+	'optional'=>'',
+	'Signup'=>'',
+	'message_get_verification_email'=>'To receive the activation code via email click here',
+	'Cant_Request_Money'=>'can not be request because dont have money',
 
 ];
 

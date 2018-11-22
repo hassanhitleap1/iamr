@@ -57,4 +57,13 @@ return [
 	'why_get_membership'=>'Warum Mitgliedschaft bekommen?',
 	'Conect_Us'=>'verbinde uns',
 	'Load_more' => 'Mehr laden',
+	'Thank_Contact'=>'Danke, dass Sie uns kontaktiert haben. Wir werden Ihnen so schnell wie möglich antworten.',
+	'Name'=>'Name',
+	'Subject'=>'Gegenstand',
+	'Body'=>'Karosserie',
+	'Freq'=>'häufig',
+	'optional'=>'wahlweise',
+	'Signup'=>'Anmelden',
+	'message_get_verification_email'=>'Um den Aktivierungscode per E-Mail zu erhalten, klicken Sie hier',
+	'Cant_Request_Money'=>'kann nicht angefordert werden, weil kein Geld hat',
 ];

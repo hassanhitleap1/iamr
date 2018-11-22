@@ -7,7 +7,7 @@ use yii\bootstrap\ActiveForm;
 use kartik\file\FileInput;
 use yii\helpers\Url;
 use yii\web\UploadedFile;
-$this->title = 'Signup';
+$this->title = Yii::t('app','Signup');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                          </div>   
                                               <?= $form->field($model, 'about_me')->textArea(['rows' => '6','cols'=>50,
                                                 'placeholder'=>Yii::t('app','About_Me')])->label(false)  ;?>
-                                                <label for="file">optional</label>
+                                                <label for="file"><?=Yii::t('app','optional');?></label>
                                               <?= $form->field($model, 'file')->widget(FileInput::classname(), [
                                                     'options' => ['multiple' => false, 'accept' => 'image/*'],
                                                     'pluginOptions' => [

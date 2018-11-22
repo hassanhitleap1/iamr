@@ -126,18 +126,17 @@ class UserController extends BaseController
         if ($model->load(Yii::$app->request->post()) ) {
             $model->file = UploadedFile::getInstance($model, 'file');
              
-
             if(!empty($model->file)){
-                
-                $model->file->saveAs('image/' . $model->file->baseName . 
-                    '.' . $model->file->extension);
-                $user->image_name = 'image/' . $model->file->baseName .
-                    '.' . $model->file->extension;
+                $image_path='image/' . md5(uniqid(rand(), true))  . '.'  . $model->file->extension;  
+                $model->file->saveAs($image_path,false);
+               $user->image_name = $image_path;
             }
+
+ 
             if ($model->validate()) {
                 $user->full_name=$model->full_name;
                 $user->about_me = $model->about_me;
-                $user->save();
+                $user->save(false);
 
                 return $this->redirect(['user/profile']);
             }

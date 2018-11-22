@@ -61,4 +61,13 @@ return [
 	'why_get_membership'=>"perché ottenere l'adesione",
 	'Conect_Us'=>'connettici',
 	'Load_more' => 'carica di più',
+	'Thank_Contact'=>'Grazie per averci contattato. Ti risponderemo il prima possibile.',
+	'Name'=>'Nome',
+	'Subject'=>'Soggetto',
+	'Body'=>'Corpo',
+	'Freq'=>'frequente',
+	'optional'=>'opzionale',
+	'Signup'=>'Iscriviti',
+	'message_get_verification_email'=>'Per ricevere il codice di attivazione via e-mail clicca qui',
+	'Cant_Request_Money'=>'non può essere richiesta perché non hanno soldi',
 ];
