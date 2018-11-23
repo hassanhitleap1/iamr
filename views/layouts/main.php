@@ -23,6 +23,7 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if(Yii::$app->language=='ar'):?>
+    <link rel="shortcut icon" href="<?= Yii::getAlias('@web') ?>/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" type="text/css" href="<?=Yii::getAlias('@web')?>/css/ar.css" />
     <?php endif;?>
     <?= Html::csrfMetaTags() ?>
