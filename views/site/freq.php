@@ -4,7 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Frq';
+$this->title = Yii::t('app', 'Freq');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?php $id=1;
