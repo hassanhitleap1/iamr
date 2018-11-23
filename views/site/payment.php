@@ -69,7 +69,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <div class="row">
                             <div class="col-xs-7 col-md-7">
                                 <div class="form-group">
-                                    <div> <img src="http://www.fabawards.com/wp-content/uploads/paypal-and-credit-cards1.gif" alt="PayPal Cards" style=" margin-top:0px;"> </div>
+                                    <div> <img  class="img-card" src="http://www.fabawards.com/wp-content/uploads/paypal-and-credit-cards1.gif" alt="PayPal Cards" style=" margin-top:0px;" > </div>
                                 </div>
                             </div>
                         </div>
