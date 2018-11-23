@@ -70,4 +70,5 @@ return [
 	'Signup'=>'تسجيل ',
 	'message_get_verification_email'=>'للحصول على رمز التفعيل عبر البريد الإلكتروني اضغط هنا',
 	'Cant_Request_Money'=>'لا يمكنك طلب المال لانه ليس لديك المال المتوفر ',
+	'membership' => 'عضوية',
 ];

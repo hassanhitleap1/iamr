@@ -70,4 +70,5 @@ return [
 	'Signup'=>"S'inscrire",
 	'message_get_verification_email'=>"Pour recevoir le code d'activation par email, cliquez ici",
 	'Cant_Request_Money'=>"ne peut pas être demandé parce que vous n'avez pas d'argent",
+	'membership' => 'adhésion',
 ];

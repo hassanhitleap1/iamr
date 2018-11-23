@@ -70,6 +70,6 @@ return [
 	'Signup'=>'',
 	'message_get_verification_email'=>'To receive the activation code via email click here',
 	'Cant_Request_Money'=>'can not be request because dont have money',
-
+	'membership' => 'membership',
 ];
 

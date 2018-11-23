@@ -4,8 +4,7 @@
 
 use yii\helpers\Html;
 
-$this->title = 'membership
-';
+$this->title = Yii::t('app', 'membership');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

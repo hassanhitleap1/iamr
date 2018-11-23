@@ -66,4 +66,5 @@ return [
 	'Signup'=>'Anmelden',
 	'message_get_verification_email'=>'Um den Aktivierungscode per E-Mail zu erhalten, klicken Sie hier',
 	'Cant_Request_Money'=>'kann nicht angefordert werden, weil kein Geld hat',
+	'membership'=> 'Mitgliedschaft',
 ];
