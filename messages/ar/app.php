@@ -71,4 +71,14 @@ return [
 	'message_get_verification_email'=>'للحصول على رمز التفعيل عبر البريد الإلكتروني اضغط هنا',
 	'Cant_Request_Money'=>'لا يمكنك طلب المال لانه ليس لديك المال المتوفر ',
 	'membership' => 'عضوية',
+	'Incorrect_E_O_P' => 'خطا في البريد او الرقم السري ',
+	'Remember_Me' => 'تذكرني ',
+	'Pay'=>'ادفع',
+	'Total_Donation' => 'القيمه كاملة',
+	'This_Payment' => 'هذه الطريق',
+	'Payment' => 'الدفع',
+	'CARD_NUMBER' => 'رقم البطاقة',
+	'EXPIRY_DATE' => 'تاريخ الانتهاء',
+	'Payment_Details' => 'تفاصيل الدفع',
+	
 ];

@@ -67,4 +67,13 @@ return [
 	'message_get_verification_email'=>'Um den Aktivierungscode per E-Mail zu erhalten, klicken Sie hier',
 	'Cant_Request_Money'=>'kann nicht angefordert werden, weil kein Geld hat',
 	'membership'=> 'Mitgliedschaft',
+	'Incorrect_E_O_P' => 'falsche Email oder Passwort',
+	'Remember_Me' => 'Erinnere dich an mich',
+	'Pay' => 'Zahlen',
+	'Total_Donation' => 'Gesamtspende',
+	'This_Payment' => 'Diese Zahlung',
+	'Payment' => 'Zahlung',
+	'CARD_NUMBER' => 'KARTENNUMMER',
+	'EXPIRY_DATE' => 'EXPIRY DATE',
+	'Payment_Details' => 'Payment Details',
 ];

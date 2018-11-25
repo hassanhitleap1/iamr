@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use yii\bootstrap\Html;
 /* @var $this yii\web\View */
 
-$this->title = 'Payment';
+$this->title = Yii::t('app', 'Payment');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-payment">
@@ -12,18 +12,18 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-12 col-md-4 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="radio pull-right">
-                      <label><input type="radio" name="optradio" disabled >this payment</label>
+                      <label><input type="radio" name="optradio" disabled ><?= Yii::t('app', 'This_Payment') ?> </label>
                     </div>
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            Payment Details
+                             <?= Yii::t('app', 'Payment_Details') ?> 
                         </h3>
                     </div>
                     <div class="panel-body">
                         <form role="form">
                         <div class="form-group">
                             <label for="cardNumber">
-                                CARD NUMBER</label>
+                                <?= Yii::t('app', 'CARD_NUMBER') ?>  </label>
                             <div class="input-group">
                                 <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
                                     required autofocus disabled />
@@ -34,7 +34,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <div class="col-xs-7 col-md-7">
                                 <div class="form-group">
                                     <label for="expityMonth">
-                                        EXPIRY DATE</label>
+                                      <?= Yii::t('app', 'EXPIRY_DATE') ?> </label>
                                     <div class="col-xs-6 col-lg-6 pl-ziro">
                                         <input type="text" class="form-control" id="expityMonth" placeholder="MM" required  disabled/>
                                     </div>
@@ -57,11 +57,11 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-xs-12 col-md-4" >
             <div class="panel panel-default">
                     <div class="radio pull-right">
-                      <label><input type="radio" name="optradio" checked>this payment</label>
+                      <label><input type="radio" name="optradio" checked> <?= Yii::t('app', 'This_Payment') ?> </label>
                     </div>
                     <div class="panel-heading">
                         <h3 class="panel-title">
-                            Payment Details
+                            <?= Yii::t('app', 'Payment_Details') ?>
                         </h3>
                        
                     </div>
@@ -82,10 +82,10 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="col-xs-12 col-md-8 col-md-offset-2">
             <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span><?= $membership->price ?></span> total donation</a>
+                <li class="active"><a href="#"><span class="badge pull-right"><span class="glyphicon glyphicon-usd"></span><?= $membership->price ?></span><?= Yii::t('app', 'Total_Donation')?></a>
                 </li>
             </ul>
             <br/>
-            <?= Html::a('Pay', ['/payment', 'id' => $membership->id], ['class' => 'btn btn-success btn-lg btn-block', "role" => "button"]) ?>
+            <?= Html::a(Yii::t('app','Pay'), ['/payment', 'id' => $membership->id], ['class' => 'btn btn-success btn-lg btn-block', "role" => "button"]) ?>
         </div>   
 </div>    

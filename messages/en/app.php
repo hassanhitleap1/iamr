@@ -71,5 +71,15 @@ return [
 	'message_get_verification_email'=>'To receive the activation code via email click here',
 	'Cant_Request_Money'=>'can not be request because dont have money',
 	'membership' => 'membership',
+	'Incorrect_E_O_P' => 'Incorrect email or password.',
+	'Remember_Me' => 'Remember Me',
+	'Pay' => 'Pay',
+	'Total_Donation'=> 'Total Donation',
+	'This_Payment'=> 'This Payment',
+	'Payment'=> 'Payment',
+	'CARD_NUMBER'=> 'CARD NUMBER',
+	'EXPIRY_DATE'=> 'EXPIRY DATE',
+	'Payment_Details'=> 'Payment Details',
 ];
+
 

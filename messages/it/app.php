@@ -71,4 +71,13 @@ return [
 	'message_get_verification_email'=>'Per ricevere il codice di attivazione via e-mail clicca qui',
 	'Cant_Request_Money'=>'non può essere richiesta perché non hanno soldi',
 	'membership' => 'adhésion',
+	'Incorrect_E_O_P'=> 'email ou mot de passe incorrect',
+	'Remember_Me' => 'Se souvenir de moi',
+	'Pay' => 'zahlen',
+	'Total_Donation' => 'Donazione totale',
+	'This_Payment' => 'Questo pagamento',
+	'Payment' => 'Pagamento',
+	'CARD_NUMBER' => 'NUMERO DI CARTA',
+	'EXPIRY_DATE' => 'DATA DI SCADENZA',
+	'Payment_Details' => 'Dettagli di pagamento',
 ];
