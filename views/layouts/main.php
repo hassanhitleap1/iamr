@@ -46,8 +46,8 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
         ['label' => Yii::t('app', 'why_get_membership'), 'url' => ['/site/why-get-membership']], 
         ['label' => Yii::t('app', 'make-money'), 'url' => ['/site/make-money']],
         ['label' => Yii::t('app', 'success_story'), 'url' => ['/site/success-story']],
-        ['label' => Yii::t('app', 'Conect_Us'), 'url' => ['/site/contact']],
-        ['label' => Yii::t('app', 'Freq'), 'url' => ['/site/freq']],
+        // ['label' => Yii::t('app', 'Conect_Us'), 'url' => ['/site/contact']],
+        // ['label' => Yii::t('app', 'Freq'), 'url' => ['/site/freq']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => Yii::t('app', 'signup'), 'url' => ['/site/signup']];
@@ -73,7 +73,8 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
         'label' => '<img id="imgNavSel" src="" alt="..." class="img-thumbnail icon-small">  <span id="lanNavSel">ENG</span> ',
         'linkOptions' => [
             'data-toggle' => 'dropdown', 'role' => 'button',
-            'aria-expanded' => 'false'
+            'aria-expanded' => 'false',
+            'class'=>'open-lang'
         ],
         'encode' => false,
         'items' => [
@@ -255,6 +256,19 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
                     <i class="fa fa-envelope mr-3"></i> connect@youarearich.org</p>
                 <p>
             </div>
+             <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
+                <h6 class="text-uppercase font-weight-bold">
+                    <strong><?= Yii::t('app', 'Page') ?></strong>
+                </h6>
+                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="">
+                <ul>
+                    <li>
+                        <?= Html::a(Yii::t('app', 'Conect_Us'), ['/site/contact'], ['class' => '']) ?>
+                    </li>
+                    <li><?= Html::a(Yii::t('app', 'Freq'), ['/site/freq'], ['class' => '']) ?>
+                    </li>
+                </ul>
+            </div>
             <!--/.Fourth column-->
 
         </div>
@@ -279,6 +293,10 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
 <script>
     var Site_Url="<?=Yii::$app->params["siteUrl"];?>";
     $(document).ready(function(){
+           $('.open-lang').click(function (e) { 
+                e.preventDefault();
+            });
+        
         var itaImgLink =Site_Url+"/img-site/Italien.gif";
         var engImgLink = Site_Url+"/img-site/Grossbritanien.gif";
         var deuImgLink = Site_Url+"/img-site/Deutschland.gif";
