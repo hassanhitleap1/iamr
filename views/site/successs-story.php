@@ -14,8 +14,8 @@ $this->title = 'You are a rich';
                     <div class="card-block">
                         <h4 class="card-title"><?= $user->full_name?></h4>
                         <p class="card-text"><?=  substr($user->about_me,0,40)?></p><a
-                         href=<?=Yii::$app->request->baseUrl."/index.php/?r=site/view&id=$user->id"?> class="nav-toggle">Read More</a>
-                        <p class="card-text"><small class="text-muted"><?= $user->created_at?></small></p>
+                         href=<?=Yii::$app->request->baseUrl."/index.php/?r=site/view&id=$user->id"?> class="nav-toggle"><?=Yii::t('app','Read_More')?></a>
+                        <p class="card-text"><small class="text-muted"><?=date("Y-m-d", $user->created_at); ?></small></p>
                     </div>
             </div>
         </div>
