@@ -80,5 +80,6 @@ return [
 	'CARD_NUMBER' => 'رقم البطاقة',
 	'EXPIRY_DATE' => 'تاريخ الانتهاء',
 	'Payment_Details' => 'تفاصيل الدفع',
+	'Read_More'=>'اقرأ المزيد',
 	
 ];

@@ -80,4 +80,5 @@ return [
 	'CARD_NUMBER' => 'NUMÉRO DE CARTE',
 	'EXPIRY_DATE' => "DATE D' EXPIRATION" ,
 	'Payment_Details' => 'Détails de paiement',
+	'Read_More'=>'Lire la suite',
 ];

@@ -80,6 +80,7 @@ return [
 	'CARD_NUMBER'=> 'CARD NUMBER',
 	'EXPIRY_DATE'=> 'EXPIRY DATE',
 	'Payment_Details'=> 'Payment Details',
+	'Read_More'=>'Read More',
 ];
 
 
