@@ -82,4 +82,9 @@ return [
 	'Payment_Details' => 'Dettagli di pagamento',
 	'Read_More'=>'Leggi di più',
 	'Forgot_Password' => 'Ha dimenticato la password',
+	'Send_Sucessfully' => 'inviato con successo si prega di controllare la tua email',
+	'New_Password' => 'nuova password',
+	'expired_token' => 'Token scaduto',
+	'Error_Token' => 'Token di errore',
+	'Successfully_Change_Password' => 'cambia con successo passa al login',
 ];

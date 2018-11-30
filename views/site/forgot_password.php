@@ -18,12 +18,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="panel-heading"><?= Yii::t('app', 'Forgot_Password') ?></div>
                 <div class="panel-body">
                     <div class="row">
-                        <?php //Yii::$app->session->destroy(); ?>
                         <?php if(Yii::$app->session->has('send_email')):?>
                             <div class="alert alert-success">
-                            <?= 'http://localhost/iamrich/web/index.php?r=site/new-password&token=' . Yii::$app->session->get('validate_code') ?>
                                 <?= Yii::t('app','Send_Sucessfully')?>
-                                <?php //Yii::$app->session->destroy('send_email'); ?>
+                                <?php Yii::$app->session->remove('send_email'); ?>
                             </div>
                         <?php else:?>
                              <div class="col-md-12">
@@ -41,7 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
                                           <?= Html::submitButton(Yii::t('app', 'Send'), ['class' => 'btn btn-primary btn-block', 'name' => 'forget-button']) ?>
                                       </div>
                                   </div>
-
                               <?php ActiveForm::end(); ?>
                         </div>
                         <?php endif;?>

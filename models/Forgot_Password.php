@@ -53,7 +53,7 @@ class Forgot_Password extends Model
                 $session = Yii::$app->session;
                 $session->set('validate_code', $validateCode);
                 $session->set('send_email', 1);
-              //UserHelper::sendForGetPassword($this->email, $validateCode);
+                UserHelper::sendForGetPassword($this->email, $validateCode);
             }
 
             

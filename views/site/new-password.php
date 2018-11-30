@@ -26,18 +26,15 @@ $this->params['breadcrumbs'][] = $this->title;
                          <?php elseif (Yii::$app->session->has('error_code')) : ?>
                             <div class="alert alert-danger">
                                 <?= Yii::t('app', 'Error_Token') ?>
-                                <?php Yii::$app->session->destroy('error_code'); ?>
+                                <?php Yii::$app->session->remove('error_code'); ?>
                             </div>
                             <?php elseif (Yii::$app->session->has('create_password')) : ?>
                             <div class="alert alert-success">
-                                <?= Yii::t('app', 'Successfully_Change_Password') ?>
-                                <?php Yii::$app->session->destroy('create_password'); ?>
+                                <?= Html::a(Yii::t('app', 'Successfully_Change_Password'), ['/site/login'], ['class' => '']) ?>
+                                <?php Yii::$app->session->destroy(); ?>
                             </div>
                     
                         <?php else : ?>
-
-                     
-                        <?php endif; ?>
                                 <div class="col-md-12">
                                 <?php $form = ActiveForm::begin([
                                     'id' => 'new-password',
@@ -59,6 +56,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                   </div>
 
                               <?php ActiveForm::end(); ?>
+                        <?php endif; ?>
                         </div>
                     </div>
                 </div>

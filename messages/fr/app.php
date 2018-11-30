@@ -82,4 +82,9 @@ return [
 	'Payment_Details' => 'Détails de paiement',
 	'Read_More'=>'Lire la suite',
 	'Forgot_Password' => 'mot de passe oublié',
+	'Send_Sucessfully' => "envoyé avec succès s'il vous plaît vérifier votre email",
+	'New_Password' => 'nouveau mot de passe',
+	'expired_token' => 'Jeton expiré',
+	'Error_Token' => "Jeton d'erreur",
+	'Successfully_Change_Password' => 'changer le mot de passe avec succès aller à la connexion',
 ];

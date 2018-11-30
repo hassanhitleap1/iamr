@@ -82,6 +82,11 @@ return [
 	'Payment_Details'=> 'Payment Details',
 	'Read_More'=>'Read More',
 	'Forgot_Password' => 'Forgot Password',
+	'Send_Sucessfully' => 'Sent successfully please check your email',
+	'New_Password' => 'New Password',
+	'expired_token' => 'Expired Token',
+	'Error_Token' => 'Error Token',
+	'Successfully_Change_Password' => 'Successfully change password  go to login ',
 ];
 
 

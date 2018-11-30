@@ -82,5 +82,11 @@ return [
 	'Payment_Details' => 'تفاصيل الدفع',
 	'Read_More'=>'اقرأ المزيد',
 	'Forgot_Password'=>'نسيت كلمة السر',
+	'Send_Sucessfully' => 'تم العمليه بنجاح الرجاء التحقق من البريد الاليكتروني',
+	'New_Password' => 'كلة سر جديده',
+	'expired_token' => 'انتها التوكين',
+	'Error_Token' => 'خطاء في التوكين',
+	'Successfully_Change_Password' => 'تمت تغير كلمه السر اذهب لتسجيل الدخول ',
+	
 	
 ];

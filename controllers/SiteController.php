@@ -313,23 +313,25 @@ class SiteController extends BaseController
     public function actionNewPassword()
     {
         $model = new NewPassword;
+        $session = Yii::$app->session;
         $token=Yii::$app->request->get('token');
         $tokenRow = ForgotPassword::find()
             ->where('validate_code = :token', [':token' => $token])
             ->one();
         if(empty($tokenRow)){
-            $session = Yii::$app->session;
+            
             $session->set('error_code',1);
             return $this->render('new-password', ['model' => $model]);
-        }elseif ($tokenRow->validate_code == $token) {
-            return $this->render('new-password', ['model' => $model]);
         }
-        if ($model->load(Yii::$app->request->post()) ) {
-            $user=User::find($tokenRow->user_id);
-            $user->password= Yii::$app->security->generatePasswordHash($model->password);
-            $user->save(false);
-            $session->set('create_password',1);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($tokenRow->validate_code == $token){
+                $user = User::findOne($tokenRow->user_id);
+                $user->password_hash = Yii::$app->security->generatePasswordHash($model->password);
+                $user->save(false);
+                $session->set('create_password', 1);
+            }
             return $this->render('new-password', ['model' => $model]);
+            
         }
         return $this->render('new-password', ['model' => $model]);
     }
