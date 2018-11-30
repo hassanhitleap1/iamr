@@ -81,5 +81,6 @@ return [
 	'EXPIRY_DATE' => 'تاريخ الانتهاء',
 	'Payment_Details' => 'تفاصيل الدفع',
 	'Read_More'=>'اقرأ المزيد',
+	'Forgot_Password'=>'نسيت كلمة السر',
 	
 ];

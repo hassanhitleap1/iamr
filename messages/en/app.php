@@ -81,6 +81,8 @@ return [
 	'EXPIRY_DATE'=> 'EXPIRY DATE',
 	'Payment_Details'=> 'Payment Details',
 	'Read_More'=>'Read More',
+	'Forgot_Password' => 'Forgot Password',
 ];
+
 
 

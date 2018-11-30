@@ -22,6 +22,9 @@ use app\components\Membership;
 use app\components\UserHelper;
 use app\models\Contact;
 use app\models\ImageConecatUs;
+use app\models\Forgot_Password;
+use app\models\NewPassword;
+use app\models\ForgotPassword;
 
 class SiteController extends BaseController
 {
@@ -298,6 +301,38 @@ class SiteController extends BaseController
 
     }
 
+    public function actionForgetPassword()
+    {
+        $model= new Forgot_Password;
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            return $this->render('forgot_password', ['model' => $model]);
+        }
+        return $this->render('forgot_password',['model'=>$model]);
+    }
+
+    public function actionNewPassword()
+    {
+        $model = new NewPassword;
+        $token=Yii::$app->request->get('token');
+        $tokenRow = ForgotPassword::find()
+            ->where('validate_code = :token', [':token' => $token])
+            ->one();
+        if(empty($tokenRow)){
+            $session = Yii::$app->session;
+            $session->set('error_code',1);
+            return $this->render('new-password', ['model' => $model]);
+        }elseif ($tokenRow->validate_code == $token) {
+            return $this->render('new-password', ['model' => $model]);
+        }
+        if ($model->load(Yii::$app->request->post()) ) {
+            $user=User::find($tokenRow->user_id);
+            $user->password= Yii::$app->security->generatePasswordHash($model->password);
+            $user->save(false);
+            $session->set('create_password',1);
+            return $this->render('new-password', ['model' => $model]);
+        }
+        return $this->render('new-password', ['model' => $model]);
+    }
             /**
      * Finds the Ads model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.

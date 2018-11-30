@@ -57,7 +57,9 @@ $this->params['breadcrumbs'][] = $this->title;
                                   'placeholder'=>Yii::t('app','Password_Hash')])->label(false) ?>
 
                                   <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
+                                    <div class="form-group">
+                                      <?=Html::a(Yii::t('app','Forgot_Password'), ['site/forget-password'])?>
+                                    </div>
                                   <div class="form-group">
                                       <div class="col-md-4">
                                           <?= Html::submitButton(Yii::t('app', 'login'), ['class' => 'btn btn-primary btn-block', 'name' => 'login-button']) ?>
