@@ -12,8 +12,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-signup">
      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default ">
+        <div class="col-md-12">
+            <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h3><?= Yii::t('app','signup');?></h3>
                     </div>

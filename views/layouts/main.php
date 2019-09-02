@@ -77,39 +77,39 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
             'class'=>'open-lang'
         ],
         'encode' => false,
+      
         'items' => [
-
-            '<li>
+                '<li>
                 <a id="navEng" href="#" class="language">
-                    <img id="imgNavEng" src="" alt="..." class="img-thumbnail icon-small">  
+                    <img id="imgNavEng" src="/img-site/flag/united-kingdom.svg" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavEng">English</span>
                 </a>
             </li>',
 
             '<li>
                 <a id="navIta" href="#" class="language">
-                     <img id="imgNavIta" src="" alt="..." class="img-thumbnail icon-small">  
+                     <img id="imgNavIta" src="/img-site/flag/italy.svg" alt="..." class="img-thumbnail icon-small">  
                      <span id="lanNavIta">Italiano</span>
                  </a>
             </li>',
 
             '<li>
                 <a id="navDeu" href="#" class="language">
-                     <img id="imgNavDeu" src="" alt="..." class="img-thumbnail icon-small"> 
+                     <img id="imgNavDeu" src="/img-site/flag/germany.svg" alt="..." class="img-thumbnail icon-small"> 
                       <span id="lanNavDeu">Deutsch</span>
                  </a>
              </li>',
 
             '<li>
                 <a id="navFra" href="#" class="language">
-                    <img id="imgNavFra" src="" alt="..." class="img-thumbnail icon-small">  
+                    <img id="imgNavFra" src="/img-site/flag/france.svg" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavFra">Francais</span>
                 </a>
             </li>',
 
             '<li>
                 <a id="navArb" href="#" class="language">
-                    <img id="imgNavArb" src="" alt="..." class="img-thumbnail icon-small">  
+                    <img id="imgNavArb" src="/img-site/flag/united-arab-emirates.svg" alt="..." class="img-thumbnail icon-small">  
                     <span id="lanNavEng">Arbic</span>
                 </a>
             </li>',
@@ -200,51 +200,7 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
                 <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
                 <p><?=Yii::t('app','desc_site') ?></p>
             </div>
-            <!--/.First column-->
-
-            <!--Second column-->
-            <!-- <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 dark-grey-text">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Products</strong>
-                </h6>
-                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!" class="dark-grey-text">MDBootstrap</a>
-                </p>
-                <p>
-                    <a href="#!" class="dark-grey-text">MDWordPress</a>
-                </p>
-                <p>
-                    <a href="#!" class="dark-grey-text">BrandFlow</a>
-                </p>
-                <p>
-                    <a href="#!" class="dark-grey-text">Bootstrap Angular</a>
-                </p>
-            </div> -->
-            <!--/.Second column-->
-
-            <!--Third column-->
-            <!-- <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 dark-grey-text">
-                <h6 class="text-uppercase font-weight-bold">
-                    <strong>Useful links</strong>
-                </h6>
-                <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-                <p>
-                    <a href="#!" class="dark-grey-text">Your Account</a>
-                </p>
-                <p>
-                    <a href="#!" class="dark-grey-text">Become an Affiliate</a>
-                </p>
-                <p>
-                    <a href="#!" class="dark-grey-text">Shipping Rates</a>
-                </p>
-                <p>
-                    <a href="#!" class="dark-grey-text">Help</a>
-                </p>
-            </div> -->
-            <!--/.Third column-->
-
-            <!--Fourth column-->
+           
             <div class="col-md-4 col-lg-3 col-xl-3 dark-grey-text">
                 <h6 class="text-uppercase font-weight-bold">
                     <strong><?=Yii::t('app', 'Contact')?></strong>
@@ -291,17 +247,17 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
 
 <?php JSRegister::begin(); ?>
 <script>
-    var Site_Url="<?=Yii::$app->params["siteUrl"];?>";
+    var Site_Url="<?= ""//Yii::$app->params["siteUrl"];?>";
     $(document).ready(function(){
            $('.open-lang').click(function (e) { 
                 e.preventDefault();
             });
         
-        var itaImgLink =Site_Url+"/img-site/Italien.gif";
-        var engImgLink = Site_Url+"/img-site/Grossbritanien.gif";
-        var deuImgLink = Site_Url+"/img-site/Deutschland.gif";
-        var fraImgLink = Site_Url+"/img-site/Frankreich.gif";
-        var arbImgLink = Site_Url+"/img-site/sadi.jpg";
+        var itaImgLink =Site_Url+"/img-site/flag/italy.svg";
+        var engImgLink = Site_Url+"/img-site/flag/united-kingdom.svg";
+        var deuImgLink = Site_Url+"/img-site/flag/germany.svg";
+        var fraImgLink = Site_Url+"/img-site/flag/france.svg";
+        var arbImgLink = Site_Url+"/img-site/flag/united-arab-emirates.svg";
 
         var imgBtnSel = $('#imgBtnSel');
         var imgBtnIta = $('#imgBtnIta');
