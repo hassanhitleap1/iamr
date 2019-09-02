@@ -217,3 +217,32 @@ font-size: 16px;
 .list-unstyled li {
     color: black !important;
 }
+
+.navbar-custom {
+    background-color: #006b96;
+}
+/* change the brand and text color */
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: white;
+}
+/* change the link color */
+.navbar-custom .navbar-nav .nav-link {
+    color: white;
+}
+/* change the color of active or hovered links */
+.navbar-custom .nav-item.active .nav-link,
+.navbar-custom .nav-item:hover .nav-link {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #004059 !important;
+}
+.navbar-inverse .navbar-nav > li > a {
+   color: white !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+    background-color: #004059 !important;
+}
