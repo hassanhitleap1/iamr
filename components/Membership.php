@@ -67,26 +67,26 @@ class Membership extends BaseObject
         
     }
     public static function getPrice(){
-        return $this->price;
+        return self::price;
     }
 
     public static function getLimitedReferrl()
     {
-        return $this->limitedReferrl;
+        return self::limitedReferrl;
     }
 
     public static function getPercentagePerReferral()
     {
-        return $this->percentagePerReferral;
+        return self::percentagePerReferral;
     }
 
     public static function getDaysForPay()
     {
-        return $this->daysForPay;
+        return self::daysForPay;
     }
 
     public function getCommission(){
-      return  $this->commission;
+      return  self::commission;
     }
     
 }

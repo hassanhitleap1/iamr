@@ -11,22 +11,16 @@ class Device extends BaseObject
 {
 	
 	public static function  getIp(){
-		if (!empty($_SERVER['HTTP_CLIENT_IP']))
-        //check ip from share internet
-        {
-          $ip=$_SERVER['HTTP_CLIENT_IP'];
+		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+            //ip from share internet
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+            //ip pass from proxy
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        }else{
+            $ip = $_SERVER['REMOTE_ADDR'];
         }
-        elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR']))
-        //to check ip is pass from proxy
-        {
-          $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-        }
-        else
-        {
-          $ip=$_SERVER['REMOTE_ADDR'];
-		}
-		
-		return $ip;
+        return $ip;
 		
 	}
 
@@ -102,17 +96,28 @@ class Device extends BaseObject
 		$infoDivce->ip= $ip;
 		$moreInfo=self::getMoreInfo();
 		if(!$moreInfo == ""){
-		$infoDivce->country 		=$moreInfo['country'];
-		$infoDivce->country_code	=$moreInfo['countryCode'];
-		$infoDivce->region			=$moreInfo['region'];
-		$infoDivce->region_name		=$moreInfo['regionName'];
-		$infoDivce->city			=$moreInfo['city'];
-		$infoDivce->lat				=(string)$moreInfo['lat'];
-		$infoDivce->lon				= (string)$moreInfo['lon'];
-		$infoDivce->timezone		=$moreInfo['timezone'];
-		$infoDivce->isp				=$moreInfo['isp'];
-		$infoDivce->org				=$moreInfo['org'];
-		$infoDivce->as				=$moreInfo['as'];
+			
+			$infoDivce->query =$moreInfo['query'];
+			$infoDivce->continent =$moreInfo['continent'];
+			$infoDivce->continentCode =$moreInfo['continentCode'];
+			$infoDivce->country =$moreInfo['country'];
+			$infoDivce->countryCode =$moreInfo['countryCode'];
+			$infoDivce->region =$moreInfo['region'];
+			$infoDivce->regionName =$moreInfo['regionName'];
+			$infoDivce->regioncityName =$moreInfo['city'];
+			$infoDivce->zip =$moreInfo['zip'];
+			$infoDivce->lat =$moreInfo['lat'];
+			$infoDivce->lon =$moreInfo['lon'];
+			$infoDivce->timezone =$moreInfo['timezone'];
+			$infoDivce->currency =$moreInfo['currency'];
+			$infoDivce->isp =$moreInfo['isp'];
+			$infoDivce->org =$moreInfo['org'];
+			$infoDivce->as =$moreInfo['as'];
+			$infoDivce->asname =$moreInfo['asname'];
+			$infoDivce->reverse =$moreInfo['reverse'];
+			$infoDivce->mobile =$moreInfo['mobile'];
+			$infoDivce->proxy =$moreInfo['proxy'];
+		
 		}
 		
         $infoDivce->browser=self::getBrowser();
@@ -125,8 +130,48 @@ class Device extends BaseObject
 
 	public static function getMoreInfo()
 	{
-		$moreInfo = @unserialize(file_get_contents('http://ip-api.com/php/'));
-		if($moreInfo && $moreInfo['status'] == 'success') {
+		//Initialize cURL.
+		$ch = curl_init();
+		//Set the URL that you want to GET by using the CURLOPT_URL option.
+		curl_setopt($ch, CURLOPT_URL, 'http://ip-api.com/php/'.Self::getIp().'?fields=status,message,continent,continentCode,country,countryCode,region,regionName,city,zip,lat,lon,timezone,currency,isp,org,as,asname,reverse,mobile,proxy,query');
+		
+		//Set CURLOPT_RETURNTRANSFER so that the content is returned as a variable.
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		
+		//Set CURLOPT_FOLLOWLOCATION to true to follow redirects.
+		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+		
+		//Execute the request.
+		$data = curl_exec($ch);
+		
+		//Close the cURL handle.
+		curl_close($ch);
+		/*
+		{
+			"query": "24.48.0.1",
+			"status": "success",
+			"continent": "North America",
+			"continentCode": "NA",
+			"country": "Canada",
+			"countryCode": "CA",
+			"region": "QC",
+			"regionName": "Quebec",
+			"city": "Montreal",
+			"zip": "H1S",
+			"lat": 45.5807991027832,
+			"lon": -73.5824966430664,
+			"timezone": "America/Toronto",
+			"currency": "CAD",
+			"isp": "Le Groupe Videotron Ltee",
+			"org": "Videotron Ltee",
+			"as": "AS5769 Videotron Telecom Ltee",
+			"asname": "ASN-VIDEOTRON",
+			"reverse": "modemcable001.0-48-24.mc.videotron.ca",
+			"mobile": false,
+			"proxy": false
+			}*/
+		$moreInfo=json_decode($data);
+		if($moreInfo['status'] == 'success') {
 			return $moreInfo;
 		}
 		return "";
