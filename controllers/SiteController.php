@@ -51,6 +51,18 @@ class SiteController extends BaseController
                     'logout' => ['post'],
                 ],
             ],
+            'pageCache' => [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['why-get-membership'],
+                'duration' => 60,
+                'dependency' => [
+                    'class' => 'yii\caching\DbDependency',
+                    'sql' => 'SELECT * FROM page  where key_page="page_why"',
+                ],
+                'variations' => [
+                    \Yii::$app->language,
+                ]
+            ],
         ];
     }
 

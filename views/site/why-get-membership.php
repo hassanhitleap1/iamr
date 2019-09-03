@@ -4,6 +4,7 @@ use richardfan\widget\JSRegister;
 /* @var $this yii\web\View */
 $this->title = 'You are a rich';
 ?>
+<?php if ($this->beginCache(1, ['duration' => 3600])) :?>
 <div class="site-why-get-membership">
 
     <div class="container">
@@ -143,3 +144,6 @@ $(document).ready(function () {
 });
 </script>
 <?php JSRegister::end(); ?>
+
+<?php $this->endCache();?>
+<?php endif;?>
