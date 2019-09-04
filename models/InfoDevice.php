@@ -11,11 +11,12 @@ use Yii;
  * @property string $ip
  * @property string $query
  * @property string $continent
- * @property string $continentCode
+ * @property string $continent_code
  * @property string $country
- * @property string $countryCode
+ * @property string $country_code
  * @property string $region
- * @property string $regionName
+ * @property string $region_name
+ * @property string $regioncity_name
  * @property string $city
  * @property string $zip
  * @property string $lat
@@ -29,6 +30,8 @@ use Yii;
  * @property string $reverse
  * @property string $mobile
  * @property string $proxy
+ * @property string $browser
+ * @property string $os
  * @property int $user_id
  *
  * @property User $user
@@ -51,7 +54,7 @@ class InfoDevice extends \yii\db\ActiveRecord
         return [
             [['user_id'], 'required'],
             [['user_id'], 'integer'],
-            [['ip', 'query', 'continent', 'continentCode', 'country', 'countryCode', 'region', 'regionName', 'city', 'zip', 'lat', 'lon', 'timezone', 'currency', 'isp', 'org', 'as', 'asname', 'reverse', 'mobile', 'proxy'], 'string', 'max' => 100],
+            [['ip', 'query', 'continent', 'continent_code', 'country', 'country_code', 'region', 'region_name', 'regioncity_name', 'city', 'zip', 'lat', 'lon', 'timezone', 'currency', 'isp', 'org', 'as', 'asname', 'reverse', 'mobile', 'proxy', 'browser', 'os'], 'string', 'max' => 100],
             [['user_id'], 'unique'],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
         ];
@@ -67,11 +70,12 @@ class InfoDevice extends \yii\db\ActiveRecord
             'ip' => Yii::t('app', 'Ip'),
             'query' => Yii::t('app', 'Query'),
             'continent' => Yii::t('app', 'Continent'),
-            'continentCode' => Yii::t('app', 'Continent Code'),
+            'continent_code' => Yii::t('app', 'Continent Code'),
             'country' => Yii::t('app', 'Country'),
-            'countryCode' => Yii::t('app', 'Country Code'),
+            'country_code' => Yii::t('app', 'Country Code'),
             'region' => Yii::t('app', 'Region'),
-            'regionName' => Yii::t('app', 'Region Name'),
+            'region_name' => Yii::t('app', 'Region Name'),
+            'regioncity_name' => Yii::t('app', 'Regioncity Name'),
             'city' => Yii::t('app', 'City'),
             'zip' => Yii::t('app', 'Zip'),
             'lat' => Yii::t('app', 'Lat'),
@@ -85,6 +89,8 @@ class InfoDevice extends \yii\db\ActiveRecord
             'reverse' => Yii::t('app', 'Reverse'),
             'mobile' => Yii::t('app', 'Mobile'),
             'proxy' => Yii::t('app', 'Proxy'),
+            'browser' => Yii::t('app', 'Browser'),
+            'os' => Yii::t('app', 'Os'),
             'user_id' => Yii::t('app', 'User ID'),
         ];
     }
@@ -106,7 +112,7 @@ class InfoDevice extends \yii\db\ActiveRecord
         return new InfoDeviceQuery(get_called_class());
     }
 
-            /**
+                    /**
      * @inheritdoc
      * @return InfoDevice|array|null
      */

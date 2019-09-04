@@ -36,6 +36,8 @@ class m180819_071827_create_info_device_table extends Migration
             'reverse' => $this->string(100),
             'mobile' => $this->string(100),
             'proxy' => $this->string(100),
+            'browser'=> $this->string(100),
+            'os'=> $this->string(100),
             'user_id' => $this->integer(11)->notNull()->unique(),
         ]);
         // add foreign key for table `user`
