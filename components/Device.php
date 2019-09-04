@@ -99,12 +99,12 @@ class Device extends BaseObject
 			
 			$infoDivce->query =$moreInfo['query'];
 			$infoDivce->continent =$moreInfo['continent'];
-			$infoDivce->continentCode =$moreInfo['continentCode'];
+			$infoDivce->continent_code =$moreInfo['continentCode'];
 			$infoDivce->country =$moreInfo['country'];
-			$infoDivce->countryCode =$moreInfo['countryCode'];
+			$infoDivce->country_code =$moreInfo['countryCode'];
 			$infoDivce->region =$moreInfo['region'];
-			$infoDivce->regionName =$moreInfo['regionName'];
-			$infoDivce->regioncityName =$moreInfo['city'];
+			$infoDivce->region_name =$moreInfo['regionName'];
+			$infoDivce->city =$moreInfo['city'];
 			$infoDivce->zip =$moreInfo['zip'];
 			$infoDivce->lat =$moreInfo['lat'];
 			$infoDivce->lon =$moreInfo['lon'];

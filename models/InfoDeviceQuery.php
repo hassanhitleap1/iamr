@@ -2,8 +2,6 @@
 
 namespace app\models;
 
-use yii\db\Query;
-
 /**
  * This is the ActiveQuery class for [[InfoDevice]].
  *
@@ -17,7 +15,7 @@ class InfoDeviceQuery extends \yii\db\ActiveQuery
     }*/
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return InfoDevice[]|array
      */
     public function all($db = null)
@@ -26,14 +24,11 @@ class InfoDeviceQuery extends \yii\db\ActiveQuery
     }
 
     /**
-     * @inheritdoc
+     * {@inheritdoc}
      * @return InfoDevice|array|null
      */
     public function one($db = null)
     {
         return parent::one($db);
     }
-
-
-
 }
