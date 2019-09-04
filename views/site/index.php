@@ -12,15 +12,18 @@ $this->title = 'You are a rich';
     color: #6c757d;
 }
 .panel-standerd{
-    background-color: #20b23e !important;
+  background-color: #00bcd4 !important;
+    -webkit-appearance: button;
    
 }
 .panel-golden{
     background-color: #FFD700 !important;
+    -webkit-appearance: button;
    
 }
 .panel-premium{
     background-color: #008bfd !important;
+    -webkit-appearance: button;
    
 }
 .panel-heading{
