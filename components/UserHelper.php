@@ -94,17 +94,22 @@ class UserHelper extends BaseObject
     public static function sendEmailValidation(){
 
         error_reporting(E_ALL);
+        $whitelist = array(
+            '127.0.0.1',
+            '::1',
+        );
 
-        $to = Yii::$app->user->identity->email;
-        $subject = 'Send Validation Email';
-        $message = self::returnHrmlEamilValidatonCode();
-        $headers = 'From: support@youarearich.org' . "\r\n" .
-            'Reply-To: support@youarearich.org' . "\r\n" .
-            'X-Mailer: PHP/' . phpversion();
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
-        mail($to, $subject, $message, $headers);
-
+        if (!in_array($_SERVER['REMOTE_ADDR'], $whitelist)) {
+            $to = Yii::$app->user->identity->email;
+            $subject = 'Send Validation Email';
+            $message = self::returnHrmlEamilValidatonCode();
+            $headers = 'From: support@youarearich.org' . "\r\n" .
+                'Reply-To: support@youarearich.org' . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+            $headers .= "MIME-Version: 1.0\r\n";
+            $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+            mail($to, $subject, $message, $headers);
+        }
     }
 
     public static function returnHrmlEamilValidatonCode()
