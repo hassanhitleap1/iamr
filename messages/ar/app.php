@@ -2,8 +2,8 @@
 
 return [
 	'Home'=>'الرئيسي',
-	'why-100-doller'=>'لماذا 100 دولار ',
-	'make-money' => 'جني المال',
+	'why-100-doller'=>'لماذا نأخذ هذه الاموال ',
+	'make-money' => 'كيفية صناعة المال',
 	'signup'=>'تسجيل الدخول',
 	'login'=>'دخول ',
 	'profile'=>'الملف الشخصي',
@@ -50,10 +50,10 @@ return [
 	'price:{0}'=>'السعر {0} دولار ',
 	'direct_referral'=>'الاحالة المباشرة ',
 	'pay_every:{0}'=>' يدفع كل {0} ايام ',
-	'unlimited_direct_referral'=>'احالة مياشرة غير محدودة ',
-	'Standerd'=>'ستاندرد',
-	'Golden'=>'ذهبي',
-	'Premium'=>'بريميوم ',
+	'unlimited_direct_referral'=>'احالة مباشرة غير محدودة  ',
+	'Standerd'=>'عضوية عادية',
+	'Golden'=>'عضوية ذهبية',
+	'Premium'=>'عضوية بريميوم',
 	'Order_now' => 'اطلب الان',
 	'your_membership'=>'عضويتك',
 	'Number'=>'عدد',
@@ -65,7 +65,7 @@ return [
 	'Name'=>'الاسم',
 	'Subject'=>'الموضوع',
 	'Body'=>'الوصف',
-	'Freq'=>'اسلئله متكرره',
+	'Freq'=>'اسئلة متكرره',
 	'optional'=>'اختياري ',
 	'Signup'=>'انشاء حساب ',
 	'message_get_verification_email'=>'للحصول على رمز التفعيل عبر البريد الإلكتروني اضغط هنا',
@@ -74,7 +74,7 @@ return [
 	'Incorrect_E_O_P' => 'خطا في البريد او الرقم السري ',
 	'Remember_Me' => 'تذكرني ',
 	'Pay'=>'ادفع',
-	'Total_Donation' => 'القيمه كاملة',
+	'Total_Donation' => 'القيمة كاملة',
 	'This_Payment' => 'هذه الطريق',
 	'Payment' => 'الدفع',
 	'CARD_NUMBER' => 'رقم البطاقة',
@@ -84,9 +84,10 @@ return [
 	'Forgot_Password'=>'نسيت كلمة السر',
 	'Send_Sucessfully' => 'تم العمليه بنجاح الرجاء التحقق من البريد الاليكتروني',
 	'New_Password' => 'كلة سر جديده',
-	'expired_token' => 'انتها التوكين',
+	'expired_token' => 'انتهى التوكين',
 	'Error_Token' => 'خطاء في التوكين',
 	'Successfully_Change_Password' => 'تمت تغير كلمه السر اذهب لتسجيل الدخول ',
+	'Info'=>'معلومة'
 	
 	
 ];

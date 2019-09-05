@@ -131,12 +131,12 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
         <?php if (!Yii::$app->user->isGuest) : ?>
             <?php if (!Yii::$app->user->identity->status) : ?>
                 <div class="alert alert-info">
-                    <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['site/membership']); ?> ><?= Yii::t('app', 'message_get_referral') ?>  </a>
+                    <strong><?= Yii::t('app', 'Info') ?></strong>  <a href=<?= \yii\helpers\Url::to(['site/membership']); ?> ><?= Yii::t('app', 'message_get_referral') ?>  </a>
                 </div>
             <?php endif; ?>
             <?php if (!Yii::$app->user->identity->verification_email) : ?>
                 <div class="alert alert-warning">
-                    <strong>Info!</strong>  <a href=<?= \yii\helpers\Url::to(['user/verification-email']); ?> ><?= Yii::t('app', 'message_get_verification_email') ?>  </a>
+                    <strong><?= Yii::t('app', 'Info') ?></strong>  <a href=<?= \yii\helpers\Url::to(['user/verification-email']); ?> ><?= Yii::t('app', 'message_get_verification_email') ?>  </a>
                 </div>
             <?php endif; ?>
         <?php endif; ?>

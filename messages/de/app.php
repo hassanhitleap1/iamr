@@ -83,4 +83,5 @@ return [
 	'expired_token'=> 'Abgelaufenes Token',
 	'Error_Token'=> 'Fehler-Token',
 	'Successfully_Change_Password'=> 'Passwort erfolgreich ändern gehe zum Login',
+	'Info'=>'Information'
 ];

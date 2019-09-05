@@ -87,4 +87,5 @@ return [
 	'expired_token' => 'Jeton expiré',
 	'Error_Token' => "Jeton d'erreur",
 	'Successfully_Change_Password' => 'changer le mot de passe avec succès aller à la connexion',
+	'Info'=>'Information'
 ];
