@@ -31,7 +31,7 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => 6],
             ['confirm_password', 'compare', 'compareAttribute'=>'password'],
-            ['file',  'image', 'extensions' => "gif, jpg, png"],
+            ['file',  'image', 'extensions' => "tiff,gif, jpeg,jpg, png"],
 
         ];
     }
