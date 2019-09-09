@@ -78,10 +78,10 @@ class UserController extends BaseController
             $model = $this->findModel(Yii::$app->user->id);
             $model->verification_email= 1;
             $model->save();
+            UserHelper::sendEmailValidation();
             return $this->redirect(['/']);
             }
         }
-        UserHelper::sendEmailValidation();
         return $this->render('verification-email');
     }
     /**
