@@ -7,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+
 /**
  * User model
  *
@@ -21,6 +22,7 @@ use yii\web\IdentityInterface;
  * @property integer $updated_at
  * @property string $password write-only password
  * @property string $ref
+ * @property string $membership_id
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -71,6 +73,7 @@ class User extends ActiveRecord implements IdentityInterface
             'ref' => Yii::t('app','Ref'),
             'created_at' => Yii::t('app','Created_At'),
             'updated_at' => Yii::t('app','Updated_At'),
+            'membership_id'=> 'membership'
         ];
     }
     /**

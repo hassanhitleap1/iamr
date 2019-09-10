@@ -1,5 +1,6 @@
 <?php
 
+use app\components\Membership;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\User;
@@ -35,6 +36,26 @@ $this->params['breadcrumbs'][] = $this->title;
                      width="100" height="100">';
             }
                 
+            ],
+            [
+                'attribute' => 'membership_id',
+                'format' => 'raw',
+                'value' => function ($dataProvider) {
+                    if($dataProvider->membership_id>0){
+                     $membership = new Membership($dataProvider->membership_id);
+                     $name= $membership->name;
+                    }else {
+                    $name = "no membership";
+                    }
+               
+                return $name;
+                },
+            'filter' => [
+                    0 => "no membership",
+                    1 => "Standerd",  
+                    2 => "Golden", 
+                    3 => "Premium"
+                ]
             ],
             'email:email',
             'ref',
