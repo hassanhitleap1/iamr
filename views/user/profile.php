@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Html;
+use app\components\Membership;
 
 $this->title = 'Profile';
 $this->params['breadcrumbs'][] = $this->title;
@@ -10,6 +11,19 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-profile">
     <div class="row">
     <p>
+    
+    <?php
+        if($user->membership_id>0){
+            $membership = new Membership($user->membership_id);
+            $name= $membership->name;
+        }else {
+            $name = "no membership";
+        }
+            echo $name;
+    ?>
+    </p>
+    <p>
+         
         <?= Html::a('Update profile', ['edit'], ['class' => 'btn btn-success pull-right']) ?>
     </p>
                     <div class="col-sm-6 col-md-4">
