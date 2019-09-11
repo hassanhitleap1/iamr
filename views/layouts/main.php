@@ -247,7 +247,7 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
 
 <?php JSRegister::begin(); ?>
 <script>
-    var Site_Url="<?= ""//Yii::$app->params["siteUrl"];?>";
+    var Site_Url="<?= Yii::$app->params["siteUrl"];?>";
     $(document).ready(function(){
            $('.open-lang').click(function (e) { 
                 e.preventDefault();
