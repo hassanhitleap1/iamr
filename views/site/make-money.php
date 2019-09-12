@@ -10,7 +10,7 @@ $this->title =  Yii::t('app','make-money');
         <div class="row" style="margin-top:65px">
 
             <div class="row">
-                <h1 class="title"><?= $model['title_' . Yii::$app->language] ?></h1>
+                <h1 class="title"><?=$this->title ?> - (<?=Yii::t('app','Calculator');?>) </h1>
             </div>
             <div class="row">
                 <hr>

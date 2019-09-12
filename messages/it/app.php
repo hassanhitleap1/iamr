@@ -87,5 +87,6 @@ return [
 	'expired_token' => 'Token scaduto',
 	'Error_Token' => 'Token di errore',
 	'Successfully_Change_Password' => 'cambia con successo passa al login',
-	'Info'=>'Informazione'
+	'Info'=>'Informazione',
+	'Calculator'=>'Calcolatrice',
 ];

@@ -87,7 +87,8 @@ return [
 	'expired_token' => 'Expired Token',
 	'Error_Token' => 'Error Token',
 	'Successfully_Change_Password' => 'Successfully change password  go to login ',
-	'Info'=>'Information'
+	'Info'=>'Information',
+	'Calculator'=>'Calculator',
 ];
 
 

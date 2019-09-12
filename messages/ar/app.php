@@ -87,7 +87,8 @@ return [
 	'expired_token' => 'انتهى التوكين',
 	'Error_Token' => 'خطاء في التوكين',
 	'Successfully_Change_Password' => 'تمت تغير كلمه السر اذهب لتسجيل الدخول ',
-	'Info'=>'معلومة'
+	'Info'=>'معلومة',
+	'Calculator'=>'اله الحاسبه',
 	
 	
 ];
