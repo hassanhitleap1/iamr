@@ -5,38 +5,7 @@ use yii\bootstrap\Html;
 /* @var $this yii\web\View */
 $this->title = 'You are a rich';
 ?>
-<style>
 
- .list-unstyled li {
-    padding: 10px;
-    color: #6c757d;
-}
-.panel-standerd{
-  background-color: #00bcd4 !important;
-    -webkit-appearance: button;
-   
-}
-.panel-golden{
-    background-color: #FFD700 !important;
-    -webkit-appearance: button;
-   
-}
-.panel-premium{
-    background-color: #008bfd !important;
-    -webkit-appearance: button;
-   
-}
-.panel-heading{
- text-align: center;
-}
-.list-unstyled{
-font-size: 16px;
-}
-
-.list-unstyled li {
-    color: black !important;
-}
-</style>
 <div class="site-index">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->

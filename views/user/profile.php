@@ -11,16 +11,20 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="site-profile">
     <div class="row">
     <p>
-    
+    <div class="panel panel-default">
     <?php
+
         if($user->membership_id>0){
             $membership = new Membership($user->membership_id);
             $name= $membership->name;
         }else {
             $name = "no membership";
         }
-            echo $name;
+        echo '<div class="panel-heading panel-'.strtolower($name).'">'; 
+        echo  $name;  
     ?>
+        </div>
+    </div>            
     </p>
     <p>
          
