@@ -149,7 +149,7 @@ $dir = Yii::$app->language == 'ar' ? 'rtl' : 'ltr';
 <!--Footer-->
 <footer class="page-footer font-small blue-grey lighten-5 pt-0 ">
 
-    <div style="background-color: #101010;">
+    <div style="background-color: #006b96;">
         <div class="container">
             <!--Grid row-->
             <div class="row py-4 d-flex align-items-center">
