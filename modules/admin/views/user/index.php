@@ -59,6 +59,18 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'email:email',
             'ref',
+            [
+                'attribute' => 'balance',
+                'value' => function ($dataProvider) {
+                    $user= User::find($dataProvider->id);
+                     $balance=0;
+                    if($user->balance->balance!=null){
+                        $balance = $user->balance->balance;
+                    }
+                    return $balance;
+                }
+
+            ],
             'created_at',
             [
                 'attribute'=>'status',

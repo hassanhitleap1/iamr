@@ -4,6 +4,8 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use app\models\PaymentRequest;
+use app\models\User;
+
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\admin\PaymentRequestSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -26,6 +28,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'western_union_full_name',
             'country',
              'full_address',
+        [
+            'attribute' => 'balance',
+            'value' => function ($dataProvider) {
+                $user = User::find($dataProvider->id);
+                $balance = 0;
+                if ($user->balance->balance != null) {
+                    $balance = $user->balance->balance;
+                }
+                return $balance;
+            }
+
+        ],
              'create_at',
 
              [
