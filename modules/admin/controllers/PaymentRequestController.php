@@ -51,11 +51,11 @@ class PaymentRequestController extends BaseController
             $model->accept = PaymentRequest::ACCPET_PAYMENT;
             $balanceModel= \app\models\Balance::find()->where(['user_id'=>$model->user_id])->one();
             
-            // if( $model->value <= $balanceModel->balance){
-            //     $balanceModel->balance -= $model->value;
-            //     $balanceModel->save();
-            // }
-            // $model->save(false);
+            if( $model->value <= $balanceModel->balance){
+                $balanceModel->balance -= $model->value;
+                $balanceModel->save();
+            }
+            $model->save(false);
         } 
         $payouts = new \PayPal\Api\Payout();
         $senderBatchHeader = new \PayPal\Api\PayoutSenderBatchHeader();
