@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Balance;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
@@ -31,10 +32,10 @@ $this->params['breadcrumbs'][] = $this->title;
         [
             'attribute' => 'balance',
             'value' => function ($dataProvider) {
-                $user = User::find($dataProvider->id);
+                $balanceObject = Balance::find()->where(['user_id' => $dataProvider->user_id])->one();
                 $balance = 0;
-                if ($user->balance->balance != null) {
-                    $balance = $user->balance->balance;
+                if (!empty($balanceObject)) {
+                    $balance = $balanceObject->balance;
                 }
                 return $balance;
             }

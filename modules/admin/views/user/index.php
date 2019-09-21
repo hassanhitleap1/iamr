@@ -1,6 +1,7 @@
 <?php
 
 use app\components\Membership;
+use app\models\Balance;
 use yii\helpers\Html;
 use yii\grid\GridView;
 use app\models\User;
@@ -60,15 +61,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'ref',
             [
-                'attribute' => 'balance',
-                'value' => function ($dataProvider) {
-                    $user= User::find($dataProvider->id);
-                     $balance=0;
-                    if($user->balance->balance!=null){
-                        $balance = $user->balance->balance;
-                    }
-                    return $balance;
+            'attribute' => 'balance',
+            'value' => function ($dataProvider) {
+                $balanceObject = Balance::find()->where(['user_id' => $dataProvider->id])->one();
+                $balance=0;
+                if (!empty($balanceObject) ) {
+                    $balance = $balanceObject->balance;
                 }
+                return $balance;
+            }
 
             ],
             'created_at',
