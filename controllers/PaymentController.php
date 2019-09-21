@@ -229,7 +229,7 @@ class PaymentController extends BaseController
            
             $user->save();
             $trans->save();
-
+            UserHelper::setCoin(1.0);
 
             UserHelper::setBalance(Yii::$app->user->id);
             UserHelper::setReferralCode(Yii::$app->user->id);

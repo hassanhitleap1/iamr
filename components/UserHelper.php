@@ -28,7 +28,7 @@ class UserHelper extends BaseObject
     }
 
     public static function setCoin($coin){
-        $user=User::find(Yii::$app->user->id);
+        $user= User::findOne(Yii::$app->user->id) ;
         $user->coin=$coin;
         $user->save();
     }
