@@ -21,6 +21,7 @@ use yii\web\IdentityInterface;
  * @property integer $created_at
  * @property integer $updated_at
  * @property string $password write-only password
+ * @property integer $coin
  * @property string $ref
  * @property string $membership_id
  */
@@ -71,6 +72,7 @@ class User extends ActiveRecord implements IdentityInterface
             'email' => Yii::t('app','Email'),
             'status' => Yii::t('app','Status'),
             'ref' => Yii::t('app','Ref'),
+            'coin' => Yii::t('app', 'Coin'),
             'created_at' => Yii::t('app','Created_At'),
             'updated_at' => Yii::t('app','Updated_At'),
             'membership_id'=> 'membership'
@@ -225,6 +227,8 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasOne(Balance::className(), ['user_id' => 'id']);
     }
 
+
+    
     /**
      * @return \yii\db\ActiveQuery
      */

@@ -101,11 +101,17 @@ class UserController extends BaseController
             $subQuery = Referral::find()->select('user_id_referral')->where(['user_id'=>Yii::$app->user->id]);
             $query = User::find()->where(['in', 'id', $subQuery]);
             $referalUsers = $query->all();
-          
+           
+            $coin = User::find()->select('coin')->where(['id' => Yii::$app->user->id])
+                ->limit('1')
+                ->one();
+ 
+        
             return $this->render('referral',[
                 'balance'=>$blance,
                 'referralCode'=>$referralCode,
                 'referalUsers'=>$referalUsers,
+                'coin'=> $coin,
             ]);
         }else {
             return $this->render('alarm');

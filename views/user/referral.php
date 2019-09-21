@@ -10,10 +10,18 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-referral">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-3">
             <h2><?= Yii::t('app', 'Your_Balance'); ?></h1>
                 <span class="glyphicon glyphicon-usd gi-lg"> <?= $balance->balance ?></span>
         </div>
+
+
+        <div class="col-md-3">
+            <h2><?= Yii::t('app', 'Your_Coin'); ?></h1>
+                <span class="glyphicon glyphicon-usd gi-lg"> <?= $coin->coin ?></span>
+        </div>
+
+
         <div class="col-md-6">
             <div class="referral">
                 <div class="form-group">
@@ -48,12 +56,12 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <td><?= $referalUser->status ? "Active" : "Disactive"  ?></td>
                                 <td><?= $referalUser->status ? "Pay" : "Not Pay"  ?></td>
                                 <td>
-                                    <?php 
-                                        $membership=new Membership($referalUser->membership_id);
+                                    <?php
+                                            $membership = new Membership($referalUser->membership_id);
                                             echo $membership->name;
-                                        ?>
+                                            ?>
                                 </td>
-                                
+
                             </tr>
                         <?php endforeach; ?>
                     <?php endif; ?>

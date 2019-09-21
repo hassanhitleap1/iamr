@@ -89,6 +89,7 @@ return [
 	'Successfully_Change_Password' => 'Successfully change password  go to login ',
 	'Info'=>'Information',
 	'Calculator'=>'Calculator',
+	'Your_Coin'=> 'Your Coin',
 ];
 
 

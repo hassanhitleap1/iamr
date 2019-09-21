@@ -89,4 +89,5 @@ return [
 	'Successfully_Change_Password' => 'changer le mot de passe avec succès aller à la connexion',
 	'Info'=>'Information',
 	'Calculator'=>'Calculatrice',
+	'Your_Coin'=> 'Votre pièce',
 ];

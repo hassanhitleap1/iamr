@@ -8,7 +8,7 @@ use app\models\Balance;
 use app\models\Referral;
 use app\models\ReferralCode;
 use app\models\PaymentRequest;
-
+use app\models\User;
 
 class UserHelper extends BaseObject
 {
@@ -25,6 +25,12 @@ class UserHelper extends BaseObject
         $referral->user_id=$userId;
         $referral->user_id_referral=$userIdReferral;
         $referral->save();
+    }
+
+    public static function setCoin($coin){
+        $user=User::find(Yii::$app->user->id);
+        $user->coin=$coin;
+        $user->save();
     }
 
     public static function setReferralCode($userId){

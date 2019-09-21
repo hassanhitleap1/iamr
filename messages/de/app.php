@@ -85,4 +85,5 @@ return [
 	'Successfully_Change_Password'=> 'Passwort erfolgreich ändern gehe zum Login',
 	'Info'=>'Information',
 	'Calculator'=>'Taschenrechner',
+	'Your_Coin' => 'La tua moneta',
 ];

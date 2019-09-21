@@ -60,6 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             'email:email',
             'ref',
+            'coin',
             [
             'attribute' => 'balance',
             'value' => function ($dataProvider) {

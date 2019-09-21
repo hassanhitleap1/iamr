@@ -89,6 +89,7 @@ return [
 	'Successfully_Change_Password' => 'تمت تغير كلمه السر اذهب لتسجيل الدخول ',
 	'Info'=>'معلومة',
 	'Calculator'=>'اله الحاسبه',
+	'Your_Coin' => 'عملتك المعدنية',
 	
 	
 ];
