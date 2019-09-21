@@ -18,7 +18,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <div class="col-md-3">
             <h2><?= Yii::t('app', 'Your_Coin'); ?></h1>
-                <span class="glyphicon  glyphicon glyphicon-fire  gi-lg"> <?= $coin->coin ?></span>
+                <span class="glyphicon  glyphicon glyphicon-fire  gi-lg"> <?= $coin->coin ?> </span>
+               in <span class="glyphicon glyphicon-usd gi-lg">   <?= $coin->coin * 1 ?></span>
         </div>
 
 
